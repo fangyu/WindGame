@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
+#include "EntryLayer.h"
 
 USING_NS_CC;
 
@@ -24,10 +25,17 @@ void AppDelegate::initGLContextAttrs()
 
 bool AppDelegate::applicationDidFinishLaunching() {
     // initialize director
+    
+    FileUtils::getInstance()->addSearchPath("res");
+    FileUtils::getInstance()->addSearchPath("res/ccb");
+    FileUtils::getInstance()->addSearchPath("res/ccbimages");
+    FileUtils::getInstance()->addSearchPath("res/staticData");
+    FileUtils::getInstance()->addSearchPath("res/ccbimages/background");
+    
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLViewImpl::create("My Game");
+        glview = GLViewImpl::create("FirstGame");
         director->setOpenGLView(glview);
     }
 
@@ -38,7 +46,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    auto scene = HelloWorld::createScene();
+//    auto scene = HelloWorld::createScene();
+
+    auto scene = EntryLayer::createScene();
 
     // run
     director->runWithScene(scene);

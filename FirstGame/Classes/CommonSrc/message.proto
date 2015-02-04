@@ -1,0 +1,6559 @@
+enum MESSAGEID {
+//角色系统
+	MIN_PLAYER_ID = 0;
+
+	C2M_VERIFY_SYN = 1;
+	M2C_VERIFY_ACK = 2;
+	
+	M2D_PLAYER_BASEINFO_SYN = 3;
+	D2M_PLAYER_BASEINFO_ACK = 4;
+
+	M2C_CHECK_ACCOUNT = 5;
+
+	M2D_PLAYERINFO_UPDATE_SYN = 6;
+	
+	C2M_CREATE_PLAYER_SYN = 7;
+	M2D_CREATE_PLAYER_SYN = 8;
+
+	C2M_LOGOUT_SYN = 9;
+
+	M2A_VERIFY_ACCOUNT_SYN = 10;
+	A2M_VERIFY_ACCOUNT_ACK = 11;
+
+	M2A_VERIFY_PAYRESULT_SYN = 12;
+	A2M_VERIFY_PAYRESULT_ACK = 13;
+	C2M_VERIFY_PAYRESULT_SYN = 14;
+	M2C_VERIFY_PAYRESULT_ACK = 15;
+	
+	C2M_ANONYMOUS_LOGIN_SYN = 16;
+	M2C_ANONYMOUS_LOGIN_ACK = 17;
+	
+	M2A_PHONE_LOGIN_SYN = 18;
+	A2M_PHONE_LOGIN_ACK = 19;
+	C2M_PHONE_LOGIN_SYN = 20;
+	M2C_PHONE_LOGIN_ACK = 21;
+	M2D_PHONE_LOGIN_SYN = 22;
+	D2M_PHONE_LOGIN_ACK = 23;
+	
+	C2M_REGISTER_SYN = 24;
+	M2C_REGISTER_ACK = 25;
+	M2D_REGISTER_SYN = 26;
+	D2M_REGISTER_ACK = 27;
+	
+	C2M_BIND_PHONE_SYN = 28;
+	M2C_BIND_PHONE_ACK = 29;
+	M2D_BIND_PHONE_SYN = 30;
+	D2M_BIND_PHONE_ACK = 31;
+	
+	C2M_MODIFYNAME_SYN = 32;
+	M2C_MODIFYNAME_ACK = 33;
+	M2D_MODIFYNAME_SYN = 34;
+	D2M_MODIFYNAME_ACK = 35;
+	
+	M2A_ACQUIRE_CODE_SYN = 36;
+	A2M_ACQUIRE_CODE_ACK = 45;
+	
+	C2M_VERIFY_CODE_SYN = 37;
+	M2C_VERIFY_CODE_ACK = 38;
+	M2A_VERIFY_CODE_SYN = 39;
+	A2M_VERIFY_CODE_ACK = 40;
+	
+	C2M_VERIFY_IOS_PAY_RESULT_SYN = 41;
+	M2C_VERIFY_IOS_PAY_RESULT_ACK = 42;
+	M2A_VERIFY_IOS_PAY_RESULT_SYN = 43;
+	A2M_VERIFY_IOS_PAY_RESULT_ACK = 44;
+	
+	C2M_CHECK_CDKEY_SYN = 46;
+	M2C_CHECK_CDKEY_ACK = 47;
+	M2A_CHECK_CDKEY_SYN = 48;
+	A2M_CHECK_CDKEY_ACK = 49;
+	
+	C2M_ADD_APPRENTICE_SYN = 68;
+	M2C_ADD_APPRENTICE_ACK = 69;
+	M2D_ADD_APPRENTICE_SYN = 52;
+	D2M_ADD_APPRENTICE_ACK = 53;
+	M2A_ADD_APPRENTICE_SYN = 54;
+	A2M_ADD_APPRENTICE_ACK = 55;
+	
+	C2M_GET_APPRENTICE_SYN = 56;
+	M2C_GET_APPRENTICE_ACK = 57;
+	M2A_GET_APPRENTICE_SYN = 58;
+	A2M_GET_APPRENTICE_ACK = 59;
+	
+	C2M_DEL_APPRENTICE_SYN = 60;
+	M2C_DEL_APPRENTICE_ACK = 61;
+	M2A_DEL_APPRENTICE_SYN = 62;
+	A2M_DEL_APPRENTICE_ACK = 63;
+	
+	C2M_GET_APPRENTICE_AWARD_SYN = 64;
+	M2C_GET_APPRENTICE_AWARD_ACK = 65;
+	M2A_GET_APPRENTICE_AWARD_SYN = 66;
+	A2M_GET_APPRENTICE_AWARD_ACK = 67;
+
+	C2M_GET_EXPAND_INFO_SYN = 70;
+	M2C_GET_EXPAND_INFO_ACK = 71;
+
+	M2D_BAN_SPEAK_SYN = 50;
+
+    M2A_COMMON_PUSH_MSG_SYN = 51; // 通用push消息
+
+	M2D_KEEPALIVE_ACK  = 100;
+	
+	//九游SDK接入
+	MIN_JIUYOU_SDK = 101;
+	
+	C2M_JIUYOU_SDK_LOGIN_SYN = 102;		
+	M2C_JIUYOU_SDK_LOGIN_ACK = 103;		
+	
+	M2A_JIUYOU_SDK_LOGIN_SYN = 104;
+	A2M_JIUYOU_SDK_LOGIN_ACK = 105;
+	
+	//当乐SDK接入
+	C2M_DANGLE_SDK_LOGIN_SYN = 106;		
+	M2C_DANGLE_SDK_LOGIN_ACK = 107;		
+	
+	M2A_DANGLE_SDK_LOGIN_SYN = 108;
+	A2M_DANGLE_SDK_LOGIN_ACK = 109;
+	
+	//91SDK接入
+	C2M_91_SDK_LOGIN_SYN = 110;		
+	M2C_91_SDK_LOGIN_ACK = 111;	
+	
+	M2A_91_SDK_LOGIN_SYN = 112;
+	A2M_91_SDK_LOGIN_ACK = 113;
+	
+	//多酷接入
+	C2M_DUOKU_SDK_LOGIN_SYN = 114;		
+	M2C_DUOKU_SDK_LOGIN_ACK = 115;	
+	
+	M2A_DUOKU_SDK_LOGIN_SYN = 116;
+	A2M_DUOKU_SDK_LOGIN_ACK = 117;
+	
+	//360接入
+	C2M_360_SDK_LOGIN_SYN = 118;		
+	M2C_360_SDK_LOGIN_ACK = 119;	
+	
+	M2A_360_SDK_LOGIN_SYN = 120;
+	A2M_360_SDK_LOGIN_ACK = 121;
+	
+	//安智接入
+	C2M_ANZHI_SDK_LOGIN_SYN = 122;		
+	M2C_ANZHI_SDK_LOGIN_ACK = 123;	
+	
+	M2A_ANZHI_SDK_LOGIN_SYN = 124;
+	A2M_ANZHI_SDK_LOGIN_ACK = 125;
+	
+	//华为接入
+	C2M_HUAWEI_SDK_LOGIN_SYN = 126;		
+	M2C_HUAWEI_SDK_LOGIN_ACK = 127;	
+	
+	M2A_HUAWEI_SDK_LOGIN_SYN = 128;
+	A2M_HUAWEI_SDK_LOGIN_ACK = 129;
+	
+	//小米接入
+	C2M_XIAOMI_SDK_LOGIN_SYN = 130;		
+	M2C_XIAOMI_SDK_LOGIN_ACK = 131;	
+	
+	M2A_XIAOMI_SDK_LOGIN_SYN = 132;
+	A2M_XIAOMI_SDK_LOGIN_ACK = 133;
+	
+	//91SDK接入
+	C2M_91_IOS_SDK_LOGIN_SYN = 134;		
+	M2C_91_IOS_SDK_LOGIN_ACK = 135;	
+	
+	M2A_91_IOS_SDK_LOGIN_SYN = 136;
+	A2M_91_IOS_SDK_LOGIN_ACK = 137;
+	
+	//QQ应用宝接入
+	C2M_QQ_SDK_LOGIN_SYN = 138;		
+	M2C_QQ_SDK_LOGIN_ACK = 139;	
+	
+	M2A_QQ_SDK_LOGIN_SYN = 140;
+	A2M_QQ_SDK_LOGIN_ACK = 141;
+	
+	//豌豆荚接入
+	C2M_WANDOUJIA_SDK_LOGIN_SYN = 142;		
+	M2C_WANDOUJIA_SDK_LOGIN_ACK = 143;	
+	
+	M2A_WANDOUJIA_SDK_LOGIN_SYN = 144;
+	A2M_WANDOUJIA_SDK_LOGIN_ACK = 145;
+	
+	//同步推接入
+	C2M_TONGBUTUI_SDK_LOGIN_SYN = 146;		
+	M2C_TONGBUTUI_SDK_LOGIN_ACK = 147;	
+	
+	M2A_TONGBUTUI_SDK_LOGIN_SYN = 148;
+	A2M_TONGBUTUI_SDK_LOGIN_ACK = 149;
+	
+	//PP助手
+	C2M_PPHELPER_SDK_LOGIN_SYN = 150;		
+	M2C_PPHELPER_SDK_LOGIN_ACK = 151;	
+	
+	M2A_PPHELPER_SDK_LOGIN_SYN = 152;
+	A2M_PPHELPER_SDK_LOGIN_ACK = 153;
+	
+	//OPPO
+	C2M_OPPO_SDK_LOGIN_SYN = 154;		
+	M2C_OPPO_SDK_LOGIN_ACK = 155;	
+	
+	M2A_OPPO_SDK_LOGIN_SYN = 156;
+	A2M_OPPO_SDK_LOGIN_ACK = 157;
+	
+	//SDK接入通用
+	C2M_COMMON_SDK_LOGIN_SYN = 158;		
+	M2C_COMMON_SDK_LOGIN_ACK = 159;	
+	
+	M2A_COMMON_SDK_LOGIN_SYN = 160;
+	A2M_COMMON_SDK_LOGIN_ACK = 161;
+	
+	MAX_JIUYOU_SDK = 180;
+	
+	C2M_GET_SERVERLIST_SYN = 183;
+	M2C_GET_SERVERLIST_ACK = 184;
+	C2M_CHECK_IF_NAME_EXIST_SYN = 185;
+	M2C_CHECK_IF_NAME_EXIST_ACK = 186;
+	M2D_CHECK_IF_NAME_EXIST_SYN = 187;
+	D2M_CHECK_IF_NAME_EXIST_ACK = 188;
+	
+	C2M_CHECK_GOLD_SYN = 190;
+	M2C_CHECK_GOLD_ACK = 191;
+
+	M2A_NOTIFY_PAY_RESULT_ACK = 195;	
+	A2M_NOTIFY_PAY_RESULT_SYN = 196;
+	
+	
+	M2D_BAN_PLAYER_SYN = 197;
+	
+	M2L_LOG_SYN = 198;
+	MAX_PLAYER_ID = 199;
+//抽卡系统
+	MIN_MARKET_ID = 200;
+	
+	C2M_GETCARD_SYN = 201;
+	M2C_GETCARD_ACK	= 202;
+
+	C2M_GETCARD_CUTDOWN_SYN = 203;
+	M2C_GETCARD_CUTDOWN_ACK = 204;
+
+	MAX_MARKET_ID = 399;
+//卡牌系统
+	MIN_CARD_ID = 400;
+
+	C2M_CONFIGSKILL_SYN = 401;
+	M2C_CONFIGSKILL_ACK = 402;
+
+	C2M_CONFIGEQUIPMENT_SYN =  403;
+	M2C_CONFIGEQUIPMENT_ACK =  404;
+
+	C2M_SWAP_FIGHTING_POSITION_SYN = 405;
+	M2C_SWAP_FIGHTING_POSITION_ACK = 406;
+
+	C2M_SWAP_FIGHTING_CARD_SYN =  407;
+	M2C_SWAP_FIGHTING_CARD_ACK =  408;
+
+    C2M_REFRESH_FIGHT_POS_INFO_SYN = 409;
+    M2C_REFRESH_FIGHT_POS_INFO_ACK = 410;
+    
+    C2M_PASS_EXPERIENCE_SYN = 411;
+    M2C_PASS_EXPERIENCE_ACK = 412;
+    
+    C2M_CARD_TRAIN_REQUREST_SYN = 413;
+    M2C_CARD_TRAIN_REQUREST_ACK = 414;
+    
+    C2M_CARD_TRAIN_CONFIRM_SYN = 415;
+    M2C_CARD_TRAIN_CONFIRM_ACK = 416;     
+    
+    C2M_CARD_UPGRADE_QUALITY_SYN = 417;
+    M2C_CARD_UPGRADE_QUALITY_ACK = 418;
+	
+	MAX_CARD_ID = 599;
+//魂魄系统
+	MIN_GHOST_ID = 600;
+	
+	C2M_GHOST_RECRUIT_SYN = 601;
+	M2C_GHOST_RECRUIT_ACK = 602;
+		
+
+	MAX_GHOST_ID = 799;
+//江湖系统
+	MIN_FIGHT_ID = 800;
+        
+    C2M_GETALLRUNESCAPE_SYN = 801;
+	M2C_ALLRUNESCAPE_ACK = 802;
+
+	C2M_GETEATCHICHEN_SYN = 803; 
+	M2C_EATCHICHEN_ACK = 804;
+	
+    C2M_BUY_CHALLEGENUM_SYN = 805; 
+	M2C_BUY_CHALLEGENUM_ACK = 806;
+
+    C2M_CLEAR_CDTIMER_SYN = 807; 
+	M2C_CLEAR_CDTIMER_ACK = 808;
+	
+	C2M_BUY_POWER_SYN = 809;
+	M2C_BUY_POWER_ACK = 810;
+  
+    MAX_FIGHT_ID = 999;
+//关卡系统
+	MIN_PARAGRAPH_ID = 1000;
+
+        C2M_GETFIGHT_SYN = 1001;
+	M2C_FIGHT_ACK = 1002;
+	
+        C2M_GETSERIESFIGHT_SYN = 1003;
+	M2C_SERIESFIGHT_ACK = 1004;
+
+	MAX_PARAGRAPH_ID = 1199;
+//装备系统
+	MIN_EQUIP_ID = 1200;
+
+	C2M_UPGRADE_EQUIPMENT_SYN = 1201;
+	M2C_UPGRADE_EQUIPMENT_ACK = 1202;
+
+	C2M_SELL_EQUIPMENT_SYN = 1203;
+	M2C_SELL_EQUIPMENT_ACK = 1204;
+
+	MAX_EQUIP_ID = 1399;
+
+//技能系统
+	MIN_SKILL_ID = 1400;
+
+	C2M_UPGRADE_SKILL_SYN = 1401; 
+	M2C_UPGRADE_SKILL_ACK = 1402;
+
+	C2M_UPGRADE_INBORNSKILL_SYN = 1403; 
+	M2C_UPGRADE_INBORNSKILL_ACK = 1404;
+
+	C2M_SELL_SKILL_SYN = 1405;
+	M2C_SELL_SKILL_ACK = 1406;
+
+	MAX_SKILL_ID = 1599;
+
+//论剑系统
+	MIN_DUEL_ID = 1600;
+
+	M2D_DUEL_TOPLISTINFO_SYN = 1601;
+	D2M_DUEL_TOPLISTINFO_ACK = 1602;
+
+	M2D_DUEL_UPDATE_TOPLISTINFO_SYN = 1603;
+
+	M2D_DUEL_PLAYER_BASEINFO_SYN = 1605;
+	D2M_DUEL_PLAYER_BASEINFO_ACK = 1606;
+
+	
+	C2M_DUEL_GET_BASEINFO_SYN = 1607;
+	M2C_DUEL_GET_BASEINFO_ACK = 1608;
+	
+	C2M_DUEL_CHALLENGE_SYN = 1609;
+	M2C_DUEL_CHALLENGE_ACK = 1610;
+
+	C2M_DUEL_REFRESH_SCORE_SYN = 1611;
+	M2C_DUEL_REFRESH_SCORE_ACK = 1612;
+
+	C2M_DUEL_EXCHANGE_TRAINING_SYN = 1613;
+	M2C_DUEL_EXCHANGE_TRAINING_ACK = 1614;
+
+	C2M_DUEL_GET_PRIZE_SYN = 1615;
+	M2C_DUEL_GET_PRIZE_ACK = 1616;
+	
+    D2M_DUEL_TOPLIS_FINISH = 1617;
+        
+   	C2M_DUEL_SEND_MESSAGE_SYN = 1618;
+   	M2C_DUEL_SEND_MESSAGE_ACK = 1619;
+	
+	MAX_DUEL_ID = 1799;
+
+
+//血战系统
+	MIN_BLOODYBATTLE_ID = 1800;
+
+	C2M_BLOODYBATTLE_INFO_SYN = 1801;
+	M2C_BLOODYBATTLE_INFO_ACK = 1802;
+	
+	C2M_ADDITION_BLOODYBATTLE_INFO_SYN = 1803;
+	M2C_ADDITION_BLOODYBATTLE_INFO_ACK = 1804;
+	
+	C2M_FIGHT_BLOODYBATTLE_INFO_SYN = 1805;
+	M2C_FIGHT_BLOODYBATTLE_INFO_ACK = 1806;
+	
+	C2M_RANK_BLOODYBATTLE_INFO_SYN = 1807;
+	M2C_RANK_BLOODYBATTLE_INFO_ACK = 1808;
+        
+    C2M_RANK_BLOODYBATTLE_PLAYER_INFO_SYN = 1809;
+	M2C_RANK_BLOODYBATTLE_PLAYER_INFO_ACK = 1810;
+        
+    M2D_RANK_BLOODYBATTLE_INFO_SYN = 1811;
+    D2M_RANK_BLOODYBATTLE_INFO_ACK = 1812;
+
+    M2D_RANK_UPDATE_BLOODYBATTLE_INFO_SYN = 1813;
+
+	C2M_ENTER_BLOODYBATTLE_INFO_SYN = 1814;
+	M2C_ENTER_BLOODYBATTLE_INFO_ACK = 1815;
+
+	MAX_BLOODYBATTLE_ID = 1999;
+	
+//道具及集市系统
+	ITEM_MARKET_MIN = 2000;
+	
+	C2M_ITEM_OPEN_BOXORPACKS_SYN = 2001;
+	M2C_ITEM_OPEN_BOXORPACKS_ACK = 2002; 
+	
+	C2M_ITEM_BUY_SYN = 2005;
+	M2C_ITEM_BUY_ACK = 2006; 
+	
+	C2M_ITEM_USING_SYN = 2007;
+	M2C_ITEM_USING_ACK = 2008;
+	
+	C2M_ITEM_MARKET_SYN = 2009;
+	M2C_ITEM_MARKET_ACK = 2010;
+	
+	M2D_ITEM_MARKET_SYN = 2011;
+	D2M_ITEM_MARKET_ACK = 2012;
+	
+	M2D_ITEM_UPDATE_MARKET_SYN = 2013;
+	
+	C2M_GM_SET_PLAYER_INFO_SYN = 2015; 
+	
+	C2M_ITEM_ADD_PLAYER_OR_FIGHTCARD_EXP_SYN = 2017;
+	
+	M2C_ITEM_ADD_PLAYER_OR_FIGHTCARD_EXP_ACK = 2018;
+	
+	C2M_ITEM_ADD_ONE_CARD_EXP_SYN = 2019;
+	
+	M2C_ITEM_ADD_ONE_CARD_EXP_ACK = 2020;
+	
+	ITEM_MARKET_MAX = 2200;
+
+//消息系统
+	MESSAGE_SYSTEM_MIN = 2201;
+
+	C2M_MESSAGESYSTEM_GETALL_SYN = 2202;
+	M2C_MESSAGESYSTEM_GETALL_ACK = 2203;
+	
+	G2M_MESSAGESYSTEM_ADD_SYN = 2204;
+	M2G_MESSAGESYSTEM_ADD_ACK = 2205;
+	
+	C2M_MESSAGESYSTEM_READ_SYN = 2206;
+	M2C_MESSAGESYSTEM_READ_ACK = 2207;
+	
+	C2M_MESSAGESYSTEM_ACCPETAWARD_SYN = 2208;
+	M2C_MESSAGESYSTEM_ACCPETAWARD_ACK = 2209;
+	
+	M2D_MESSAGESYSTEM_GETALL_SYN = 2210;
+
+	D2M_MESSAGESYSTEM_MAX_MSGID = 2211;
+	D2M_MESSAGESYSTEM_GETALL_ACK = 2212;
+
+	M2D_MESSAGESYSTEM_UPDATE_AWARD_SYN = 2213;
+	M2D_MESSAGESYSTEM_UPDATE_CLICK_SYN = 2214;
+	M2D_MESSAGESYSTEM_UPDATE_TIPS_SYN = 2215;
+
+	D2M_MESSAGESYSTEM_GETALL_FINISH = 2216;
+
+	C2M_MESSAGESYSTEM_TIPS_SYN = 2217;
+	M2C_MESSAGESYSTEM_TIPS_ACK = 2218;
+
+	C2M_MESSAGESYSTEM_INCREMENTAL_SYN = 2219;
+	M2C_MESSAGESYSTEM_INCREMENTAL_ACK = 2220;
+
+	C2M_MESSAGESYSTEM_CHAT_SYN = 2221;
+	M2C_MESSAGESYSTEM_CHAT_ACK = 2222;
+
+	M2D_MESSAGESYSTEM_FETCH_SYN = 2223;
+
+	MESSAGE_SYSTEM_MAX = 2399;
+
+//好友系统消息
+        FRIENDS_SYSTEM_MIN = 2400;
+        
+        C2M_REFRESH_FRIENDS_MSG_SYN = 2401;
+        M2C_REFRESH_FRIENDS_MSG_ACK = 2402;
+        
+        M2D_PULL_FRIENDS_INFO_SYN = 2403;
+        D2M_PULL_FRIENDS_INFO_ACK =2404;
+        
+        C2M_INVITE_FRIEND_SYN = 2405;
+        M2C_INVITE_FRIEND_ACK = 2406;
+        
+        C2M_CONFIRM_INVITE_SYN = 2407;
+        M2C_CONFIRM_INVITE_ACK = 2408;
+        
+        C2M_DELETE_FRIEND_SYN = 2409;
+        M2C_DELETE_FRIEND_ACK = 2410;
+        
+        C2M_WATCH_FRIEND_FIGHT_POS_SYN = 2411;
+        M2C_WATCH_FRIEND_FIGHT_POS_ACK = 2412;
+        
+        C2M_SEND_MESSAGE_SYN = 2413;
+        M2C_SEND_MESSAGE_ACK = 2414;
+        
+        C2M_GET_FRIENDS_INVITE_STATUS_SYN = 2415;
+        M2C_GET_FRIENDS_INVITE_STATUS_ACK = 2416;
+        
+        D2M_PULL_FRIENDS_INFO_FINISH =2417;
+
+	M2D_FRIEND_MSG_UPDATE_SYN = 2418;
+
+	M2D_FRIEND_PLAYER_BASEINFO_SYN = 2419;
+	D2M_FRIEND_PLAYER_BASEINFO_ACK = 2420;
+	
+	C2M_SEARCH_FRIENDS_SYN = 2421;
+	M2C_SEARCH_FRIENDS_ACK = 2422;
+	
+	C2M_MARK_MSG_READ_SYN = 2423;
+	M2C_MARK_MSG_READ_ACK = 2424;
+		
+	C2M_REFRESH_NEW_FRIENDS_MSG_SYN = 2425;
+	M2C_REFRESH_NEW_FRIENDS_MSG_ACK = 2426;
+        
+        FRIENDS_SYSTEM_MAX = 2599;
+
+//运营活动
+        ACTIVITY_SYSTEM_MIN = 2600;
+        
+        C2M_GET_ACTIVITY_INFO_SYN = 2601;
+        M2C_GET_ACTIVITY_INFO_ACK = 2602;
+        
+        C2M_RECEIVE_ACTIVITY_UPGRADE_AWARD_SYN = 2603;
+        M2C_RECEIVE_ACTIVITY_UPGRADE_AWARD_ACK = 2604;
+        
+        C2M_RECEIVE_ACTIVITY_HARD_WORK_SYN = 2607;
+        M2C_RECEIVE_ACTIVITY_HARD_WORK_ACK = 2608;
+        
+        C2M_RECEIVE_CONTINOUS_LOGIN_AWARD_SYN= 2609;
+        M2C_RECEIVE_CONTINOUS_LOGIN_AWARD_ACK = 2610;
+        
+        C2M_RECEIVE_ACTIVITY_EAT_GINSENG_SYN = 2611;
+        M2C_RECEIVE_ACTIVITY_EAT_GINSENG_ACK = 2612;
+        
+        C2M_RECEIVE_ACTIVITY_EIGHT_GRAPH_SYN = 2613;
+        M2C_RECEIVE_ACTIVITY_EIGHT_GRAPH_ACK = 2614;
+        
+        C2M_RECEIVE_ACTIVITY_FORTUNE_SYN = 2615;
+        M2C_RECEIVE_ACTIVITY_FORTUNE_ACK = 2616;
+        
+        C2M_GET_RUNNING_OPERATIONG_ACTIVITY_INFO_SYN = 2617;
+        M2C_GET_RUNNING_OPERATIONG_ACTIVITY_INFO_ACK = 2618;
+        
+
+        C2M_ACTIVITY_HARD_WORK_EXPIRED_SYN = 2619;
+        M2C_ACTIVITY_HARD_WORK_EXPIRED_ACK = 2620;
+        
+        G2M_ACTIVITY_FORTUNE_SET_SYN = 2621;
+		M2G_ACTIVITY_FORTUNE_SET_ACK = 2622;
+
+        ACTIVITY_SYSTEM_MAX = 2799;
+
+// 引导
+        GUIDE_SYSTEM_MIN = 2800;
+        C2M_GUIDE_SET_GUIDE_ID_SYN = 2801;
+        M2C_GUIDE_SET_GUIDE_ID_ACK = 2802;
+        GUIDE_SYSTEM_MAX = 2820;
+
+// 控制命令
+	CTRL_CMD = 2821;
+
+// 天梯系统
+	LADDER_SYSTEM_MIN = 3000;
+	C2M_LADDER_FETCH_CONTEXT_SYN = 3001; // 拉取天梯信息请求
+	M2C_LADDER_FETCH_CONTEXT_ACK = 3002; // 拉取天梯信息响应
+	C2M_LADDER_FIND_ENEMY_SYN = 3003; // 匹配对手请求
+	M2C_LADDER_FIND_ENEMY_ACK = 3004; // 匹配对手响应
+	C2M_LADDER_FIGHT_SYN = 3005; // 出击请求
+	M2C_LADDER_FIGHT_ACK = 3006; // 出击响应
+	C2M_LADDER_FIGHT_BACK_SYN = 3007; // 反击请求
+	M2C_LADDER_FIGHT_BACK_ACK = 3008; // 反击响应
+	C2M_LADDER_FETCH_RANK_LIST_SYN = 3009; // 拉取排行榜请求
+	M2C_LADDER_FETCH_RANK_LIST_ACK = 3010; // 拉取排行榜响应
+	C2M_LADDER_REDUCE_FATIGUE_SYN = 3011; // 手动恢复疲劳值请求
+	M2C_LADDER_REDUCE_FATIGUE_ACK = 3012; // 手动恢复疲劳值响应
+		
+	C2M_LADDER_FRIENDCARDS_SYN = 3013;
+	M2C_LADDER_FRIENDCARDS_ACK = 3014;
+		
+	M2D_LADDER_FETCH_PLAYER_SYN = 3015; // 拉取天梯系统玩家请求
+	D2M_LADDER_FETCH_PLAYER_ACK = 3016; // 拉取天梯系统玩家响应 
+	D2M_LADDER_FETCH_PLAYER_FIN = 3017; // 通知GameSrv天梯系统玩家下发完成
+	M2D_LADDER_FETCH_RANK_LIST_SYN = 3018; // 拉取天体排行榜请求
+	D2M_LADDER_FETCH_RANK_LIST_ACK = 3019; // 拉取天体排行榜响应
+	D2M_LADDER_FETCH_RANK_LIST_FIN = 3020; // 通知GameSrv天梯排行榜下发完成
+	M2D_LADDER_UPDATE_PLAYER_SYN = 3021; // 天梯玩家存盘
+	M2D_LADDER_UPDATE_RANK_LIST_SYN = 3022; // 天梯排行榜存盘
+	 
+	C2M_LADDER_OTHERPLAYER_FIGHTINGPOS_SYN = 3023; // 拉取排行榜请求
+	M2C_LADDER_OTHERPLAYER_FIGHTINGPOS_ACK = 3024; // 拉取排行榜响应
+
+    C2M_LADDER_EXCHANGE_COIN_SYN = 3025; // 兑换银两请求
+    M2C_LADDER_EXCHANGE_COIN_ACK = 3026; // 兑换银两响应
+
+    C2M_LADDER_FETCH_FIGHT_BACK_ENEMY_SYN = 3027; // 拉取反击对手信息请求
+    M2C_LADDER_FETCH_FIGHT_BACK_ENEMY_ACK = 3028; // 拉取反击对手信息响应
+    
+    C2M_LADDER_OPERATION_FIGHTINGPOS_SYN = 3029;//拉取天梯阵容
+    M2C_LADDER_OPERATION_FIGHTINGPOS_ACK = 3030;//拉取天梯阵容响应 
+    
+    M2D_LADDER_FIGHTINGPOS_GET_FRIENDS_CARD_INFO_SYN = 3031;
+    D2M_LADDER_FIGHTINGPOS_GET_FRIENDS_CARD_INFO_ACK = 3032;
+
+	LADDER_SYSTEM_MAX = 3200;		
+		
+//任务系统 
+	MISSION_SYSTEM_MIN = 3201;
+		
+	C2M_MISSION_UPDATE_CHECK_SYN = 3202;
+	M2C_MISSION_UPDATA_CHECK_ACK = 3303;
+		
+	C2M_MISSION_FETCH_INFO_SYN = 3304;
+	M2C_MISSION_FETCH_INFO_ACK = 3305;
+		
+	C2M_MISSION_AWARD_ACQUIRE_SYN = 3306;
+	M2C_MISSION_AWARD_ACQUIRE_ACK = 3307;
+	
+	MISSION_SYSTEM_MAX = 3400;              
+		                
+//GM
+       G2G_NOTICE = 3587;
+       G2G_DELETE_ANNOUNCEMENT = 3588;
+       G2G_ACCOUNT_AWARD_NOTICE = 3589;
+       G2G_BANNED_PLAYER = 3598;
+       G2G_GOODS_DISCOUNT = 3599;
+       G2G_OPERATION_AC = 3666; 
+       G2G_GM_SET_PLAYER_INFO_SYN = 3669;
+       
+//神秘商店
+	MYSTERY_SHOP_MIN = 3701;
+	
+	C2M_REFRESH_MYSTERY_SHOP_INFO_SYN = 3702;
+	M2C_REFRESH_MYSTERY_SHOP_INFO_ACK = 3703;
+	
+	C2M_BUY_MYSTERY_GOOD_SYN = 3704;
+	M2C_BUY_MYSTERY_GOOD_ACK = 3705;
+	
+	MYSTERY_SHOP_MAX = 3800;
+
+ //VIP卡
+	VIP_CARD_MSG_MIN = 4001;
+		
+	C2M_GET_VIPCARD_INFO_SYN = 4003;
+	M2C_GET_VIPCARD_INFO_ACK = 4004;
+		
+	C2M_GET_VIPCARD_DAYPRIZE_SYN = 4005;
+	M2C_GET_VIPCARD_DAYPRIZE_ACK = 4006;
+		
+	VIP_CARD_MSG_MAX = 4200;
+
+//EquipFragMent
+	EQUIP_FRAGMENG_MIN = 4201;
+		
+	C2M_GET_EQUIPFRAG_INFO_SYN = 4203;
+	M2C_GET_EQUIPFRAG_INFO_ACK = 4204;
+		
+	C2M_MERGE_FRAG_TO_EQUIP_SYN = 4205;
+	M2C_MERGE_FRAG_TO_EQUIP_ACK = 4206;
+		
+	EQUIP_FRAGMENG_MAX = 4400; 
+		
+		
+
+//动态关卡
+	DYNAMICRUNE_MIN = 4401;
+	
+	C2M_GET_DYNAMICRUNE_INFO_SYN = 4403;
+	M2C_GET_DYNAMICRUNE_INFO_ACK = 4404;
+	
+	C2M_FIGHT_DYNAMICRUNE_SYN = 4405;
+	M2C_FIGHT_DYNAMICRUNE_ACK = 4406;
+
+	C2M_SERFIGHT_DYNAMICRUNE_SYN = 4407;
+	M2C_SERFIGHT_DYNAMICRUNE_ACK = 4408;
+	
+	DYNAMICRUNE_MAX = 4600; 
+		
+//装备镶嵌宝石
+	EQUIP_GEMSTONE_MIN = 4601;
+		
+	C2M_UPGRADE_GEMSTONE_SYN = 4603;		//升级宝石
+	M2C_UPGRADE_GEMSTONE_ACK = 4604;
+		
+	C2M_MERGE_GEMSTONE_SYN = 4605;			//合成宝石
+	M2C_MERGE_GEMSTONE_ACK = 4606;
+		
+	C2M_DECOMPOSITE_GEMSTONE_SYN = 4607;	//分解彩色宝石
+	M2C_DECOMPOSITE_GEMSTONE_ACK = 4608;	 
+		
+	C2M_EQUIP_DIGHOLE_SYN = 4609;			//装备打孔
+	M2C_EQUIP_DIGHOLE_ACK = 4610;
+		
+	C2M_EQUIP_EMBED_GEMSTONE_SYN = 4611;	//镶嵌宝石
+	M2C_EQUIP_EMBED_GEMSTONE_ACK = 4612;
+		
+	C2M_EQUIP_REMOVE_GEMSTONE_SYN = 4613;	//卸载宝石
+	M2C_EQUIP_REMOVE_GEMSTONE_ACK = 4614;
+		
+	EQUIP_GEMSTONE_MAX = 4800; 
+		
+//签到系统
+	CHECK_IN_MIN = 4801;
+		
+	C2M_GET_CHECKIN_INFO_SYN = 4803;
+	M2C_GET_CHECKIN_INFO_ACK = 4804;
+		
+	C2M_CHECKIN_SYN = 4805;
+	M2C_CHECKIN_ACK = 4806;
+		 
+	CHECK_IN_MAX= 5000;
+		
+//诛仙探宝
+	TREASURE_MIN = 5001;
+	
+	C2M_GET_TREASURE_INFO_SYN = 5002;
+	M2C_GET_TREASURE_INFO_ACK = 5003;
+
+	C2M_START_TREASURE_SYN = 5004;
+	M2C_START_TREASURE_ACK = 5005;
+
+	C2M_EXPLORER_TREASURE_SYN = 5006;
+	M2C_EXPLORER_TREASURE_ACK = 5007;
+
+	C2M_BUY_TREASURE_SYN = 5008;
+	M2C_BUY_TREASURE_ACK = 5009;
+
+	C2M_REVIVE_TREASURE_SYN = 5010;
+	M2C_REVIVE_TREASURE_ACK = 5011;
+
+	C2M_FINGER_TREASURE_SYN = 5012;
+	M2C_FINGER_TREASURE_ACK = 5013;
+
+	TREASURE_MAX = 5200; 
+	
+			//绝地渡劫
+		HERO_JUEDI_MIN = 5201;
+		
+		C2M_HERO_JUEDI_GET_INFO_SYN = 5203;
+		M2C_HERO_JUEDI_GET_INFO_ACK = 5204;
+		
+		C2M_HERO_JUEDI_FIGHT_SYN = 5205;
+		M2C_HERO_JUEDI_FIGHT_ACK = 5206;
+		
+		C2M_HERO_JUEDI_FIGHT_ALL_SYN = 5207;
+		M2C_HERO_JUEDI_FIGHT_ALL_ACK = 5208;
+		
+		C2M_HERO_JUEDI_ADD_FIGHTING_NUM_SYN = 5209;
+		M2C_HERO_JUEDI_ADD_FIGHTING_NUM_ACK = 52010;
+		
+		C2M_HERO_ATTRIBUTE_GET_INFO_SYN = 5301;
+		M2C_HERO_ATTRIBUTE_GET_INFO_ACK = 5302;
+		
+		C2M_HERO_ATTRIBUTE_UPGRADE_SYN = 5303;
+		M2C_HERO_ATTRIBUTE_UPGRADE_ACK = 5304;
+
+		HERO_JUEDI_MAX = 5400;
+		
+		
+		//有福同享邀请码
+		
+		INVITATION_CODE_MIN = 5401;
+		
+		C2M_INVITATION_CODE_GET_INFO_SYN = 5403;
+		M2C_INVITATION_CODE_GET_INFO_ACK = 5404;
+		
+		M2A_INVITATION_CODE_GET_INFO_SYN = 5405;
+		A2M_INVITATION_CODE_GET_INFO_ACK = 5406;
+		
+		C2M_INVITATION_CODE_AWARD_SYN = 5407;
+		M2C_INVITATION_CODE_AWARD_ACK = 5408;
+		
+		M2A_INVITATION_CODE_AWARD_SYN = 5409;
+		A2M_INVITATION_CODE_AWARD_ACK = 5410;
+		
+		C2M_INVITATION_CODE_CONFIRM_CANCEL_SYN = 5411;
+		M2C_INVITATION_CODE_CONFIRM_CANCEL_ACK = 5412;
+		
+		M2A_INVITATION_CODE_CONFIRM_CANCEL_SYN = 5413;
+		A2M_INVITATION_CODE_CONFIRM_CANCEL_ACK = 5414;
+		
+		C2M_INVITATION_CODE_INPUT_SYN = 5415;
+		M2C_INVITATION_CODE_INPUT_ACK = 5416;
+		
+		M2A_INVITATION_CODE_INPUT_SYN = 5417;
+		A2M_INVITATION_CODE_INPUT_ACK = 5418;
+		
+		C2M_INVITATION_CODE_DELETE_SYN = 5419;
+		M2C_INVITATION_CODE_DELETE_ACK = 5420;
+		
+		M2A_INVITATION_CODE_DELETE_SYN = 5421;
+		A2M_INVITATION_CODE_DELETE_ACK = 5422;
+		
+		INVITATION_CODE_MAX = 5600;
+	
+	//消耗排名活动
+	CONSUME_RANK_MIN = 5601;
+	
+	C2M_CONSUME_RANK_INFO_SYN = 5603;
+	M2C_CONSUME_RANK_INFO_ACK = 5604;
+
+	C2M_CONSUME_RANK_BILLBOARD_INFO_SYN = 5605;
+	M2C_CONSUME_RANK_BILLBOARD_INFO_ACK = 5606;
+
+	C2M_CONSUME_RANK_AWARD_INFO_SYN = 5607;
+	M2C_CONSUME_RANK_AWARD_INFO_ACK = 5608;
+	
+	M2D_GET_COSUME_RANK_BILLBOARD_SYN = 5609;
+	D2M_GET_COSUME_RANK_BILLBOARD_ACK = 5610;
+	
+	M2D_UPDATE_COSUME_RANK_BILLBOARD = 5611;
+
+	CONSUME_RANK_MAX = 5602;
+
+	//运营活动
+	BUSINESS_ACTIVITY_MIN = 5801;
+
+	G2G_BUSINESS_ACTIVITY_OPENSERVER_NOTICE = 5802;
+	G2G_BUSINESS_ACTIVITY_INIT = 5803;
+	G2G_BUSINESS_ACTIVITY_GETCARD = 5804;
+	G2G_BUSINESS_ACTIVITY_OPENBOX = 5805;
+	G2G_BUSINESS_ACTIVITY_CONSUMERANK = 5806;
+	
+	BUSINESS_ACTIVITY_MAX = 6000;
+}
+
+enum NotifyResType {
+
+    SUCCESS = 0;
+
+    FAILURE = 1;
+}
+
+// 更新玩家信息写盘方式
+enum UpdateFlag
+{
+	UPDATE_LOGOUT = 0;
+	UPDATE_NORMAL = 1;
+	UPDATE_KICK = 2;
+	UPDATE_SHUTDOWN = 3;
+}
+
+enum FightingPosType
+{
+	NORMAL_TYPE = 0;
+	LADDER_TYPE = 1; 
+}
+
+enum DBOperate
+{
+	DB_OP_INSERT = 0;
+	DB_OP_UPDATE = 1;
+}
+
+// 天梯系统
+// 天梯阵容类型
+enum LadderEmbattle
+{
+	LADDER_EMBATTLE_4P = 0; // 4人阵
+	LADDER_EMBATTLE_5P = 1;
+	LADDER_EMBATTLE_6P = 2;
+	LADDER_EMBATTLE_7P = 3;
+	LADDER_EMBATTLE_8P = 4;
+	LADDER_EMBATTLE_MAX = 5;
+};
+
+// 天梯数值类型
+enum LadderAttribType
+{
+    LADDER_ATTRIB_SCORE = 0; // 天梯积分
+    LADDER_ATTRIB_GRADE = 1; // 天梯级别   读表？
+    LADDER_ATTRIB_EMBATTLE = 2; // 几人阵，参见LadderEmbattle
+    LADDER_ATTRIB_RANK = 3; // 预测排名
+    LADDER_ATTRIB_WIN_COUNT = 4; // 胜次
+    LADDER_ATTRIB_LOSE_COUNT = 5; // 负次
+    LADDER_ATTRIB_SLASH_COUNT = 6; // 连斩次数
+    LADDER_ATTRIB_FATIGUE_VALUE = 7; // 疲劳值
+    LADDER_ATTRIB_COIN = 8; // 小金库银两
+    LADDER_ATTRIB_CHANGE_ENEMY_COUNT = 9; // 换对手次数
+    LADDER_ATTRIB_REDUCE_FATIGUE_COUNT = 10; // 手动恢复疲劳值的次数
+    LADDER_ATTRIB_MAX = 11;
+};
+
+// 天梯战斗结果
+enum LadderFightRet
+{
+	LADDER_FIGHT_RET_WIN = 0;
+	LADDER_FIGHT_RET_LOSE = 1;
+};
+
+// 天梯战斗类型
+enum LadderFightType
+{
+	LADDER_FIGHT_TYPE_FIGHT = 0; // 出击
+	LADDER_FIGHT_TYPE_FIGHT_BACK = 1; // 反击
+};
+
+message LadderFightBackItem
+{
+	optional int64 genTime = 1;
+	optional int32 seq = 2;
+	optional int32 enemyPlayerID = 3;
+	optional int32 extraCoin = 4;
+};
+
+message LadderEnemyMatchCDItem
+{
+    optional int32 enemyPlayerID = 1;
+    optional int32 timeLeft = 2;
+    optional int64 opTime = 3;
+};
+
+message LadderDefendCD
+{
+    optional int32 timeLeft = 1;
+    optional int64 opTime = 2;
+};
+
+message LadderAttrib
+{
+	optional LadderAttribType type = 1;
+	optional int32 value = 2;
+}
+
+message LadderAttribList
+{
+    repeated LadderAttrib attribs = 1;
+}
+
+message LadderCardIDList
+{
+	repeated int32 cardIDs = 1;
+}
+
+message LadderFightBackList
+{
+	repeated LadderFightBackItem fightBackItems = 1;
+}
+
+message LadderEnemyMatchCDList
+{
+	repeated LadderEnemyMatchCDItem enemyMatchCDItems = 1;
+}
+
+message LadderPlayerList
+{
+	repeated LadderPlayer players = 1;
+}
+
+message LadderRankListAll
+{
+	repeated LadderRankList rankLists = 1;
+}
+
+message LadderPlayerListDB
+{
+	repeated LadderPlayerDB players = 1;
+}
+
+message LadderPlayer
+{
+    optional int32 playerID = 1;
+    optional string playerName = 2;
+    optional LadderAttribList attribList = 3;
+	optional int32 coinToPlayer = 4;
+	optional LadderCardIDList cardIDList = 5; // 天梯阵容
+	optional LadderCardIDList defaultCardIDList = 6; // 默认阵容
+};
+
+message LadderWinEnemyReward
+{
+    optional int32 ladderScore = 1; // 可获得的天梯积分
+    optional int32 slashScore = 2; // 连斩额外获得的天梯积分
+    optional int32 ladderCoin = 3; // 小金库掠夺基数，不包括随机的倍数
+}
+
+message LadderExtraContextCS
+{
+    optional uint32 playerCoin = 1; // 玩家银两值
+}
+
+message LadderContextOnLogin
+{
+    optional int32 ladderFatigueValue = 1; // 疲劳值
+    optional int32 ladderFightCount = 2; // 天梯战斗次数
+    
+    optional int32 ladderRecoverCycle = 3; //
+    optional int64  ladderRecoverTime = 4;
+}
+
+// 天梯信息
+message LadderPartContext
+{
+	optional LadderAttribList attribList = 1;
+	optional LadderFightBackList fightBackItemList = 2;
+	optional int32 enemyCount = 3;
+	optional LadderPlayer enemy = 4;
+	optional LadderEnemyMatchCDList enemyMatchCDItemList = 5;
+	optional LadderDefendCD defendCD = 6;
+	optional int64 recoverFatigueTime = 7; // 疲劳值的下次恢复时间（time）
+	
+	// 几个读表值
+	optional int32 useFriendCount = 8; // 借用好友上限
+	optional int32 changeCDTime = 9; // 放弃CD时间（暂时不用）
+	optional int32 maxGiveupCount = 10; // 每天最大放弃次数
+	optional int32 plunderBase = 11; // 掠夺基数
+	
+	// 天梯阵容
+	repeated FightingPosInfoM2C ladderFightingPosInfo = 12;
+
+	optional LadderWinEnemyReward winEnemyReward = 13; // 当有对手时，客户端需要展示战胜对手后的奖励
+
+    optional int32 coinRate = 14; // 玩家银两转入小金库倍率（百分比）
+    optional int32 coinConvertNum = 15; // 1银两可兑换多少小金库银两
+    optional LadderExtraContextCS extraContext = 16;
+    
+    optional int32 recoverCycle = 17;  //恢复周期
+};
+
+// 天梯排行榜条目
+message LadderRankItem
+{
+	optional int32 rank = 1; // 名次
+	optional int32 playerID = 2;
+	optional string playerName = 3;
+	optional int32 score = 4;
+	optional int32 winRate = 5;
+	optional int32 slashCount = 6;
+	optional LadderCardIDList cardIDList = 7; // 天梯阵容卡牌id列表
+};
+
+message LadderRankItemList
+{
+	repeated LadderRankItem items = 1;
+}
+
+message LadderRankList
+{
+	optional LadderEmbattle embattle = 1; // 几人阵
+	optional LadderRankItemList itemList = 2;
+};
+
+// 天梯战斗结果
+message LadderFightResult
+{
+	optional LadderFightRet fightRet = 1; // 战斗结果（胜利/失败）
+	optional LadderFightType fightType = 2; // 出击/反击
+	optional int32 rounds = 3; // 战斗回合数
+	optional int32 score = 4; // 积分(胜利时为获得积分，失败时为损失积分)
+	optional int32 slashScore = 5; // 连胜积分
+	optional int32 coin = 6; // 小金库银两(胜利时为获得银两，失败时为损失银两) 
+	optional int32 rate = 7; // 掠夺倍数(仅胜利时)
+	optional int32 extraCoin = 8; //如果是反击胜利，有一个额外银两
+	optional int32 star = 9; // 评价星级
+	optional GainSkillsMessage gainSkills = 10;
+  	repeated WarProcessMessageData warProcessDataList = 11;
+  	// 下面3个字段不用
+	optional int32 enemyPlayerID = 12;
+	optional int64 genTime = 13;
+	optional int32 seq = 14;
+
+    optional LadderCardIDList ourCardIDList = 15;
+    optional LadderCardIDList theirCardIDList = 16;
+};
+
+message LadderPlayerDB
+{
+	optional int32 playerID = 1;
+	optional LadderPlayer ladderPlayer = 2;
+	optional LadderPartContext ladderPartContext = 3;
+}
+
+// 天梯系统]
+
+//角色信息基本结构
+message PlayerBaseInfo {
+	required int32  player_id = 1;
+	required string name = 2;
+	required int32  level = 3;
+	required int32  exp = 4;
+	required string accountId = 5;
+	required int32	goldCoin = 6;
+	required int32	sliverCoin = 7;
+	required int32	power = 8;
+	required int32	vitality = 9;
+	required int32	hundredLeaveTimes = 10;
+	required int32	thousandLeaveTimes = 11;
+	required int32	tenThousandLeaveTimes = 12;
+	required int64	leaveGameDate = 13;
+	required int32	thousandFirstRefresh = 14;
+	required int32	tenThousandFirstRefresh = 15;
+	required int32  duelChallengeNum = 16;
+	required int32	vip = 17;
+	required int32	payedGold = 18;
+	required int32	donativePayedGold = 19;
+	optional int32	nextVipNeedGold = 20;
+	optional bytes	awardFlag = 21;
+	optional bytes	msgFlag = 22;
+	optional bytes  readFlag = 23;
+	optional bytes	sendFlag = 24;
+	optional int64	registerDate = 25;
+	optional int64  banendtime = 26;
+	optional int32	hundredFreeGetCardTimes = 27;
+	optional int32	hundredGoldGetCardTimes = 28;
+	optional int32	thousandFreeGetCardTimes = 29;
+	optional int32	thousandGoldGetCardTimes = 30;
+	optional int32	tenThousandFreeGetCardTimes = 31;
+	optional int32	tenThousandGoldGetCardTimes = 32;
+	optional int32	firstClassCardTimes = 33;
+	optional int32	secondClassCardTimes = 34;
+	optional int32	noneSecondClassTimes = 35;
+	optional int32	noneFirstClassTimes = 36;
+	optional bool	IsFirstTenThousand = 37; 
+	optional int32 cardTrainCount = 38; 
+	optional int32 SkillUpgradeCount = 39;
+	optional int32 EquipmentUpgradeCount = 40; 
+	optional int32 SkillUniqueNum = 41;
+	optional int32 EquipmentUniqueNum = 42; 
+	optional int64 banSpeakEndTime = 43;
+	optional bool isGMAccount = 44;
+	optional int32 getCardFlag = 45;
+	optional int32 dailyRefillPowerNum = 46;
+	optional bytes obtainedCard = 47;
+	optional int32 firstPayedFlag = 48;
+	optional int32 getCardScoreInRound = 49;
+	optional int32 nuwaStoneInRound = 50;
+	optional int64 lastResetPlayerTime = 51;
+	optional int32 getRareCardTimes = 52;
+	optional int32 rankDayConsume = 53;
+	optional int32 rankSumConsume = 54;
+	optional int64 rankDayAwardGetDate = 55;
+	optional int64 rankConsumeChangeDate = 56;
+	optional int64 cardActivityChangedDate = 57;
+	optional int32 cardActivityStep = 58;
+}
+
+//卡牌数据库基本数据
+message CardBaseInfoDB {
+	required int32 index = 1;
+	required int32 playerID = 2;
+	optional int32 cardID = 3;
+	optional int32 level = 4;
+	optional int32 exp = 5;
+	optional float hp= 6;
+	optional float dp = 7;
+	optional float ap = 8;
+	optional float mp= 9;
+	optional float potential = 10;
+	optional int32 talentSkillIndex = 11;
+	optional int32 hit = 12;
+	optional int32 hitDefence = 13;
+	optional int32 crit = 14;
+	optional int32 critDefence = 15;
+	optional int32 prarry = 16;
+	optional int32 prarryDefence = 17;
+	optional int32 pulseOpenCircle = 18;
+	optional int32 pulseOpenLevel = 19;
+	optional int32 breakthroughLevel = 20;
+	optional int32 dbOPeration = 21;
+	optional int32 hpoffset = 22;
+	optional int32 apoffset = 23;
+	optional int32 dpoffset = 24;
+	optional int32 mpoffset = 25;
+	optional int32 useTranningNum = 26;
+	optional int32 potentialOffset = 27;
+	optional int32 ownerPlayerID = 28;
+	optional int32 AccumulatedEnergy = 29;
+	optional int32 friendCardIsExist = 30;	//天梯阵容专用，用于判断某卡牌是否还存在
+}
+
+//卡牌M2C基本类型
+message CardBaseInfoM2C {
+	optional int32 index = 1;
+	optional int32 playerID = 2;
+	optional int32 cardID = 3;
+	optional int32 level = 4;
+	optional int32 exp = 5;
+	optional int32 hp= 6;
+	optional int32 dp = 7;
+	optional int32 ap = 8;
+	optional int32 mp= 9;
+	optional int32 potential = 10;
+	optional int32 talentSkillIndex = 11;
+	optional int32 hit = 12;
+	optional int32 hitDefence = 13;
+	optional int32 crit = 14;
+	optional int32 critDefence = 15;
+	optional int32 prarry = 16;
+	optional int32 prarryDefence = 17;
+	optional int32 pulseOpenCircle = 18;
+	optional int32 pulseOpenLevel = 19;
+	optional int32 breakthroughLevel = 20;
+	optional int32 hpoffset = 21;
+	optional int32 apoffset = 22;
+	optional int32 dpoffset = 23;
+	optional int32 mpoffset = 24;
+	optional int32 useTranningNum = 25;
+	optional int32 potentialOffset = 26;
+	optional int32 ownerPlayerID = 27;
+	optional int32 talentskillID = 28;
+	optional int32 talentskillLevel = 29;
+	optional int32 isOnSkyLadderFightPos = 30;
+	optional int32 maxLevel = 31;
+	optional int32 accumulatedEnergy = 32;
+}
+
+//魂魄数据库基本数据
+message GhostBaseInfoDB {
+	required int32 index = 1;
+	required int32 playerID = 2;
+	optional int32 cardID = 3;
+	optional int32 num = 4;
+	optional int32 dbOPeration = 5;
+}
+
+//魂魄M2C基本类型
+message GhostBaseInfoM2C {
+	required int32 index = 1;
+	required int32 playerID = 2;
+	optional int32 cardID = 3;
+	optional int32 num = 4;
+}
+
+//阵位数据库基本数据
+message FightingPosInfoDB {
+	required int32 index = 1;
+	required int32 playerID = 2;
+	optional int32 cardIndex = 3;
+	optional int32 secondSkillIndex = 4;
+	optional int32 thirdSkillIndex = 5;
+	optional int32 waponIndex = 6;
+	optional int32 armorIndex = 7;
+	optional int32 accessoryIndex = 8;
+	optional int32 dbOPeration = 9;
+}
+
+//玩家统计基本数据
+message PlayerStatistics
+{
+	optional int32 putCardOnNewFightPosNum = 1;
+	optional int32 putEquipmentOnNewSlotNum = 2;
+	optional int32 putSkillOnNewSlotNum = 3;
+	optional int32 duelNum = 4;
+	optional int32 cardTrainNum = 5;
+	optional int32 skyLadderNum = 6;
+	optional int32 cardPassExpNum = 7;
+	optional int32 equipmentUpgradeNum = 8;
+	optional int32 skillUpgradeNum = 9;
+	optional int32 cardBreakthroughNum = 10;
+	optional int32 bloodyBattleNum = 11;
+	optional int32 skyLadderHistoryTopScore = 12;
+	optional int32 topMostFightPower = 13;
+	optional int32 mostTotalCardNum = 14;
+	optional int32 mostTotalOneStarCardNum = 15;
+	optional int32 mostTotalTwoStarCardNum = 16;
+	optional int32 mostTotalThreeStarCardNum = 17;
+	optional int32 mostTotalFourStarCardNum = 18;
+	optional int32 mostTotalFiveStarCardNum = 19;
+	optional int32 cardBreakthroughToTwoStarNum = 20;
+	optional int32 cardBreakthroughToThreeStarNum = 21;
+	optional int32 cardBreakthroughToFourStarNum = 22;
+	optional int32 cardBreakthroughToFiveStarNum = 23;
+	optional int32 mostFateNum = 24;
+	optional int32 mostBloodyBattleStarNum = 25;
+	optional int32 mostTotalFriendsNum = 26;
+	optional int32 playerID = 27;
+	optional bytes dailyStatistics = 28;
+	optional int32 mostTotalSixStarCardNum = 29;
+	optional int32 mostTotalSevenStarCardNum = 30;
+	optional int32 cardBreakthroughToSixStarNum = 31;
+	optional int32 cardBreakthroughToSevenStarNum = 32;
+	optional int32 historyGetCardNum = 33;
+	optional int32 configFightPosNum = 34;
+	optional bytes goldBoxData = 35;
+	optional bytes silverBoxData = 36;
+	optional bytes copperBoxData = 37;
+	optional bytes ironBoxData = 38;
+	optional int32 skillUpgradeToTwoStarNum = 39;
+	optional int32 skillUpgradeToThreeStarNum = 40;
+	optional int32 skillUpgradeToFourStarNum = 41;
+	optional int32 skillUpgradeToFiveStarNum = 42;
+	optional int32 skillUpgradeToSixStarNum = 43;
+	optional int32 skillUpgradeToSevenStarNum = 44;
+	optional int32 mostTotalTwoStarEquipNum = 45;
+	optional int32 mostTotalThreeStarEquipNum = 46;
+	optional int32 mostTotalFourStarEquipNum = 47;
+	optional int32 mostTotalFiveStarEquipNum = 48;
+	optional int32 mostTotalSixStarEquipNum = 49;
+	optional int32 mostTotalSevenStarEquipNum = 50;
+	optional int32 buyPowerTimes = 51;
+	optional int32 dynamicRuneTimes = 52;
+	optional int32 juediTimes = 53;
+	optional int32 checkInTimes = 54;
+	optional int32 buyGoldKeyTimes = 55;
+	optional int32 openNewPlayerPackTimes = 56;
+}
+
+//缘分结构
+message FateStruct
+{
+    required int32 fateID = 1;              //缘分ID号
+	required int32 isActivate = 2;          //是否激活 
+}
+
+//阵位M2C基本类型
+message FightingPosInfoM2C {
+	required int32 index = 1;
+	required int32 playerID = 2;
+	optional int32 cardID = 3;
+	optional int32 talentSkillIndex = 4;
+	optional int32 secondSkillIndex = 5;
+	optional int32 thirdSkillIndex = 6;
+	optional int32 waponIndex = 7;
+	optional int32 armorIndex = 8;
+	optional int32 accessoryIndex = 9;	
+	optional int32 hp = 10;
+	optional int32 ap = 11;
+	optional int32 dp = 12;
+	optional int32 mp = 13;
+	optional int32 cardIndex = 14;
+	repeated FateStruct fateList = 15;
+	optional bool isOtherPlayerCard = 16;
+	optional string cardOfPlayerName = 17;
+	optional int32 cardLevel = 18;
+	optional int32 cardExp = 19;
+	optional int32 cardOfPlayerID = 20;
+	optional int32 Crit = 21;
+	optional int32 CritDefence = 22;
+	optional int32 Hit = 23;
+	optional int32 HitDefence = 24;
+	optional int32 Prarry = 25;
+	optional int32 PrarryDefence = 26;
+}
+
+//客户端请求刷新阵位信息
+message MSG_C2M_REFRESH_FIGHT_POS_INFO_SYN
+{
+        optional MESSAGEID messageID = 1 [default = C2M_REFRESH_FIGHT_POS_INFO_SYN];
+        repeated int32 fightPosIndex = 2;
+}
+
+//服务器响应刷新阵位信息
+message MSG_M2C_REFRESH_FIGHT_POS_INFO_ACK
+{
+         optional MESSAGEID messageID = 1 [default = M2C_REFRESH_FIGHT_POS_INFO_ACK];
+         repeated FightingPosInfoM2C fightPosInfo= 2;
+         repeated CardBaseInfoM2C cardInfo = 3;
+}
+
+
+//时间戳相关数据结构
+message PlayerTimeStampInfo
+{
+	required int64	powerChangedDate = 1;
+	required int64	vitalityChangedDate = 2;
+
+	required int64	hundredChangedDate = 3;
+	required int64	thousandChangedDate = 4;
+	required int64	tenthousandChangedDate = 5;
+        optional int64  serialFightCDDate = 6;
+	required int64	lastResetLadderFightingPosTime = 38;
+}
+
+//倒计时相关数据结构
+message PlayerTimeCutDownInfo
+{
+	required int32	powerCutDown = 1;
+	required int32	vitalityCutDown = 2;
+	required int32	hundredCutDown = 3;
+	required int32	thousandCutDown = 4;
+	required int32	tenThousandCutDown = 5;
+	optional int32  countdownCD = 6;
+}
+
+//道具及集市结构
+message ItemClientData
+{
+	optional int32 itemID = 1;
+	optional int32 itemNum = 2;
+	optional int32 DayUsingTimes = 3;
+}
+
+//提示消息当日是否显示标识
+message MsgTipsFlag
+{
+	optional int32 msgType = 1;
+	optional int32 flag = 2;
+}
+
+//好友及好友信息
+message FriendsBaseInfo
+{
+        optional string playerName = 1;
+        optional int32  playerLevel = 2;
+        optional int32  playerID = 3;
+        optional int32 	duelRank = 4;
+        optional int32 status = 5;
+}
+
+message FriendsInvitationMsg
+{
+        optional int32 senderPlayerID = 1;
+        optional string senderName = 2;
+        optional int32 senderLevel = 3;
+        optional int64 startTime = 4; 
+        optional bool readFlag = 5;
+}
+
+message FriendsLeaveMsg
+{ 
+        optional int32 messageIndex = 1;
+        optional int32 senderPlayerID = 2;
+        optional string senderName = 3;
+        optional string content = 4;  
+        optional int64 startTime = 5; 
+        optional bool readFlag = 6;
+}
+
+message FriendsDuelEnemyMsg
+{  
+        optional int32 messageIndex = 1;
+        optional int32 challengerPlayerID = 2;
+        optional string challengerName = 3;
+        optional int64 startTime = 4;
+        optional int32 originRank = 5;
+        optional int32 duelRank = 6;
+        optional bool readFlag = 7;
+}
+
+message FriendsLadderEnemyMsg
+{  
+        optional int32 messageIndex = 1;
+        optional int32 challengerPlayerID = 2;
+        optional string challengerName = 3;
+        optional int64 startTime = 4; 
+        optional int32 ladderCoin = 5;
+        optional int32 ladderScore = 6;
+        optional bool hadBackAttack = 7;
+        optional bool readFlag = 8;
+        optional int32 seq = 9;
+}
+
+message FriendsInviteStatus
+{
+		optional int32 playerID = 1;
+		optional string playerName = 2;
+		optional int32 playerLevel = 3;
+		optional int32 status  = 4;
+}
+
+message FriendsInfoM2C
+{
+     repeated FriendsBaseInfo friendsList = 1;
+     repeated FriendsDuelEnemyMsg duelenemyMsgList = 2;
+     repeated FriendsInvitationMsg friendsInvatationMsgList = 3;
+     repeated FriendsLeaveMsg leaveMsgList = 4;
+     repeated FriendsLadderEnemyMsg ladderenemyMsgList = 5;
+  	 repeated FriendsInviteStatus inviteStatus = 6;
+}
+
+message GuideIDGroup
+{
+    repeated int32 guideID = 1;
+}
+
+message GuiedRewardGroup
+{
+    repeated ObjectDrop reward = 1;
+}    
+    
+message GuidePartContext
+{
+    optional GuideIDGroup guideIDGroup = 1;
+}
+
+
+//需要带给客户端的额外信息
+message PlayerExpandInfo
+{
+	optional int32 duelScore = 1;
+	optional int32 genSingNum = 2;
+	optional int32 bbLeaveTimes = 3;
+	optional int32 cardTrainCount = 4; 
+	optional int32 SkillUpgradeCount = 5;
+	optional int32 EquipmentUpgradeCount = 6; 
+	optional int32 undoMissionNum = 7;
+	optional bool isMysteryShopOpen = 8;
+	optional int32 isNuwaStoneActivityOpen = 9;
+	optional int32 heroCurrentDayHadJuediNum = 10;	//客户端生成绝地的近期消息用，表示该玩家当天已经参与绝地的次数
+	optional int32 heroCurrentRealmID = 11;			//玩家当前的大境界ID
+	optional int32 heroCurrentRankID = 12;			//玩家当前的小境界ID
+	optional int32 playerAlsoCanBuyItemPack = 13;	//客户端生成购买礼包的近期消息，该字段为1，表示该玩家当前的Vip等级还有可以购买的礼包
+	optional int32 dynamicRuneTimes = 14;
+	optional bool isTreasureActive = 15;
+	optional int32 dailyMissionAwardNum = 16;
+	optional int32 linkMissionAwardNum = 17;
+	optional bool isNewPlayerMissionEnd = 18;
+}
+
+//登陆发送到客户端信息结构
+message PlayerInfoToClient
+{
+	required PlayerBaseInfo BaseInfo = 1;
+	required PlayerTimeCutDownInfo  CutDownInfo = 2;
+	repeated CardBaseInfoM2C CardBaseInfo = 3;
+	repeated GhostBaseInfoM2C GhostBaseInfo = 4;
+	repeated FightingPosInfoM2C FightingPosInfo = 5;
+	repeated SkillData skillData = 6;
+	repeated EquipmentData equipmentData = 7;
+	repeated ItemClientData itemClientData = 8; 
+	optional GuidePartContext guidePartContext = 9; 
+	optional PlayerExpandInfo expandInfo = 10;
+	optional LadderContextOnLogin ladderContext = 11;
+	optional PlayerStatistics playerStatistics = 12;
+}
+
+//运营活动DB信息结构
+message ActivityDBData
+{
+        optional int32 PlayerID = 1;
+        optional bytes UpgradeReceivedAward = 2;
+        optional int32 TodayUsePhysicalPower = 3;
+        optional int64 LastContiniousLoginTime = 4;
+        optional int32 ContiniousLoginDay = 5;
+        optional bytes ContiniousLoginReceivedAwards = 6; 
+        optional int32 EatGinsengStatus = 7;
+        optional bytes EightGraphStatus = 8;
+        optional int64 EightGraphLastReceiveTime = 9;
+        optional int32 FortuneReceivedID = 10;
+        optional bytes ReceivaleHardWorkAwards = 11;
+        optional int32 FortuneReceivedGoldNum = 12;
+        optional int32 EightGraphLastGetPosition = 13;
+        optional int32 DBOperation = 14;
+        optional int32 GinsengStatus = 15;
+}
+
+//玩家神秘商店数据
+message MysteryShopDBData
+{
+	optional int32 manualRefreshCnt = 1;
+	optional int64 lastRefreshTime = 2;
+	optional int32 goodOneID = 3;
+	optional int32 goodOneLeftBuyTimes = 4;	
+	optional int32 goodTwoID = 5;
+	optional int32 goodTwoBuyTimes = 6;
+	optional int32 goodThreeID = 7;
+	optional int32 goodThreeLeftBuyTimes = 8;
+	optional int32 goodFourID = 9;
+	optional int32 goodFourLeftBuyTimes = 10;
+	optional int32 goodFiveID = 11;
+	optional int32 goodFiveLeftBuyTimes = 12;
+	optional int32 goodSixID = 13;
+	optional int32 goodSixLeftBuyTimes = 14;
+	optional int64 nextRefreshTime = 15;
+	optional int32 fortuneValue = 16;
+	optional int32 goodOneDiscountPrice = 17;
+	optional int32 goodTwoDiscountPrice = 18;
+	optional int32 goodThreeDiscountPrice = 19;
+	optional int32 goodFourDiscountPrice = 20;
+	optional int32 goodFiveDiscountPrice = 21;
+	optional int32 goodSixDiscountPrice = 22;
+	optional int32 todayUseStoneNum = 23;
+}
+        
+//从DB获取(推送)玩家所有信息结构
+message PlayerTotalInfo 
+{
+	optional PlayerBaseInfo PlayerInfo =1; 
+	optional PlayerTimeStampInfo StampInfo = 2;
+	repeated CardBaseInfoDB CardBaseInfo = 3;
+	repeated GhostBaseInfoDB GhostBaseInfo = 4;
+	repeated FightingPosInfoDB FightingPosInfo= 5;
+	repeated SkillDBData skillDBData = 6;
+	repeated EquipmentDBData equipmentDBData = 7;
+	optional RuneScapeDBMessageInfo runeScapeDBMessage = 8;
+	optional BloodyBattleDBMessageInfo bloodyBattleDBMessage = 9;
+	repeated ItemDBData itemDBData = 10;
+	optional ActivityDBData activityData = 11;
+	optional GuidePartContext guidePartContext = 12; 
+	repeated FightingPosInfoDB SkyLadderFightingPosInfo= 13;
+	optional LadderPartContext ladderPartContext = 14; 
+	optional PlayerStatistics playerStatistics = 15;
+	optional MissionInfo missionContex = 16;
+	optional MysteryShopDBData mysteryShop = 17;
+	repeated VipCardDBData vipCardDBDataArray = 18;
+	repeated EquipFragmentDBData equipFragDBDataArray = 19;
+	optional DynamicRuneInfo dynamicRuneInfo = 20;
+    repeated GemstoneDBData gemstoneDBDataArray = 21; 
+    optional CheckInDBData checkInData = 22;
+	optional TreasureDBData treasureData = 23;
+    repeated HeroJueDiDBData heroJueDiDBDataArray = 24;
+    optional HeroAttributeDBData heroAttributeData = 25;
+}
+
+//玩家技能DB数据
+message SkillDBData
+{
+  	required int32 skillIndex = 1;
+  	optional int32 skillID = 2;
+  	optional int32 skillLevel = 3;
+  	optional int32 skillAccumulatedEnergy = 4;
+	optional int32 dBFlag = 5;
+	optional bool skillisInBorn = 6;
+	optional bool skillHadUpgrade = 7; 
+	optional bool skillOfSelf = 8;
+	optional int32 skillUniqueNum = 9;
+}
+
+//玩家装备DB数据
+message EquipmentDBData
+{
+  	required int32 equipmentIndex = 1;
+  	optional int32 equipmentID = 2;
+  	optional int32 equipmentLevel = 3;
+  	optional int32 equipmentRank = 4;
+  	optional int32 equipmentRankPoint = 5;
+	optional int32 dBFlag = 6;
+	optional bool equipmentHadUpgrade = 7; 
+	optional int32 equipmentUniqueNum = 8;
+	optional bytes gemstoneOfEquipData = 9;
+}
+
+//玩家道具DB数据
+message ItemDBData
+{
+	required int32 ItemID = 1;
+	required int32 ItemNum = 2;
+	required int32 DayUsedTimes = 3;
+	required int32 TotalUsedTimes = 4;
+	required int32 BuyTimes = 5;
+	required int32 DropRareTimes = 6;
+	required int32 NotRareTimes = 7;
+	optional int32 dBFlag = 8;
+}
+
+//传给客户端的技能数据
+message SkillData
+{
+  	required int32 skillIndex = 1;
+  	optional int32 skillID = 2;
+ 	optional int32 skillLevel = 3;
+	optional int32 skillUpgradeNeedSilver = 6;
+	optional int32 skillisInBorn = 7;
+	optional int32 skillAccumulatedEnergy = 8;
+	optional int32 skillOnladderFightingPosCardID = 10;
+	optional int32 skillSellPrice = 11;
+}
+
+//传给客户端的装备数据
+message EquipmentData
+{
+  	required int32 equipmentIndex = 1;
+  	optional int32 equipmentID = 2;
+  	optional int32 equipmentLevel = 3;
+  	optional int32 equipmentRank = 4;
+  	optional int32 equipmentRankPoint = 5; 
+	optional int32 equipmentSellPrice = 8;
+	optional int32 equipmentUpgradeNeedSilver = 9;
+	optional int32 equipmentOnladderFightingPosCardID = 10;
+	repeated GemstoneOfEquipClientData gemstoneOfEquipArray = 11;
+	optional int32 gemstoneMaxNum = 12;
+}
+
+//登陆验证信息结构
+message MSG_C2M_VERIFT_SYN 
+{
+	optional MESSAGEID messageID = 1 [default = C2M_VERIFY_SYN];
+	required string szAccountName = 2;
+	required string szAccountPassword = 3;
+	optional string netenv = 4;   //网络环境
+	optional string sysinfo = 5;   //手机系统
+	optional string clientmedium = 6;  //客户端渠道
+	optional string clientversion = 7; //客户端版本
+	optional string phonemodel = 8;  //手机型号
+}
+
+message MSG_M2C_VERIFY_ACK 
+{
+	optional MESSAGEID messageID = 1 [default = M2C_VERIFY_ACK];
+	required int32 ErrorCode = 2;
+	optional PlayerInfoToClient PlayerInfo = 3;
+	optional int32 serverid = 4;
+}
+//向DB请求玩家信息
+message MSG_M2D_PLAYER_BASEINFO_SYN {
+	optional MESSAGEID messageID = 1 [default = M2D_PLAYER_BASEINFO_SYN];
+	required string szAccountName = 2;
+}
+
+message MSG_D2M_PLAYER_BASEINFO_ACK {
+	optional MESSAGEID messageID = 1 [default = D2M_PLAYER_BASEINFO_ACK];
+	required int32 ErrorCode = 2;
+	optional PlayerTotalInfo playerTotalInfo = 3;
+	optional int32 createtag = 4;
+}
+
+//玩家任务系统信息
+message MissionInfo {
+	optional bytes  missioncontex = 1;
+	optional bytes  statisticsinfo = 2;
+}
+
+//帐号验证
+message MSG_M2C_CHECK_ACCOUNT 
+{
+	required int32 ErrorCode = 1;
+	optional MESSAGEID messageID = 2 [default = M2C_CHECK_ACCOUNT];
+}
+
+//向DB更新玩家信息
+message MSG_M2D_PLAYERINFO_UPDATE_SYN
+{
+	optional MESSAGEID messageID = 1[default = M2D_PLAYERINFO_UPDATE_SYN];
+	optional PlayerTotalInfo playerTotalInfo = 2;
+	optional UpdateFlag flag = 3 [ default = UPDATE_NORMAL ];
+}
+
+//创建角色
+message MSG_C2M_CREATE_PLAYER_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_CREATE_PLAYER_SYN];
+	optional string    playername = 2;
+	optional int32     cardindex = 3;
+}
+
+message MSG_M2D_CREATE_PLAYER_SYN
+{
+	optional MESSAGEID messgaeid = 1[default = M2D_CREATE_PLAYER_SYN];
+	optional string    playername = 2;
+	optional int64	registerDate = 3;
+	repeated SkillDBData skillDBData = 4;
+	repeated CardBaseInfoDB cardinfo = 5;
+	repeated FightingPosInfoDB fightPos = 6;
+	optional ActivityDBData activity = 7;
+	repeated EquipmentDBData equipmentDBData = 8; 
+	repeated ItemDBData itemDBData = 9;
+	optional int32 goldCoin = 10;
+	optional int32 silverCoin = 11;
+	optional int32 power = 12;
+	optional int32 vitality = 13;
+}
+
+//登陆验证
+message MSG_M2A_VERIFY_ACCOUNT_SYN
+{
+	optional MESSAGEID messageid = 1[default = M2A_VERIFY_ACCOUNT_SYN];
+	optional string	 account = 2;
+	optional string	 sessionkey = 3;
+	optional string  platform = 4;
+	optional int32   ip = 5;
+	optional int32   index = 6;
+	optional int32   timestamp = 7;
+}
+
+message MSG_A2M_VERIFY_ACCOUNT_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_VERIFY_ACCOUNT_ACK];
+	optional int32	errorcode = 2;
+	optional string account = 3;	
+	optional string sessionkey = 4;
+	optional int32  ip = 5;
+	optional int32  index = 6;
+	optional int32  timestamp = 7;
+	optional string platform = 8;
+}
+
+//支付验证
+message MSG_M2A_VERIFY_PAYRESULT_SYN
+{
+	optional MESSAGEID messageid = 1[default = M2A_VERIFY_PAYRESULT_SYN];
+	optional string  orderserial = 2;
+	optional string  account = 3;
+}
+
+message MSG_A2M_VERIFY_PAYRESULT_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_VERIFY_PAYRESULT_ACK];
+	optional int32  errorcode = 2;
+	optional string consumestreamid = 3;
+	optional string orderserial = 4;
+	optional string merchantid = 5;
+	optional string appid = 6;
+	optional string productname = 7;
+	optional string uin = 8;
+	optional string goodsid = 9;
+	optional string goodsinfo = 10;
+	optional string goodscount = 11;
+	optional string originalmoney = 12;
+	optional string ordermoney = 13;
+	optional string note = 14;
+	optional string paystatus = 15;
+	optional string createtime = 16;
+	optional string errordesc = 17;	
+	optional string account = 18;
+}
+
+message MSG_C2M_VERIFY_PAYRESULT_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_VERIFY_PAYRESULT_SYN];
+	optional string    orderserial = 2;
+}
+
+message MSG_M2C_VERIFY_PAYRESULT_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_VERIFY_PAYRESULT_ACK];
+	optional int32  errorcode = 2;
+	optional string consumestreamid = 3;
+	optional string orderserial = 4;
+	optional string merchantid = 5;
+	optional string appid = 6;
+	optional string productname = 7;
+	optional string uin = 8;
+	optional string goodsid = 9;
+	optional string goodsinfo = 10;
+	optional string goodscount = 11;
+	optional string originalmoney = 12;
+	optional string ordermoney = 13;
+	optional string note = 14;
+	optional string paystatus = 15;
+	optional string createtime = 16;
+	optional string errordesc = 17;		
+}
+
+message MSG_A2M_NOTIFY_PAY_RESULT_SYN
+{
+	optional MESSAGEID messageid = 1[default = A2M_NOTIFY_PAY_RESULT_SYN];
+	optional int32  errorcode = 2;
+	optional string consumestreamid = 3;
+	optional string orderserial = 4;
+	optional string merchantid = 5;
+	optional string appid = 6;
+	optional string productname = 7;
+	optional string uin = 8;
+	optional string goodsid = 9;
+	optional string goodsinfo = 10;
+	optional string goodscount = 11;
+	optional string originalmoney = 12;
+	optional string ordermoney = 13;
+	optional string note = 14;
+	optional string paystatus = 15;
+	optional string createtime = 16;
+	optional string errordesc = 17;	
+	optional int32  serverid = 18;
+}
+
+message MSG_M2A_NOTIFY_PAY_RESULT_ACK
+{
+    required MESSAGEID messageid = 1[default = M2A_NOTIFY_PAY_RESULT_ACK];
+    required NotifyResType  retcode = 2;
+}
+
+
+message MSG_C2M_CHECK_GOLD_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_CHECK_GOLD_SYN];
+	required int32 dumb = 2;
+}
+
+message MSG_M2C_CHECK_GOLD_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_CHECK_GOLD_ACK];
+	optional int32 errorcode = 2;
+	optional int32 gold = 3;	
+	optional int32 viplevel = 4;
+	optional int32 payed_gold = 5;
+}
+
+message MSG_C2M_ANONYMOUS_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_ANONYMOUS_LOGIN_SYN];
+	required int32 errorcode = 2;
+}
+
+message MSG_M2C_ANONYMOUS_LOG_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_ANONYMOUS_LOGIN_ACK];
+	optional string account = 2;
+	optional string sid = 3;
+}
+
+message MSG_C2M_PHONE_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_PHONE_LOGIN_SYN];
+	optional string phonenumber = 2;
+	optional string password = 3;
+}
+
+message MSG_M2C_PHONE_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_PHONE_LOGIN_ACK];
+	optional int32 errorcode = 2;
+	optional string account = 3;
+	optional string sid = 4;
+	optional string msg = 5;
+}
+
+message MSG_M2D_PHONE_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default = M2D_PHONE_LOGIN_SYN];
+	optional string phonenumber = 2;
+	optional string account = 3;
+	optional int32   ip = 4;
+	optional int32   index = 5;
+	optional int32   timestamp = 6;
+}
+
+message MSG_M2A_PHONE_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default = M2A_PHONE_LOGIN_SYN];
+	optional string phonenumber = 2;
+	optional string password = 3;
+	optional int32   ip = 4;
+	optional int32   index = 5;
+	optional int32   timestamp = 6;
+}
+
+message MSG_A2M_PHONE_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_PHONE_LOGIN_ACK];
+	optional int32  errorcode = 2;
+	optional string phonenumber = 3;
+	optional string password = 4;
+	optional int32   ip = 5;
+	optional int32   index = 6;
+	optional int32   timestamp = 7;
+	optional string msg = 8;
+}
+
+message MSG_D2M_PHONE_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = D2M_PHONE_LOGIN_ACK];
+	optional int32 errorcode = 2;
+	optional string account = 3;
+	optional int32 ip = 4;
+	optional int32 index = 5;
+	optional int32 timestamp = 6;
+	optional int32 createtag = 7;
+	optional string phonenumber = 8;
+}
+
+
+message MSG_C2M_JIUYOU_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_JIUYOU_SDK_LOGIN_SYN];
+	required string sid = 2; 						//客户端从九游SDK中取
+}
+
+message MSG_M2C_JIUYOU_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_JIUYOU_SDK_LOGIN_ACK];
+	optional int32 errorcode = 2;
+	optional string account = 3;				   //登陆帐号
+	optional string sid = 4;					   //sessionKey，登陆时使用
+}
+
+
+message MSG_M2A_JIUYOU_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default = M2A_JIUYOU_SDK_LOGIN_SYN];
+	required string sid = 2;
+	required int32	ip = 3;
+	required int32	index = 4;
+	required int32	timestamp = 5;
+}
+
+message MSG_A2M_JIUYOU_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_JIUYOU_SDK_LOGIN_ACK];
+	optional int32  errorcode = 2;
+	optional string accountID = 3;
+	optional string nickName = 4;
+	optional int32	ip = 5;
+	optional int32	index = 6;
+	optional int32	timestamp = 7;
+}
+
+message MSG_C2M_DANGLE_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_DANGLE_SDK_LOGIN_SYN];
+	required int64 mid = 2;
+	required string token = 3;
+}
+
+message MSG_M2C_DANGLE_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_DANGLE_SDK_LOGIN_ACK];
+	optional int32 errorcode = 2;
+	optional string account = 3;				   //登陆帐号
+	optional string sid = 4;					   //sessionKey，登陆时使用
+}
+	
+message MSG_M2A_DANGLE_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default = M2A_DANGLE_SDK_LOGIN_SYN];
+	required int64 mid = 2;
+	required string token = 3;
+	required int32	ip = 4;
+	required int32	index = 5;
+	required int32	timestamp = 6;
+}
+
+message MSG_A2M_DANGLE_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_DANGLE_SDK_LOGIN_ACK];
+	optional int32  errorcode = 2;
+	optional string accountID = 3;
+	optional string nickName = 4;
+	optional int32	ip = 5;
+	optional int32	index = 6;
+	optional int32	timestamp = 7;
+}
+
+message MSG_C2M_91_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_91_SDK_LOGIN_SYN];
+	required string uin = 2;
+	required string sessionid = 3;
+}
+
+message MSG_M2C_91_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_91_SDK_LOGIN_ACK];
+	optional int32 errorcode = 2;
+	optional string account = 3;				   //登陆帐号
+	optional string sid = 4;					   //sessionKey，登陆时使用
+}
+
+message MSG_M2A_91_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default =  M2A_91_SDK_LOGIN_SYN];
+	required string uin = 2;
+	required string sessionid = 3;
+	required int32	ip = 4;
+	required int32	index = 5;
+	required int32	timestamp = 6;
+}
+
+message MSG_A2M_91_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_91_SDK_LOGIN_ACK];
+	optional int32  errorcode = 2;
+	optional string accountID = 3;
+	optional string nickName = 4;
+	optional int32	ip = 5;
+	optional int32	index = 6;
+	optional int32	timestamp = 7;
+}
+
+message MSG_C2M_91_IOS_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_91_IOS_SDK_LOGIN_SYN];
+	required string uin = 2;
+	required string sessionid = 3;
+}
+
+message MSG_M2C_91_IOS_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_91_IOS_SDK_LOGIN_ACK];
+	optional int32 errorcode = 2;
+	optional string account = 3;				   //登陆帐号
+	optional string sid = 4;					   //sessionKey，登陆时使用
+}
+
+message MSG_M2A_91_IOS_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default =  M2A_91_IOS_SDK_LOGIN_SYN];
+	required string uin = 2;
+	required string sessionid = 3;
+	required int32	ip = 4;
+	required int32	index = 5;
+	required int32	timestamp = 6;
+}
+
+message MSG_A2M_91_IOS_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_91_IOS_SDK_LOGIN_ACK];
+	optional int32  errorcode = 2;
+	optional string accountID = 3;
+	optional string nickName = 4;
+	optional int32	ip = 5;
+	optional int32	index = 6;
+	optional int32	timestamp = 7;
+}
+
+message MSG_C2M_DUOKU_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_DUOKU_SDK_LOGIN_SYN];
+	required string uid = 2;
+	required string sessionid = 3;
+}	
+
+message MSG_M2C_DUOKU_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_DUOKU_SDK_LOGIN_ACK];
+	optional int32 errorcode = 2;
+	optional string account = 3;				   //登陆帐号
+	optional string sid = 4;					   //sessionKey，登陆时使用
+}
+
+message MSG_M2A_DUOKU_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default =  M2A_DUOKU_SDK_LOGIN_SYN];
+	required string uid = 2;
+	required string sessionid = 3;
+	required int32	ip = 4;
+	required int32	index = 5;
+	required int32	timestamp = 6;
+}
+
+message MSG_A2M_DUOKU_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_DUOKU_SDK_LOGIN_ACK];
+	optional int32  errorcode = 2;
+	optional string accountID = 3;
+	optional string nickName = 4;
+	optional int32	ip = 5;
+	optional int32	index = 6;
+	optional int32	timestamp = 7;
+}
+
+message MSG_C2M_360_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_360_SDK_LOGIN_SYN];
+	required string authorization_code = 2;
+}
+
+message MSG_M2C_360_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_360_SDK_LOGIN_ACK];
+	optional int32 errorcode = 2;
+	optional string account = 3;				  //登陆帐号
+	optional string sid = 4;					  //sessionKey，登陆时使用
+	optional string uid = 5;					  //360账户ID，客户端充值使用
+	optional string access_token = 6;			 //360 token,客户端保存充值使用
+}
+	
+message MSG_M2A_360_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default =  M2A_360_SDK_LOGIN_SYN];
+	required string authorization_code = 2;
+	required int32	ip = 3;
+	required int32	index = 4;
+	required int32	timestamp = 5;
+}
+
+message MSG_A2M_360_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_360_SDK_LOGIN_ACK];
+	optional int32  errorcode = 2;
+	optional string accountID = 3;
+	optional string nickName = 4;
+	optional int32	ip = 5;
+	optional int32	index = 6;
+	optional int32	timestamp = 7;
+	optional string access_token = 8;			 //360 token,客户端保存充值使用
+}
+
+message MSG_C2M_ANZHI_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_ANZHI_SDK_LOGIN_SYN];
+	required string sessionID = 2;
+	required string	uid = 3;
+}
+message MSG_M2C_ANZHI_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_ANZHI_SDK_LOGIN_ACK];
+	optional int32 errorcode = 2;
+	optional string account = 3;				   //登陆帐号
+	optional string sid = 4;					   //sessionKey，登陆时使用
+}
+	
+message MSG_M2A_ANZHI_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default =  M2A_ANZHI_SDK_LOGIN_SYN];
+	required string sid = 2;
+	required int32	ip = 3;
+	required int32	index = 4;
+	required int32	timestamp = 5;
+	required string	uid = 6;
+}
+
+message MSG_A2M_ANZHI_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_ANZHI_SDK_LOGIN_ACK];
+	optional int32  errorcode = 2;
+	optional string accountID = 3;
+	optional string nickName = 4;
+	optional int32	ip = 5;
+	optional int32	index = 6;
+	optional int32	timestamp = 7;
+}
+
+message MSG_C2M_HUAWEI_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_HUAWEI_SDK_LOGIN_SYN];
+	required string access_token = 2;
+}
+
+message MSG_M2C_HUAWEI_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_HUAWEI_SDK_LOGIN_ACK];
+	optional int32 errorcode = 2;
+	optional string account = 3;				   //登陆帐号
+	optional string sid = 4;					   //sessionKey，登陆时使用
+}
+	
+message MSG_M2A_HUAWEI_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default =  M2A_HUAWEI_SDK_LOGIN_SYN];
+	required string access_token = 2;
+	required int32	ip = 3;
+	required int32	index = 4;
+	required int32	timestamp = 5;
+}
+
+message MSG_A2M_HUAWEI_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_HUAWEI_SDK_LOGIN_ACK];
+	optional int32  errorcode = 2;
+	optional string accountID = 3;
+	optional string nickName = 4;
+	optional int32	ip = 5;
+	optional int32	index = 6;
+	optional int32	timestamp = 7;
+}
+
+
+message MSG_C2M_XIAOMI_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_XIAOMI_SDK_LOGIN_SYN];
+	required string uid = 2;
+	required string sessionID = 3;
+}	
+
+message MSG_M2C_XIAOMI_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_XIAOMI_SDK_LOGIN_ACK];
+	optional int32 errorcode = 2;
+	optional string account = 3;				   //登陆帐号
+	optional string sid = 4;					   //sessionKey，登陆时使用
+}
+
+message MSG_M2A_XIAOMI_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default =  M2A_XIAOMI_SDK_LOGIN_SYN];
+	required string uid = 2;
+	required string sessionID = 3;
+	required int32	ip = 4;
+	required int32	index = 5;
+	required int32	timestamp = 6;
+}
+
+message MSG_A2M_XIAOMI_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_XIAOMI_SDK_LOGIN_ACK];
+	optional int32  errorcode = 2;
+	optional string accountID = 3;
+	optional string nickName = 4;
+	optional int32	ip = 5;
+	optional int32	index = 6;
+	optional int32	timestamp = 7;
+}
+
+message MSG_C2M_QQ_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_QQ_SDK_LOGIN_SYN];
+	required string access_token = 2;
+	required string openid = 3;
+}	
+
+message MSG_M2C_QQ_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_QQ_SDK_LOGIN_ACK];
+	optional int32 errorcode = 2;
+	optional string account = 3;				   //登陆帐号
+	optional string sid = 4;					   //sessionKey，登陆时使用
+}
+
+message MSG_M2A_QQ_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default =  M2A_QQ_SDK_LOGIN_SYN];
+	required string access_token = 2;
+	required string openid = 3;
+	required int32	ip = 4;
+	required int32	index = 5;
+	required int32	timestamp = 6;
+}
+
+message MSG_A2M_QQ_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_QQ_SDK_LOGIN_ACK];
+	optional int32  errorcode = 2;
+	optional string accountID = 3;
+	optional string nickName = 4;
+	optional int32	ip = 5;
+	optional int32	index = 6;
+	optional int32	timestamp = 7;
+}
+
+message MSG_C2M_WANDOUJIA_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_WANDOUJIA_SDK_LOGIN_SYN];
+	required string uid = 2;
+	required string token = 3;
+}	
+
+message MSG_M2C_WANDOUJIA_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_WANDOUJIA_SDK_LOGIN_ACK];
+	optional int32 errorcode = 2;
+	optional string account = 3;				   //登陆帐号
+	optional string sid = 4;					   //sessionKey，登陆时使用
+}
+
+message MSG_M2A_WANDOUJIA_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default =  M2A_WANDOUJIA_SDK_LOGIN_SYN];
+	required string uid = 2;
+	required string token = 3;
+	required int32	ip = 4;
+	required int32	index = 5;
+	required int32	timestamp = 6;
+}
+
+message MSG_A2M_WANDOUJIA_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_WANDOUJIA_SDK_LOGIN_ACK];
+	optional int32  errorcode = 2;
+	optional string accountID = 3;
+	optional string nickName = 4;
+	optional int32	ip = 5;
+	optional int32	index = 6;
+	optional int32	timestamp = 7;
+}
+
+message MSG_C2M_TONGBUTUI_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_TONGBUTUI_SDK_LOGIN_SYN];
+	required string userID = 2;
+	required string sessionID = 3;
+}	
+
+message MSG_M2C_TONGBUTUI_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_TONGBUTUI_SDK_LOGIN_ACK];
+	optional int32 errorcode = 2;
+	optional string account = 3;				   //登陆帐号
+	optional string sid = 4;					   //sessionKey，登陆时使用
+}
+
+message MSG_M2A_TONGBUTUI_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default =  M2A_TONGBUTUI_SDK_LOGIN_SYN];
+	required string userID = 2;
+	required string sessionID = 3;
+	required int32	ip = 4;
+	required int32	index = 5;
+	required int32	timestamp = 6;
+}
+
+message MSG_A2M_TONGBUTUI_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_TONGBUTUI_SDK_LOGIN_ACK];
+	optional int32  errorcode = 2;
+	optional string accountID = 3;
+	optional string nickName = 4;
+	optional int32	ip = 5;
+	optional int32	index = 6;
+	optional int32	timestamp = 7;
+}
+
+message MSG_C2M_PPHELPER_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_PPHELPER_SDK_LOGIN_SYN];
+	required string token = 2;
+}	
+
+message MSG_M2C_PPHELPER_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_PPHELPER_SDK_LOGIN_ACK];
+	optional int32 errorcode = 2;
+	optional string account = 3;				   //登陆帐号
+	optional string sid = 4;					   //sessionKey，登陆时使用
+}
+
+message MSG_M2A_PPHELPER_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default =  M2A_PPHELPER_SDK_LOGIN_SYN];
+	required string token = 2;
+	required int32	ip = 3;
+	required int32	index = 4;
+	required int32	timestamp = 5;
+}
+
+message MSG_A2M_PPHELPER_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_PPHELPER_SDK_LOGIN_ACK];
+	optional int32  errorcode = 2;
+	optional string accountID = 3;
+	optional string nickName = 4;
+	optional int32	ip = 5;
+	optional int32	index = 6;
+	optional int32	timestamp = 7;
+}
+
+message MSG_C2M_OPPO_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_OPPO_SDK_LOGIN_SYN];
+	required string token = 2;
+	required string uid = 3;
+	required string access_token_secret = 4;
+}	
+
+message MSG_M2C_OPPO_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_OPPO_SDK_LOGIN_ACK];
+	optional int32 errorcode = 2;
+	optional string account = 3;				   //登陆帐号
+	optional string sid = 4;					   //sessionKey，登陆时使用
+}
+
+message MSG_M2A_OPPO_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default =  M2A_OPPO_SDK_LOGIN_SYN];
+	required string token = 2;
+	required int32	ip = 3;
+	required int32	index = 4;
+	required int32	timestamp = 5;
+	required string uid = 6;
+	required string access_token_secret = 7;
+}
+
+message MSG_A2M_OPPO_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_OPPO_SDK_LOGIN_ACK];
+	optional int32  errorcode = 2;
+	optional string accountID = 3;
+	optional string nickName = 4;
+	optional int32	ip = 5;
+	optional int32	index = 6;
+	optional int32	timestamp = 7;
+}
+
+message MSG_C2M_COMMON_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_COMMON_SDK_LOGIN_SYN];
+	optional string token = 2;
+	optional string uid = 3;
+	optional string secret_token_ = 4; 
+	optional string sessionID = 5;
+	repeated string opt = 6;				//预留字段,备用
+	required int32 sdkType = 7;
+}		
+
+message MSG_M2C_COMMON_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_COMMON_SDK_LOGIN_ACK];
+	optional int32 errorcode = 2;
+	optional string account = 3;				   //登陆帐号
+	optional string sid = 4;					   //sessionKey，登陆时使用
+}	
+	
+message MSG_M2A_COMMON_SDK_LOGIN_SYN
+{
+	optional MESSAGEID messageid = 1[default =  M2A_COMMON_SDK_LOGIN_SYN];
+	optional string token = 2;
+	required int32	ip = 3;
+	required int32	index = 4;
+	optional int32	timestamp = 5;
+	optional string uid = 6;
+	optional string secret_token= 7;
+	optional string sessionID = 8;
+	repeated string opt = 9;
+	required int32 sdkType = 10;
+}
+
+message MSG_A2M_COMMON_SDK_LOGIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_COMMON_SDK_LOGIN_ACK];
+	optional int32  errorcode = 2;
+	optional string accountID = 3;
+	optional string nickName = 4;
+	optional int32	ip = 5;
+	optional int32	index = 6;
+	optional int32	timestamp = 7;
+}
+
+
+message MSG_C2M_REGISTER_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_REGISTER_SYN];
+	optional string phonenumber = 2;
+	optional string password = 3;
+}
+
+message MSG_M2C_REGISTER_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_REGISTER_ACK];
+	optional int32 errorcode = 2;
+	optional string account = 3;
+	optional string sid = 4;
+}
+
+message MSG_M2D_REGISTER_SYN
+{
+	optional MESSAGEID messageid  = 1[default = M2D_REGISTER_SYN];
+	optional string phonenumber = 2;
+	optional string password = 3;
+	optional string account = 4;
+	optional int32  ip = 5;
+	optional int32  index = 6;
+	optional int32  timestamp = 7;
+}
+
+message MSG_D2M_REGISTER_ACK
+{
+	optional MESSAGEID messageid = 1[default = D2M_REGISTER_ACK];
+	optional int32 errorcode = 2;
+	optional string account = 3;
+	optional int32 ip = 4;
+	optional int32 index = 5;
+	optional int32 timestamp = 6;
+}
+
+message MSG_M2A_ACQUIRE_CODE_SYN
+{
+	optional MESSAGEID messageid = 1[default = M2A_ACQUIRE_CODE_SYN];
+	optional string phonenumber = 2;
+	optional string password = 3;
+	optional int32 ip = 4;
+	optional int32 index = 5;
+	optional int32 timestamp = 6;
+}
+
+message MSG_A2M_ACQUIRE_CODE_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_ACQUIRE_CODE_ACK];
+	optional int32 errorcode = 2;
+	optional int32 ip = 4;
+	optional int32 index = 5;
+	optional int32 timestamp = 6;
+}
+
+message MSG_C2M_VERIFY_CODE_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_VERIFY_CODE_SYN];
+	optional string phonenumber = 2;
+	optional string code = 3;
+	optional string account = 4;
+}
+
+message MSG_M2C_VERIFY_CODE_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_VERIFY_CODE_ACK];
+	optional int32 errorcode = 2;
+	optional string account = 3;
+	optional string sid = 4; 
+}
+
+message MSG_M2A_VERIFY_CODE_SYN
+{
+	optional MESSAGEID messageid = 1[default = M2A_VERIFY_CODE_SYN];
+	optional string phonenumber = 2;
+	optional string code = 3;
+	optional int32 ip = 4;
+	optional int32 index = 5;
+	optional int32 timestamp = 6;
+	optional string account = 7;
+}
+
+message MSG_A2M_VERIFY_CODE_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_VERIFY_CODE_ACK];
+	optional int32  errorcode = 3;
+	optional string phonenumber = 2;
+	optional int32 ip = 4;
+	optional int32 index = 5;
+	optional int32 timestamp = 6;
+	optional string account = 7;
+}
+
+message MSG_C2M_VERIFY_IOS_PAY_RESULT_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_VERIFY_IOS_PAY_RESULT_SYN];
+	optional string receipt = 2;
+	optional string code  = 3;
+}
+
+message MSG_M2C_VERIFY_IOS_PAY_RESULT_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_VERIFY_IOS_PAY_RESULT_ACK];
+	optional int32  errorcode = 2;
+	optional string receipt = 3;
+}
+
+message MSG_M2A_VERIFY_IOS_PAY_RESULT_SYN
+{
+	optional MESSAGEID messageid = 1[default = M2A_VERIFY_IOS_PAY_RESULT_SYN];
+	optional string receipt = 2;
+	optional string code = 3;
+	optional string account = 4;
+}
+
+message MSG_A2M_VERIFY_IOS_PAY_RESULT_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_VERIFY_IOS_PAY_RESULT_ACK];
+	optional int32 errorcode = 2;
+	optional string account = 3;
+	optional string goodsid = 4;
+	optional string code = 5;
+	optional string receipt = 6;
+}
+
+message REWARD_OBJECT 
+{
+	optional int32 type = 1;
+	optional int32 count = 2;
+	optional int32 id = 3;
+}
+
+message MSG_C2M_CHECK_CDKEY_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_CHECK_CDKEY_SYN];
+	optional string key = 2;
+}
+
+message MSG_M2C_CHECK_CDKEY_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_CHECK_CDKEY_ACK];
+	optional int32 errorcode = 2;
+	optional ObjectDrop reward = 3;
+}
+
+message MSG_M2A_CHECK_CDKEY_SYN
+{
+	optional MESSAGEID messageid = 1[default = M2A_CHECK_CDKEY_SYN];
+	optional string key =2;
+	optional string account = 3;
+	optional int32  playerid = 4; 
+}
+
+message MSG_A2M_CHECK_CDKEY_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_CHECK_CDKEY_ACK];
+	optional int32 errorcode = 2;
+	optional string account =3;
+	repeated REWARD_OBJECT reward= 4;
+}
+
+message MSG_C2M_BIND_PHONE_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_BIND_PHONE_SYN];
+	optional string  phonenumber = 2;
+	optional string  password = 3;
+	optional string  account = 4;
+}
+
+message MSG_M2C_BIND_PHONE_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_BIND_PHONE_ACK];
+	optional int32 errorcode = 2;
+}
+
+message MSG_M2D_BIND_PHONE_SYN
+{
+	optional MESSAGEID messageid = 1[default = M2D_BIND_PHONE_SYN];
+	optional string phonenumber = 2;
+	optional string password = 3;
+	optional string account = 4;
+	optional int32   ip = 5;
+	optional int32   index = 6;
+	optional int32   timestamp = 7;
+}
+
+message MSG_D2M_BIND_PHONE_ACK
+{
+	optional MESSAGEID messageid = 1[default = D2M_BIND_PHONE_ACK];
+	optional int32  errorcode = 2;
+	optional int32   ip = 3;
+	optional int32   index = 4;
+	optional int32   timestamp = 5;
+}
+
+message MSG_M2D_KEEPALIVE_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2D_KEEPALIVE_ACK];
+	optional int32  errorcode = 2;
+}
+
+
+//正常退出游戏
+message MSG_C2M_LOGOUT_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_LOGOUT_SYN];
+}
+
+//抽卡
+enum GETCARDTYPE
+{
+	GETCARDTYPE_HUNDRED = 0;
+	GETCARDTYPE_THOUSAND = 1;
+	GETCARDTYPE_TENTHOUSAND = 2;
+}
+
+enum CONSUMETYPE
+{
+	CONSUMETYPE_FREE = 0;
+	CONSUMETYPE_GOLD = 1;
+	CONSUMETYPE_TEN = 2;
+}
+
+message MSG_C2M_GETCARD_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_GETCARD_SYN];
+	optional int32 playerID = 2;
+	optional GETCARDTYPE getCardType = 3;
+	optional CONSUMETYPE consumeType = 4; 
+}
+
+message GetCardData
+{
+	optional CardBaseInfoM2C cardInfo = 1;
+	optional GhostBaseInfoM2C ghostInfo = 2;
+	optional SkillData skillData = 3;
+	optional bool IsCard = 4;
+	optional ObjectDrop objectDrop = 5;
+}
+
+message MSG_M2C_GETCARD_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_GETCARD_ACK];
+	required int32 ErrorCode = 2;
+	repeated GetCardData getCardData = 3;
+	optional GETCARDTYPE getCardType = 4;
+	optional int32 cutDown = 5;
+	optional int32 leaveTimes = 6;
+	optional int32 goldCoin = 7;
+	optional int32 FirstRefresh = 8; 
+	optional ItemDrop itemDrop = 9;
+	optional int32 silverCoin = 10;
+	optional int32 nuwaStoneNum = 11;
+}
+
+message MSG_C2M_GETCARD_CUTDOWN_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_GETCARD_CUTDOWN_SYN];
+}
+
+message MSG_M2C_GETCARD_CUTDOWN_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_GETCARD_CUTDOWN_ACK];
+	optional PlayerTimeCutDownInfo cutDownInfo = 2;
+	optional int32 power = 3;
+	optional int32 vitality = 4;
+	optional int32 getCardActivityItemId = 5;
+	optional int32 getCardActivityItemType = 6;
+	optional int32 getCardActivityItemNum = 7;
+}
+
+message MSG_C2M_GHOST_RECRUIT_SYN		//魂魄招募
+{
+	optional MESSAGEID messageID = 1[default = C2M_GHOST_RECRUIT_SYN];
+	required int32 playerID = 2;
+	required int32 ghostIndex = 3;
+	required int32 cardID = 4;
+}
+
+message MSG_M2C_GHOST_RECRUIT_ACK		//魂魄招募
+{
+	optional MESSAGEID messageID = 1[default = M2C_GHOST_RECRUIT_ACK];
+	optional CardBaseInfoM2C cardInfo = 2;
+	optional SkillData skillData = 3; 
+	optional int32 errorCode = 4;
+}
+
+message MSG_C2M_CONFIGSKILL_SYN              //配置(或更换)某技能
+{
+	optional MESSAGEID messageID = 1[default = C2M_CONFIGSKILL_SYN];
+	required int32 playerID = 2;
+	required int32 fightingPos = 3;
+	required int32 selectedSlot = 4;
+	required int32 newSkillIndex = 5 ;
+	optional FightingPosType fightingtype = 6[default = NORMAL_TYPE];
+}
+
+message MSG_M2C_CONFIGSKILL_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_CONFIGSKILL_ACK];
+	repeated FightingPosInfoM2C changedFightingPos = 2;
+	required int32 errorCode = 3;
+	optional FightingPosType fightingtype = 4[default = NORMAL_TYPE];
+}
+
+message MSG_C2M_CONFIGEQUIPMENT_SYN         //配置(或更换)某装备 
+{
+	optional MESSAGEID messageID = 1[default = C2M_CONFIGEQUIPMENT_SYN];
+	required int32 playerID = 2;
+	required int32 fightingPos = 3;
+	required int32 selectedSlot = 4;
+	required int32 newEuipmentIndex = 5 ;
+	optional FightingPosType fightingtype = 6[default = NORMAL_TYPE];
+}
+
+message MSG_M2C_CONFIGEQUIPMENT_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_CONFIGEQUIPMENT_ACK];
+	repeated FightingPosInfoM2C changedFightingPos = 2;
+	required int32 errorCode = 3;
+	optional FightingPosType fightingtype = 4[default = NORMAL_TYPE];
+}
+
+message MSG_C2M_SWAP_FIGHTING_POSITION_SYN	//配置(或更换)某阵容
+{
+	optional MESSAGEID messageID = 1[default = C2M_SWAP_FIGHTING_POSITION_SYN];
+	required int32 playerID = 2;
+	repeated  int32 fightingPosIndex = 3;
+	optional FightingPosType fightingtype = 4[default = NORMAL_TYPE];
+}
+
+message MSG_M2C_SWAP_FIGHTING_POSITION_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_SWAP_FIGHTING_POSITION_ACK];	
+	required int32 errorCode = 2;
+	optional FightingPosType fightingtype = 3[default = NORMAL_TYPE];
+}
+
+message MSG_C2M_SWAP_FIGHTING_CARD_SYN         //配置(或更换)某弟子
+{
+	optional MESSAGEID messageID = 1[default = C2M_SWAP_FIGHTING_CARD_SYN];
+	required int32 playerID = 2;
+	required int32 newCardIndex = 3;
+	required int32 fightingPos = 4;
+	optional FightingPosType fightingtype = 5[default = NORMAL_TYPE];
+	optional int32 ownerPlayerID = 6;
+}
+
+message MSG_M2C_SWAP_FIGHTING_CARD_ACK            
+{
+	optional MESSAGEID messageID = 1[default = M2C_SWAP_FIGHTING_CARD_ACK];
+	repeated FightingPosInfoM2C changedFightingPosition = 2;
+	required int32 errorCode = 3;		
+	optional FightingPosType fightingtype = 4[default = NORMAL_TYPE];	
+	optional CardBaseInfoM2C cardInfo = 5;
+	optional SkillData skillData = 6;
+}
+
+message MSG_C2M_UPGRADE_SKILL_SYN 		//请求升级技能
+{
+	optional MESSAGEID messageID = 1[default = C2M_UPGRADE_SKILL_SYN];
+	required int32 playerID = 2;
+	required int32 upgradeSkillIndex = 3;
+	repeated int32 depletionskillIndex = 4 ;
+}
+
+message MSG_M2C_UPGRADE_SKILL_ACK
+{
+	optional MESSAGEID messageID  = 1 [default = M2C_UPGRADE_SKILL_ACK];
+	optional int32 upgradeLevel = 2;
+	optional SkillData skillData = 3;
+	required int32 errorCode = 4;
+	repeated FightingPosInfoM2C fightingPosInfoM2C = 5;
+	optional int32 SkillUpgradeCount = 6;
+	repeated FightingPosInfoM2C ladderfightingPosInfoM2C = 7;
+}
+
+message MSG_C2M_SELL_SKILL_SYN		//请求出售技能
+{
+	optional MESSAGEID messageID  = 1 [default = C2M_SELL_SKILL_SYN];
+	required int32 playerID = 2;
+	repeated int32 sellSkillIndex = 3; 
+}
+
+message MSG_M2C_SELL_SKILL_ACK
+{
+	optional MESSAGEID messageID  = 1 [default = M2C_SELL_SKILL_ACK];
+	optional int32 sellPrice = 2; 
+	required int32 errorCode = 3;
+}
+
+enum EQUIPMENTUPGRADETYPE
+{
+	NORMAL_UPGRADE = 0;
+	RAPID_UPGRADE = 1;
+}
+
+message MSG_C2M_UPGRADE_EQUIPMENT_SYN 	//请求升级装备
+{
+	optional MESSAGEID messageID  = 1 [default = C2M_UPGRADE_EQUIPMENT_SYN];
+	optional EQUIPMENTUPGRADETYPE upgradetype = 2  [default = NORMAL_UPGRADE];
+	required int32 upgradeEquipmentIndex = 3; 
+}
+
+message MSG_M2C_UPGRADE_EQUIPMENT_ACK {
+	optional MESSAGEID messageID  = 1 [default = M2C_UPGRADE_EQUIPMENT_ACK]; 
+	required int32 errorCode = 2;
+	optional EQUIPMENTUPGRADETYPE upgradetype = 3  [default = NORMAL_UPGRADE];
+	optional int32 upgradeLevel = 4; 
+	optional EquipmentData equipmentData = 5;
+	optional FightingPosInfoM2C fightingPosInfo = 6;
+	optional int32 consumesilver = 7;
+	optional int32 EquipmentUpgradeCount = 8; 
+	optional FightingPosInfoM2C ladderfightingPosInfo = 9;
+}
+
+message MSG_C2M_SELL_EQUIPMENT_SYN		//请求出售装备
+{
+	optional MESSAGEID messageID  = 1 [default = C2M_SELL_EQUIPMENT_SYN];
+	required int32 playerID = 2;
+	repeated int32 sellEquipmentIndex = 3; 
+}
+
+message MSG_M2C_SELL_EQUIPMENT_ACK
+{
+	optional MESSAGEID messageID  = 1 [default = M2C_SELL_EQUIPMENT_ACK];
+	optional int32 sellPrice = 2; 
+	required int32 errorCode = 3;
+}
+
+//江湖信息
+message MSG_C2M_RUNESCAPE_INFO
+{
+	optional MESSAGEID messageID = 1[default = C2M_GETALLRUNESCAPE_SYN];
+    required int32  playid = 2;
+}
+
+message ParagraphMessageInfo
+{
+     optional  int32 paragraph = 1;
+     optional  int32 starNum = 2;
+     optional  int32 challegeNum = 3;
+     optional  int32 dbOPeration = 4;
+     optional  int32 clearNum = 5;
+}
+
+message ChapterMessageInfo
+{
+     optional  int32 chapter = 1;
+     optional  int32 recoverySatus = 2;
+     repeated  ParagraphMessageInfo paragraphMessageInfo = 3;
+     optional  int32 dbOPeration = 4;
+}
+
+message  MSG_M2C_RUNESCAPE_INFO
+{
+  optional MESSAGEID messageID = 1[default = M2C_ALLRUNESCAPE_ACK];
+  optional int32 errorcode = 2;
+  repeated ChapterMessageInfo chapterMessageInfo= 3;
+  optional int32 countdownCD = 4;
+  optional int32 refillPowerNum = 5;
+}
+
+//吃鸡
+message MSG_C2M_RECOVERY_STATUS_INFO
+{
+	optional MESSAGEID messageID = 1[default = C2M_GETEATCHICHEN_SYN];
+        required int32  playid = 2;
+        required int32 charpter = 3;
+}
+message MSG_M2C_RECOVERY_STATUS_INFO
+{
+	optional MESSAGEID messageID = 1[default = M2C_EATCHICHEN_ACK];
+        optional int32 errorcode = 2;
+        optional int32 charpter = 3;
+        optional int32 recoveryStatus = 4;
+        optional ItemDrop itemDrop = 5;
+}
+
+//买挑战次数
+message MSG_C2M_BUY_CHALLEGENUM_INFO
+{
+	optional MESSAGEID messageID = 1[default = C2M_BUY_CHALLEGENUM_SYN];
+    required int32 charpter = 2;
+    required int32 paragraph = 3;
+}
+message MSG_M2C_BUY_CHALLEGENUM_INFO
+{
+	optional MESSAGEID messageID = 1[default = M2C_BUY_CHALLEGENUM_ACK];
+    optional int32 errorcode = 2;
+    optional int32 challegeNum = 3;
+    optional int32 goldenCoin = 4;
+}
+
+//购买体力
+message MSG_C2M_BUY_POWER_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_BUY_POWER_SYN];
+}
+
+message MSG_M2C_BUY_POWER_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_BUY_POWER_ACK];
+	optional int32 errorcode = 2;
+	optional int32 powerNum = 3;
+	optional int32 goldenCoin = 4;
+	optional int32 power = 5;
+}
+
+//清除CD时间
+message MSG_C2M_CLEAR_CDTIMER_INFO
+{
+	optional MESSAGEID messageID = 1[default = C2M_CLEAR_CDTIMER_SYN];
+}
+message MSG_M2C_CLEAR_CDTIMER_INFO
+{
+	optional MESSAGEID messageID = 1[default = M2C_CLEAR_CDTIMER_ACK];
+    optional int32 errorcode = 2;
+    optional int32 goldenCoin = 3;
+}
+
+//闯
+message MSG_C2M_FIGHT_INFO
+{
+	optional MESSAGEID messageID = 1[default = C2M_GETFIGHT_SYN]; 
+        required int32 playid = 2;
+        required int32 charpter = 3;
+        required int32 paragraph = 4;
+}
+
+message AttackedCardMessageInfo
+{
+	required int32 cardID = 1;
+	required int32 skillID =2;
+	required int32 hp = 3; 
+}
+
+message WarProcessMessageData
+{
+	required int32 warProcessType = 1;
+	required bool  isOurAttack = 2;
+	required int32 attackCardID = 3;
+	optional int32 attackSkillID = 4;
+	repeated AttackedCardMessageInfo attackedInfo = 5;
+}
+
+message GainSkillForACardMessage
+{
+    repeated int32 skillID = 1;
+    optional int32 hp =  2;
+    optional int32 mp = 3;
+}
+
+enum FIGHT_FIRST_TYPE
+{
+	BASED_ON_NONETYPE = 0;								//无类型，客户端看不到
+	BASED_ON_FIGHTPOWER = 1;							//根据战斗力来决定谁先手
+	BASED_ON_FIXED_WHOFIRST = 2;						//游戏规则既定的某方先手
+}
+
+message FightCommonData
+{
+	optional int32 FightRoundNum = 1;
+	optional int32 warIsOurFirst = 2;					//是否我方先手
+	optional FIGHT_FIRST_TYPE fightFirsttype = 3;		//战斗先手的类型
+}
+
+message GainSkillsMessage
+{
+    repeated GainSkillForACardMessage ourSkillCards = 1;
+    repeated GainSkillForACardMessage enemySkillCards = 2;
+    optional int32 ourFightPower = 3;
+    optional int32 enemyFightPower = 4;
+    optional FightCommonData fightCommonData = 5;
+}
+
+message OnceFightEndResultMessage
+{
+  required int32 roleExperience = 1;
+  required int32 silverCoin = 2;
+  optional int32 cardExperience = 3;
+  repeated int32 cardLevel = 4;
+  optional int32 awardType = 5;
+  optional int32 starNum = 6;
+  optional bool  isFristMaxStar = 7;
+  optional int32 roleLevel = 8;
+  optional int32 power = 9;
+  optional bool  isOurWin = 10;
+  optional ObjectDrop objectdrop = 11;
+  repeated bool isCardLevelMax = 12;
+  optional int32 roleCurrentExp = 13;
+  repeated bool isCardReachFourLevel = 14;
+  optional int32 payedGold = 15;
+  optional int32 donativePayedGold = 16;
+}
+
+message MSG_M2C_FIGHT_RESULT_INFO
+{
+  optional MESSAGEID messageID = 1[default = M2C_FIGHT_ACK];
+  optional int32 errorcode = 2;
+  optional GainSkillsMessage gainSkills = 3;
+  repeated WarProcessMessageData warProcessDataList = 4;
+  optional OnceFightEndResultMessage fightEndResult = 5;
+  optional int32 recoveryStatus = 6;
+  optional int32 challegeNum = 7;
+  repeated CardBaseInfoM2C upgradeCardInfo = 8;
+  repeated FightingPosInfoM2C upgradeFightPos = 9;
+}
+
+//连闯
+message MSG_C2M_SERIES_FIGHT_INFO
+{
+    optional MESSAGEID messageID = 1[default = C2M_GETSERIESFIGHT_SYN];
+    required int32  playid = 2;
+    required int32 charpter = 3;
+    required int32 paragraph = 4;
+}
+
+message MSG_M2C_SERIES_FIGHT_RESULTS_INFO
+{
+   optional MESSAGEID messageID = 1[default = M2C_SERIESFIGHT_ACK];
+   optional int32 errorcode = 2;
+   repeated OnceFightEndResultMessage fightEndResult = 3;
+   optional int32 recoveryStatus = 4;
+   optional int32 challegeNum = 5;
+   optional int32 countdownCD = 6;
+   repeated CardBaseInfoM2C upgradeCardInfo = 8;
+   repeated FightingPosInfoM2C upgradeFightPos = 9;
+   optional ItemDrop itemDrop = 10; 
+}
+message RecoveryStatusDBMessageInfo
+{
+    optional int32 chapter =1;
+    optional int32 recoveryStatus = 2;
+    optional int32 dbOPeration = 3;
+}
+
+message ParagarphDBMessageInfo
+{
+   optional  int32 chapter =1;
+   optional  int32 paragraph =2;
+   optional  int32 starNum = 3;
+   optional  int32 challegeNum = 4;
+   optional  int32 dbOPeration = 5;
+   optional  int32 clearNum = 6;
+}
+
+message RuneScapeDBMessageInfo
+{
+//  repeated  ChapterMessageInfo chapterMessageInfo = 1;//M2D
+  repeated  RecoveryStatusDBMessageInfo recoveryStatusDBMessage = 1; //D2M
+  repeated  ParagarphDBMessageInfo paragraphDBMessage = 2; //D2M
+}
+
+ enum DUEL_PULL_OFFLINE_PLAYER_TYPE
+ {
+ 	//战斗拉取离线玩家
+ 	DUEL_PULL_OFFLINE_PLAYER_FIGHT = 1;
+ 	//拉取前十大玩家
+ 	DUEL_PULL_OFFLINE_PLAYER_TOPTEN = 2;
+ 	//查看好友阵容拉取玩家
+ 	WATCH_FRIENDS_FIGHT_POS = 3;
+ 	//天梯系统选定某好友想选其上阵卡牌而该好友不在线
+ 	LADDER_GET_FRIENDS_CARDSINFO = 4;
+ 	
+ 	// 通用事物处理
+ 	COMMON_FETCH_PLAYER_TRANSACTION = 5;
+ 	
+ 	//查看他人天梯系统
+ 	WATCH_OTHERPLAYER_LADDER_FIGHT_POS = 6;
+ }
+ 
+//论剑系统向DB请求玩家信息
+message MSG_M2D_DUEL_PLAYER_BASEINFO_SYN {
+	optional MESSAGEID messageID = 1 [default = M2D_DUEL_PLAYER_BASEINFO_SYN];
+	required string szAccountName = 2;
+	optional DUEL_PULL_OFFLINE_PLAYER_TYPE pullOfflinePlayerType = 3 [default = DUEL_PULL_OFFLINE_PLAYER_FIGHT];
+	optional int32 challengerPlayerID = 4;
+	optional int32 challengerPlayerRank = 5;
+	optional int32 defenderPlayerID = 6;
+	optional int32 defenderPlayerRank = 7;
+	optional int32 transactionID = 8;
+}
+
+message MSG_D2M_DUEL_PLAYER_BASEINFO_ACK {
+	optional MESSAGEID messageID = 1 [default = D2M_DUEL_PLAYER_BASEINFO_ACK];
+	required int32 ErrorCode = 2;
+	optional DUEL_PULL_OFFLINE_PLAYER_TYPE pullOfflinePlayerType = 3 [default = DUEL_PULL_OFFLINE_PLAYER_FIGHT];
+	optional PlayerTotalInfo playerTotalInfo = 4;
+	optional int32 challengerPlayerID = 5;
+	optional int32 challengerPlayerRank = 6;
+	optional int32 defenderPlayerID = 7;
+	optional int32 defenderPlayerRank = 8;
+	optional int32 transactionID = 9;
+}
+
+//向数据库拉起论剑排行信息
+message MSG_M2D_DUEL_TOPLISTINFO_SYN
+{
+	optional MESSAGEID messageID = 1 [default = M2D_DUEL_TOPLISTINFO_SYN];
+}
+
+message RankInfo
+{
+	required int32 rank = 1;
+	required int32 playerID = 2;
+	optional string accountID = 3;
+	optional bool isNPC = 4;
+	optional int32 gamescore = 5;
+	optional int64 lastCalculateTime = 6;
+	optional int32 playerlevel = 7;
+	optional int32 fightPosThumbnail1 = 8;
+	optional int32 fightPosThumbnail2 = 9;
+	optional int32 fightPosThumbnail3 = 10;
+	optional bytes enemyList = 11;
+	optional bytes receivedPrize = 12;
+	optional int32 topAchievedRank = 13;
+	optional string playerName = 14;
+	optional int32 dbOPeration = 15;
+}
+
+message MSG_D2M_DUEL_TOPLISTINFO_ACK
+{
+	optional MESSAGEID messageID = 1 [default = D2M_DUEL_TOPLISTINFO_ACK];
+	repeated RankInfo rankInfo = 2;
+}
+
+//向数据库刷新排行榜信息
+message MSG_M2D_DUEL_UPDATE_TOPLISTINFO_SYN
+{
+	optional MESSAGEID messageID = 1 [default = M2D_DUEL_UPDATE_TOPLISTINFO_SYN];
+	repeated RankInfo rankInfo = 2;
+} 
+
+//数据库服务器告诉GameServer，拉取TopList完成
+message MSG_D2M_DUEL_TOPLIS_FINISH
+{
+	optional MESSAGEID messageID = 1 [default =  D2M_DUEL_TOPLIS_FINISH];
+} 
+
+
+//客户端向Game服务器请求论剑榜基本信息
+message MSG_C2M_DUEL_GET_BASEINFO_SYN
+{
+	optional MESSAGEID messageID = 1 [default = C2M_DUEL_GET_BASEINFO_SYN];
+}
+
+//阵位信息,TODO加缘分
+message OtherPlayerFightingPosInfo 
+{
+	required int32 index = 1;
+	optional int32 cardID = 2;
+	optional int32 cardLevel = 3;
+	optional int32 talentSkillID = 4;
+	optional int32 talentSkillLevel = 5;
+	optional int32 secondSkillID = 6;
+	optional int32 secondSkillLevel = 7;
+	optional int32 thirdSkillID = 8;
+	optional int32 thirdSkillLevel = 9;
+	optional int32 weaponID = 10;
+	optional int32 weaponLevel = 11;
+	optional int32 clothingID = 12;
+	optional int32 clothingLevel = 13;
+	optional int32 accessoryID = 14; 	
+	optional int32 accessoryLevel = 15; 	
+	optional int32 hp = 16;
+	optional int32 ap = 17;
+	optional int32 dp = 18;
+	optional int32 mp = 19; 
+	repeated FateStruct fateList = 20;
+	optional bool cardIsFromFriends = 21;
+	repeated GemstoneOfEquipClientData weaponGemstoneOfEquipArray = 22;
+	repeated GemstoneOfEquipClientData clothingGemstoneOfEquipArray = 23;
+	repeated GemstoneOfEquipClientData accessoryGemstoneOfEquipArray = 24;
+	optional int32 Crit = 25;
+	optional int32 CritDefence = 26;
+	optional int32 Hit = 27;
+	optional int32 HitDefence = 28;
+	optional int32 Prarry = 29;
+	optional int32 PrarryDefence = 30;
+	optional int32 RealmID = 31;
+	optional int32 RankID = 32;
+}
+
+//查看其他玩家的阵容信息
+message DuelOtherPlayerInfoToClient
+{
+	required int32 playerID = 1;
+	required string playerName = 2;
+	optional int32 playerrank = 3;
+	optional int32 playerLevel = 4;
+	repeated OtherPlayerFightingPosInfo otherFightingInfo = 5;
+}
+
+message DuelNPCPlayerInfoToClient
+{
+	required int32 playerID = 1;
+	required string playerName = 2;
+	optional int32 playerrank = 3;
+	optional int32 playerLevel = 4;
+	repeated int32 NPCID = 5;
+}
+
+message DuelOtherPlayerBaseInfo
+{
+	required int32 playerID = 1;
+	required string playerName = 2;
+	required int32 playerLevel = 3;
+	optional int32 playerrank = 4;
+	optional int32 card1ID = 5;
+	optional int32 card2ID = 6;
+	optional int32 card3ID = 7;
+	optional int32 scoreNumPer = 8;
+	optional bool isNPC = 9;
+}
+
+message DuelTopPlayerInfoToClient
+{
+	optional bool defenderIsNPC = 1;
+	optional DuelOtherPlayerBaseInfo duelPlayerBaseInfo = 2;
+	optional DuelOtherPlayerInfoToClient duelPlayerFightingInfo = 3;
+}
+
+message DuelBaseInfo
+{
+	repeated DuelTopPlayerInfoToClient TopTenPlayerInfo = 1;
+	repeated DuelOtherPlayerBaseInfo counterablePlayer = 2;
+	repeated DuelOtherPlayerBaseInfo challengeablePlayer =3;
+	repeated DuelOtherPlayerBaseInfo backwardPlayer =4;
+	repeated int32 getablePrize = 5;
+	repeated int32 notgetablePrize = 6;
+	optional int32 currentScore = 7;
+	optional int32 nextRefreshtime = 8;
+  	optional int32 vitality = 9; 
+  	optional int32 rank = 10;
+  	optional int32 scoreNumPer = 11;
+}
+
+message MSG_M2C_DUEL_GET_BASEINFO_ACK
+{
+	optional MESSAGEID messageID = 1 [default = M2C_DUEL_GET_BASEINFO_ACK];
+	required int32 ErrorCode = 2;
+	optional DuelBaseInfo duelBaseInfo = 3;
+}
+
+//客户端向服务器请求战斗
+message MSG_C2M_DUEL_CHALLENGE_SYN
+{
+	optional MESSAGEID messageID = 1 [default = C2M_DUEL_CHALLENGE_SYN];
+	optional int32 playerRank = 2;
+	optional int32 defenderPlayerID = 3;
+	optional int32 defenderPlayerRank = 4;
+} 
+
+message OnceDuelResultMessage
+{
+  	required int32 roleExperience = 1;
+  	required int32 silverCoin = 2;
+  	optional int32 cardExperience = 3;
+  	repeated int32 cardLevel = 4;
+  	optional int32 starNum = 5;
+  	optional int32 roleLevel = 6;
+ 	optional bool  isOurWin = 8;
+ 	repeated bool isCardLevelMax = 9;
+ 	optional int32 roleCurrentExp = 10;
+ 	repeated bool isCardReachFourLevel = 11;
+	optional int32 payedGold = 12;
+	optional int32 donativePayedGold = 13;
+}
+
+message MSG_M2C_DUEL_CHALLENGE_ACK
+{
+	optional MESSAGEID messageID = 1 [default = M2C_DUEL_CHALLENGE_ACK];
+	required int32 ErrorCode = 2;
+	optional bool defenderIsNPC = 3;
+	optional DuelOtherPlayerInfoToClient defenderPlayerInfo = 4;
+	optional DuelNPCPlayerInfoToClient defenderNPCPlayerInfo = 5;
+  	repeated WarProcessMessageData warProcessDataList = 6;
+  	optional GainSkillsMessage gainSkills = 7;
+ 	optional OnceDuelResultMessage onceDuelResultMessage = 8;
+	optional DuelBaseInfo duelBaseInfo = 9;
+	repeated CardBaseInfoM2C upgradeCard = 10;
+        repeated FightingPosInfoM2C upgradeFightPos = 11;
+}
+
+message MSG_C2M_DUEL_REFRESH_SCORE_SYN
+{
+	optional MESSAGEID messageID = 1 [default = C2M_DUEL_REFRESH_SCORE_SYN];
+}
+
+message MSG_M2C_DUEL_REFRESH_SCORE_ACK
+{
+	optional MESSAGEID messageID = 1 [default = M2C_DUEL_REFRESH_SCORE_ACK];
+	required int32 ErrorCode = 2;	
+	optional int32 currentScore = 3;
+  	optional int32 nextRefreshtime = 4;
+}
+
+message MSG_C2M_DUEL_EXCHANGE_TRAINING_SYN
+{
+	optional MESSAGEID messageID = 1 [default = C2M_DUEL_EXCHANGE_TRAINING_SYN];
+	optional int32 exchangeType = 2;
+}
+
+message MSG_M2C_DUEL_EXCHANGE_TRAINING_ACK
+{
+	optional MESSAGEID messageID = 1 [default = M2C_DUEL_EXCHANGE_TRAINING_ACK];
+	required int32 ErrorCode = 2;	
+	optional int32 currentScore = 3;
+  	optional int32 nextRefreshtime = 4;
+	optional ItemDrop tranning = 5;
+}
+
+message MSG_C2M_DUEL_GET_PRIZE_SYN
+{
+	optional MESSAGEID messageID = 1 [default = C2M_DUEL_GET_PRIZE_SYN];
+	optional int32 exchangeType = 2;
+}
+
+message MSG_M2C_DUEL_GET_PRIZE_ACK
+{
+	optional MESSAGEID messageID = 1 [default = M2C_DUEL_GET_PRIZE_ACK];
+	required int32 ErrorCode = 2;	
+	optional ItemDrop tranning = 3;
+	repeated int32 getablePrize = 4;
+	repeated int32 notgetablePrize = 5;
+}
+
+//血战
+message BaseBloodBattleMessageInfo
+{
+  optional int32 todayLeaveTimes = 1;
+  optional int32 todayJoinTimes = 2;
+  optional int32 todayMaxStars = 3;
+  optional int32 todayMaxPass = 4;
+  optional int32 todayPreranking = 5;
+  optional int32 currentLeaveStars= 6;
+  optional int32 currentGainStars= 7;
+  optional int32 currentPass = 8;
+  repeated int32 additionPropertyValue = 9;
+  optional int32 leavePassForAward =10;
+  optional int32 leavePassForAddition =11;
+  optional int32 preMaxStars = 12;
+}
+
+message AwardMessageInfo
+{
+  optional int32 awardID = 1;
+  optional int32 awardType = 2;
+  optional int32 awardNum = 3;
+}
+
+message SelectNPCsInBloodBattleMessageInfo
+{
+   optional int32 firstNPCIDInDeath = 1;
+   optional int32 positionTypeInDeath = 2;
+   optional int32 starTimesInDeath = 3;
+   optional AwardMessageInfo awardInDeath = 4;
+   optional int32 firstNPCIDInMight = 5;
+   optional int32 positionTypeInMight = 6;
+   optional int32 starTimesInMight = 7;
+   optional AwardMessageInfo awardInMight = 8;
+   optional int32 firstNPCIDInNormal = 9;
+   optional int32 positionTypeInNormal = 10;
+   optional int32 starTimesInNormal = 11;
+   optional AwardMessageInfo awardInNormal = 12;
+}
+
+message AwardInBloodBattleMessageInfo
+{
+    repeated ObjectDrop awardInfos = 1;
+}
+
+message InitAdditionMessageInfo
+{
+  optional int32 additionHpValue = 1;
+  optional int32 additionApValue = 2;
+  optional int32 additionDpValue = 3;
+  optional int32 additionMpValue = 4;
+}
+
+message CardMessageInfo
+{
+  optional int32 cardID = 1;
+  optional int32 cardHp = 2;
+}
+
+message  CardsInBloodBattleMessageInfo
+{
+  repeated CardMessageInfo cards =1;
+}
+
+//玩家请求血战信息
+message MSG_C2M_BLOODYBATTLE_INFO
+{
+  optional MESSAGEID messageID = 1[default = C2M_BLOODYBATTLE_INFO_SYN];
+  optional int32  playid = 2;
+}
+
+message MSG_M2C_BLOODYBATTLE_INFO
+{
+ optional MESSAGEID messageID = 1[default = M2C_BLOODYBATTLE_INFO_ACK];
+ optional int32 errorcode = 2;
+ optional int32 resultType = 3;
+ optional BaseBloodBattleMessageInfo baseBBMessageInfo = 4;
+ optional SelectNPCsInBloodBattleMessageInfo selectNPCsBBMessageInfo = 5;
+ optional InitAdditionMessageInfo initAdditionMessageInfo = 6;
+}
+
+//玩家点击开始血战
+message MSG_C2M_ENTER_BLOODYBATTLE_INFO
+{
+  optional MESSAGEID messageID = 1[default = C2M_ENTER_BLOODYBATTLE_INFO_SYN];
+  optional int32 playid = 2;
+}
+
+message MSG_M2C_ENTER_BLOODYBATTLE_INFO
+{
+  optional MESSAGEID messageID = 1[default = M2C_ENTER_BLOODYBATTLE_INFO_ACK];
+  optional int32 errorcode = 2;
+  optional int32 resultType = 3;
+  optional BaseBloodBattleMessageInfo baseBBMessageInfo = 4;
+  optional InitAdditionMessageInfo initAdditionMessageInfo = 5;
+  optional SelectNPCsInBloodBattleMessageInfo selectNPCsBBMessageInfo = 6;
+}
+
+//玩家选择加成状态
+message MSG_C2M_ADDITION_BLOODYBATTLE_INFO
+{
+     optional MESSAGEID messageID = 1[default = C2M_ADDITION_BLOODYBATTLE_INFO_SYN];
+     optional int32 playid = 2;
+     optional int32 additionType = 3;
+}
+
+message MSG_M2C_ADDITION_BLOODYBATTLE_INFO
+{
+   optional MESSAGEID messageID = 1[default = M2C_ADDITION_BLOODYBATTLE_INFO_ACK];
+   required int32 errorcode = 2;
+   optional int32 resultType = 3;
+   optional BaseBloodBattleMessageInfo baseBBMessageInfo = 4;
+   optional SelectNPCsInBloodBattleMessageInfo selectNPCsBBMessageInfo = 5;
+}
+
+//玩家进行血战战斗
+message MSG_C2M_FIGHT_BLOODYBATTLE_INFO
+{
+  optional MESSAGEID messageID = 1[default = C2M_FIGHT_BLOODYBATTLE_INFO_SYN];
+  optional int32  playid = 2;
+  optional int32  fightType = 3;
+}
+
+message FightResultBBInfo
+{
+   optional int32 currentRoundStars = 1;
+   optional int32 exceedStars = 2;
+   optional int32 silverBase = 3;
+   optional int32 startPass = 4;
+   optional int32 endPass = 5;
+}
+message MSG_M2C_FIGHT_BLOODYBATTLE_INFO
+{
+  optional MESSAGEID messageID = 1[default = M2C_FIGHT_BLOODYBATTLE_INFO_ACK];
+  required int32 errorcode = 2;
+  optional int32 resultType = 3;
+  optional BaseBloodBattleMessageInfo baseBBMessageInfo = 4;
+  optional SelectNPCsInBloodBattleMessageInfo selectNPCsBBMessageInfo = 5;
+  optional InitAdditionMessageInfo initAdditionMessageInfo = 6;
+  optional AwardInBloodBattleMessageInfo awardMessageInfo = 7;
+  optional CardsInBloodBattleMessageInfo ourCards = 8; 
+  optional CardsInBloodBattleMessageInfo enemyCards = 9;
+  optional GainSkillsMessage gainSkills = 10;
+  repeated WarProcessMessageData warProcessDataList = 11;
+  optional ObjectDrop extraAward = 12;
+  optional bool IsShowAwardPage = 13;
+  optional bool IsWin = 14;
+  optional int32 starTimes = 15;
+  optional int32 gainStars = 16;
+  optional FightResultBBInfo fightInfo = 17;
+  optional int32 IsEnd = 18;
+}
+
+//玩家请求血战排行信息
+message MSG_C2M_RANK_BLOODYBATTLE_INFO
+{
+  optional MESSAGEID messageID = 1[default = C2M_RANK_BLOODYBATTLE_INFO_SYN];
+  optional int32  positionType  = 2;
+}
+
+message BaseRankMessageInfo
+{
+  optional int32 playerId = 1;
+  optional string playerName = 2;
+  optional int32 rank = 3;
+  optional int32 passNum = 4;
+  optional int32 starNum = 5;
+  optional int32 continuousInRankNum = 6;
+  optional int32 level = 7;
+}
+
+message MSG_M2C_RANK_BLOODYBATTLE_INFO
+{
+ optional MESSAGEID messageID = 1[default = M2C_RANK_BLOODYBATTLE_INFO_ACK];
+ optional int32 errorcode = 2;
+ repeated BaseRankMessageInfo fiveBaseRank = 3;
+ repeated BaseRankMessageInfo sixBaseRank = 4;
+ repeated BaseRankMessageInfo sevenBaseRank = 5;
+ repeated BaseRankMessageInfo eightBaseRank = 6;
+}
+
+//玩家请求血战排行玩家阵容信息
+message MSG_C2M_RANK_BLOODYBATTLE_PLAYER_INFO
+{
+  optional MESSAGEID messageID = 1[default = C2M_RANK_BLOODYBATTLE_PLAYER_INFO_SYN];
+  optional int32  positionType  = 2;
+  optional int32  rank  = 3;
+}
+
+message MSG_M2C_RANK_BLOODYBATTLE_PLAYER_INFO
+{
+ optional MESSAGEID messageID = 1[default = M2C_RANK_BLOODYBATTLE_PLAYER_INFO_ACK];
+ optional int32 errorcode = 2;
+ repeated OtherPlayerFightingPosInfo rankPlayerPosition = 3;
+}
+
+//玩家血战的DB信息
+message BloodyBattleDBNpcInfo
+{
+  repeated  int32 NPCs        = 1;
+  optional  AwardMessageInfo award = 2;
+  optional  int32 positionNum      = 3;
+}
+
+message BloodyBattleDBMessageInfo
+{
+  optional  int32  playerID      = 1;
+  optional  int32  leaveTimes    = 2;
+  optional  int32  preMaxStars   = 3;
+  optional  int32  lastMaxStars  = 4;
+  optional  int32  currentPass   = 5;
+  optional  int32  preMaxPass    = 6;
+  optional  int32  lastMaxPass   = 7;
+  optional  int32  currentStars  = 8;
+  optional  int32  leaveStars    = 9;
+  optional  int64  lastActionTime = 10;
+  optional  int32  additionHP      = 11;
+  optional  int32  additionAP      = 12;
+  optional  int32  additionDP      = 13;
+  optional  int32  additionMP      = 14;
+  optional BloodyBattleDBNpcInfo firstNpcInfo = 15;
+  optional BloodyBattleDBNpcInfo secondNpcInfo = 16;
+  optional BloodyBattleDBNpcInfo thirdNpcInfo = 17;
+  optional int32   screenMode      = 18;
+  optional bytes   roundMaxStars   = 19;
+  optional int32   curAdditionType1 = 20;
+  optional int32   curAdditionType2 = 21;
+  optional int32   curAdditionType3 = 22;
+  optional int32   positionType     = 23;
+  optional int32   currentRoundStars = 24;
+}
+
+//向数据库获取排名数据
+message MSG_M2D_RANK_BLOODYBATTLE_INFO
+{
+  optional MESSAGEID messageID = 1[default = M2D_RANK_BLOODYBATTLE_INFO_SYN];
+}
+
+message BBRankBaseInfo
+{
+  optional int32 positionType = 1;
+  optional bool isToday = 2;
+  optional BaseRankMessageInfo baseInfo = 3;
+}
+
+message BBRankFightPosInfo
+{
+  optional int32 rank = 1;
+  optional int32 positionType = 2;
+  optional bool isToday = 3;
+  optional OtherPlayerFightingPosInfo fightPosInfo = 4;
+}
+
+message MSG_D2M_RANK_BLOODYBATTLE_INFO
+{
+ optional MESSAGEID messageID = 1[default = D2M_RANK_BLOODYBATTLE_INFO_ACK];
+ repeated BBRankBaseInfo rankBaseInfo = 2;
+ repeated BBRankFightPosInfo rankFightPosInfo = 3;
+ optional int32 positionType = 4;
+ optional bool IsToday = 5;
+}
+
+//更新数据库排名数据
+message PlayerRankInfoInBBMessage
+{
+  optional BBRankBaseInfo baseDBInfo = 1;
+  repeated OtherPlayerFightingPosInfo fightPosInfo = 2;
+  optional int32 dbOperation = 3;
+}
+
+message MSG_M2D_RANK_UPDATE_BLOODYBATTLE_INFO
+{
+  optional MESSAGEID messageID = 1[default = M2D_RANK_UPDATE_BLOODYBATTLE_INFO_SYN];
+  repeated PlayerRankInfoInBBMessage rankInfo = 2;
+}
+ 
+message MSG_C2M_ITEM_OPEN_BOXORPACKS_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_ITEM_OPEN_BOXORPACKS_SYN];
+	required int32 itemID = 2;
+	optional bool  isSuccessiveOpen = 3[default = false];
+	optional int32 successiveOpenNum = 4;
+}
+
+message ItemDrop
+{
+	optional int32 itemID = 1;
+	optional int32 itemChangeNum = 2;
+	optional int32 DayUsingTimes = 3;
+}
+
+message PlayeExprDrop
+{
+	optional int32 playerAddExp = 1; 
+	optional int32 playerCurrentLevel = 2;
+	optional int32 playerCurrentExp = 3;
+	optional int32 playerCurrentPower = 4;
+	optional int32 playerCurrentPayedGold = 5;
+	optional int32 playerCurrentDonativeGold = 6;
+}
+
+message CardExpDrop
+{
+	optional int32 cardAddExp = 1; 
+	repeated bool isCardLevelMax = 2;
+	repeated bool isCardReachFourLevel = 3;
+	repeated int32 cardlevel = 4;
+	repeated FightingPosInfoM2C fightPosInfo= 5;
+        repeated CardBaseInfoM2C cardInfo = 6;	
+}
+
+message ObjectDrop
+{
+	repeated CardBaseInfoM2C cardinfo = 1;
+	repeated SkillData skillData = 2;
+   	repeated EquipmentData equipment = 3;
+   	repeated GhostBaseInfoM2C ghostinfo = 4;
+   	repeated ItemDrop itemDrop = 5;
+   	optional int32	goldCoinAdd = 6;
+	optional int32	sliverCoinAdd = 7;
+	optional PlayeExprDrop playerExpDrop = 8;
+	optional CardExpDrop cardexpDrop = 9;
+	repeated EquipFragmentDrop equipFragDropArray = 10;
+	repeated GemstoneClientDropData gemstoneDropArray =11;
+	repeated FriendsBaseInfo friendsList = 12;
+}
+
+message MSG_M2C_ITEM_OPEN_BOXORPACKS_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_ITEM_OPEN_BOXORPACKS_ACK];
+	required int32 errorcode = 2;
+	optional ObjectDrop objectDrop = 3;
+}
+
+message MSG_C2M_ITEM_USING_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_ITEM_USING_SYN];
+	required int32 itemID = 2;
+}
+
+message MSG_M2C_ITEM_USING_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_ITEM_USING_ACK];
+	required int32 errorcode = 2;
+	optional int32 itemID = 3;
+	optional int32 value = 4;
+}
+
+message MSG_C2M_ITEM_ADD_PLAYER_OR_FIGHTCARD_EXP_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_ITEM_ADD_PLAYER_OR_FIGHTCARD_EXP_SYN];
+	required int32 itemID = 2;
+	optional int32 itemNum = 3;
+}
+
+message MSG_M2C_ITEM_ADD_PLAYER_OR_FIGHTCARD_EXP_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_ITEM_ADD_PLAYER_OR_FIGHTCARD_EXP_ACK];
+	optional int32 errorcode = 2;
+	optional ItemDrop reditemdrop = 3;
+	optional ObjectDrop objectDrop = 4;
+}
+
+message MSG_C2M_ITEM_ADD_ONE_CARD_EXP_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_ITEM_ADD_ONE_CARD_EXP_SYN];
+	required int32 itemID = 2;
+	required int32 cardIndex = 3;
+}
+
+message MSG_M2C_ITEM_ADD_ONE_CARD_EXP_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_ITEM_ADD_ONE_CARD_EXP_ACK];
+	optional int32 errorcode = 2; 
+	optional ItemDrop reditemdrop = 3;				//减少的经验道具
+	optional ItemDrop itemdropData = 4;				//可能返还低等级的经验道具
+	optional CardBaseInfoM2C generalCardInfo = 5;	//弟子的基本信息
+	optional FightingPosInfoM2C fightPosInfo = 6;	//如果该弟子上阵，阵位信息
+	optional int32 cardLevel = 7;					//弟子等级
+	optional bool isCardLevelMax = 8;				//该弟子是否达到掌门等级四倍
+	optional bool isCardReachFourLevel = 9;			//
+} 
+
+message MSG_M2D_ITEM_MARKET_SYN
+{
+	optional MESSAGEID messageID = 1[default = M2D_ITEM_MARKET_SYN];
+}
+
+message ItemMarketDB
+{
+    required int32 itemID = 1;            //道具ID    
+    required int32 dataSellType = 2;      //售卖类型
+    required int32 disCountPrice = 3;     //特价
+    required int64 startTime = 4;        //开始时间
+    required int64 endTime = 5;          //结束时间	
+    optional int32 dbFlag = 6;              //操作（增、删、改）
+}
+
+message MSG_D2M_ITEM_MARKET_ACK
+{
+	optional MESSAGEID messageID = 1[default = D2M_ITEM_MARKET_ACK];
+	repeated ItemMarketDB itemMarket = 2;
+	required bool isfinish = 3;            //道具ID    
+} 
+
+message MSG_M2D_ITEM_UPDATE_MARKET_SYN
+{
+	optional MESSAGEID messageID = 1[default = M2D_ITEM_UPDATE_MARKET_SYN];
+	repeated ItemMarketDB itemMarket = 2;
+}
+
+message MSG_C2M_ITEM_MARKET_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_ITEM_MARKET_SYN];
+}
+
+message ItemMarketData
+{ 
+	optional int32 itemID = 1; 
+	optional int32 hadbuyNum = 2; 
+	optional int32 discountprice = 3;
+	optional int32 dataSellType = 4; 
+	optional int64 startTime = 5;
+	optional int64 endTime = 6;
+}
+
+message ItemMarketAllInfo
+{
+	repeated ItemMarketData itemMarketData = 1;
+	repeated ItemMarketData packsMarketData = 2;
+}
+
+message MSG_M2C_ITEM_MARKET_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_ITEM_MARKET_ACK];
+	required int32 errorcode = 2;
+	optional ItemMarketAllInfo itemMarketAllInfo= 3;
+	optional int64 serverTime = 4;
+} 
+
+message MSG_C2M_ITEM_BUY_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_ITEM_BUY_SYN];
+	required int32 itemID = 2;
+	required int32 itemNum = 3;
+	required int32 price = 4;
+}
+
+message MSG_M2C_ITEM_BUY_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_ITEM_BUY_ACK];
+	required int32 errorcode = 2;
+	optional ItemDrop itemDrop = 3;
+	optional ItemMarketAllInfo itemMarketAllInfo= 4;
+	optional int64 serverTime = 5;
+}
+
+enum PASS_EXPERIENCE_TYPE
+{
+        SECRET_PASS_EXPERIENCE = 1;
+        PASS_EXPERIENCE = 2; 
+}
+
+message MSG_C2M_PASS_EXPERIENCE_SYN
+{
+  optional MESSAGEID messageID = 1[default = C2M_PASS_EXPERIENCE_SYN];
+  required int32 acceptedCardIndex = 2;
+  required int32 distributeCardIndex = 3;
+  required PASS_EXPERIENCE_TYPE passType = 4;
+}
+
+message MSG_M2C_PASS_EXPERIENCE_ACK
+{
+  optional MESSAGEID messageID = 1[default = M2C_PASS_EXPERIENCE_ACK];
+  optional FightingPosInfoM2C fightPosInfo= 2;
+  repeated CardBaseInfoM2C cardInfo = 3;
+  repeated ItemDrop itemDrop = 4;
+  required int32 errorcode = 5;             
+}
+
+enum CARD_TRAIN_TYPE
+{
+        NORMAL_TRAIN_ONE_TIME = 1;
+        NORMAL_TRAIN_TEN_TIME = 2;
+        METICULOUS_TRAIN_ONE_TIME = 3; 
+        METICULOUS_TRAIN_TEN_TIME = 4; 
+}
+
+message MSG_C2M_CARD_TRAIN_REQUREST_SYN
+{
+  optional MESSAGEID messageID = 1[default = C2M_CARD_TRAIN_REQUREST_SYN];
+  required int32 trainCardIndex = 2;
+  required CARD_TRAIN_TYPE trainType = 3; 
+}
+
+message MSG_M2C_CARD_TRAIN_REQUREST_ACK
+{
+ optional MESSAGEID messageID = 1[default = M2C_CARD_TRAIN_REQUREST_ACK];
+ optional int32 errorcode = 2;  
+ optional CardBaseInfoM2C cardInfo = 3;
+ optional ItemDrop itemDrop = 4;
+ optional int32 useGoldNum = 5;
+ optional int32 cardTrainCount = 6;
+}
+
+message MSG_C2M_CARD_UPGRADE_QUALITY_SYN
+{
+  optional MESSAGEID messageID = 1[default = C2M_CARD_UPGRADE_QUALITY_SYN];
+  required int32 upgradeQualityCardID = 2;
+  repeated int32 fertilizerCardIDs = 3;
+  repeated int32 fetilizerGhostIDs = 4;
+}
+
+message MSG_M2C_CARD_UPGRADE_QUALITY_ACK
+{
+   optional MESSAGEID messageID = 1[default = M2C_CARD_UPGRADE_QUALITY_ACK]; 
+   required int32 errorCode = 2;
+   optional bool isUpgradeSucceed = 3;
+   optional CardBaseInfoM2C upgradeCard = 4;
+   optional FightingPosInfoM2C upgradeCardFightPos = 5;
+}
+
+enum CARD_TRAIN_OPERATION
+{
+       CARD_TRAIN_ACCEPT = 1;
+       CARD_TRAIN_CANCEL = 2;
+}
+
+message MSG_C2M_CARD_TRAIN_CONFIRM_SYN
+{
+ optional MESSAGEID messageID = 1[default = C2M_CARD_TRAIN_CONFIRM_SYN];
+ required int32 trainCardIndex = 2; 
+ required CARD_TRAIN_OPERATION trainConfirm = 3;    
+}
+
+message MSG_M2C_CARD_TRAIN_CONFIRM_ACK
+{
+  optional MESSAGEID messageID = 1[default = M2C_CARD_TRAIN_CONFIRM_ACK];
+  optional FightingPosInfoM2C fightPosInfo= 2;
+  optional CardBaseInfoM2C cardInfo = 3;
+  required int32 errorcode = 5;  
+}
+
+//消息系统
+//获取所有消息
+message MSG_C2M_MESSAGESYSTEM_GETALL_SYN
+{
+ 	optional MESSAGEID messageID = 1[default = C2M_MESSAGESYSTEM_GETALL_SYN];
+}
+
+message AwardTypeMessage
+{
+	optional int32 playerID = 1;
+	optional int64 MsgID = 2;
+	optional string title = 3;
+	optional string content = 4;
+	optional int64 startTime = 5;
+	optional int64 endTime = 6;
+	repeated AwardMessageInfo awardInfo = 7;
+	optional bool readFlag = 8;
+	optional bool sendFlag = 9;
+	optional int32 typeFlag = 10;
+}
+
+message ClickTypeMessage
+{
+	optional int32 playerID = 1;
+	optional int64 MsgID = 2;
+	optional string title = 3;
+	optional string content = 4;
+	optional int64 startTime = 5;
+	optional int64 endTime = 6;
+	optional bool readFlag = 7;
+	optional int32 messageShowType = 8;
+	optional int32 targetPage = 9;
+	optional int32 actionPlayerID = 10;
+	optional int32 Importance = 11;
+	optional bool sendFlag = 12;
+}
+
+message TipsTypeMessage
+{
+    	optional int32 playerID = 1;
+	optional int64 MsgID = 2;
+	optional string title = 3;
+	optional string content = 4;
+	optional int64 startTime = 5;
+	optional int64 endTime = 6;
+	optional bool readFlag = 7;
+	optional int32 messageShowType = 8;
+	optional int32 actionPlayerID = 9;
+	optional int32 Importance = 10;
+	optional bool sendFlag = 11;
+	optional int32 colorType = 12;
+	optional int32 vip = 13;
+	optional string actionPlayerName = 14;
+}
+
+message MSG_M2C_MESSAGESYSTEM_GETALL_ACK
+{
+  	optional MESSAGEID messageID = 1[default = M2C_MESSAGESYSTEM_GETALL_ACK];
+  	required int32 errorcode = 2;
+	optional bool IsIncremental = 3;
+  	repeated AwardTypeMessage awards= 4;
+  	repeated ClickTypeMessage clicks = 5;
+  	repeated TipsTypeMessage tips = 6; 
+	repeated TipsTypeMessage chats = 7;
+	repeated MsgTipsFlag msgTipsFlag = 8;
+	repeated int32 deleteMsgs = 9;
+	optional int32 dailyMissionAwardNum = 10;
+	optional int32 linkMissionAwardNum = 11;
+}
+
+//增量获取消息
+message MSG_C2M_MESSAGESYSTEM_INCREMENTAL_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_MESSAGESYSTEM_INCREMENTAL_SYN];
+	repeated int32 msgIDs = 2;
+}
+
+//增加消息
+message MSG_G2M_MESSAGESYSTEM_ADD_SYN
+{
+ 	optional MESSAGEID messageID = 1[default = G2M_MESSAGESYSTEM_ADD_SYN];
+ 	repeated AwardTypeMessage award = 2;
+ 	repeated ClickTypeMessage click = 3;
+ 	repeated TipsTypeMessage tip = 4;
+}
+
+message MSG_M2G_MESSAGESYSTEM_ADD_ACK
+{
+ 	optional MESSAGEID messageID = 1[default = M2G_MESSAGESYSTEM_ADD_ACK];
+ 	required int32 errorcode = 2;
+}
+
+//大喇叭聊天消息
+message MSG_C2M_MESSAGESYSTEM_CHAT_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_MESSAGESYSTEM_CHAT_SYN];
+	optional string content = 2;
+}
+
+message MSG_M2C_MESSAGESYSTEM_CHAT_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_MESSAGESYSTEM_CHAT_ACK];
+	optional int32 errorCode = 2;
+}
+
+//设置读标记
+message MessageInfo
+{
+	optional int64 msgID = 1;
+	optional int32 msgType = 2;
+}
+
+message MSG_C2M_MESSAGESYSTEM_READ_SYN
+{
+ 	optional MESSAGEID messageID = 1[default = C2M_MESSAGESYSTEM_READ_SYN];
+	repeated MessageInfo msg = 2;
+}
+
+message MSG_M2C_MESSAGESYSTEM_READ_ACK
+{
+ 	optional MESSAGEID messageID = 1[default = M2C_MESSAGESYSTEM_READ_ACK];
+ 	required int32 errorcode = 2;
+}
+
+//领取获奖标记
+message MSG_C2M_MESSAGESYSTEM_ACCPETAWARD_SYN
+{
+ 	optional MESSAGEID messageID = 1[default = C2M_MESSAGESYSTEM_ACCPETAWARD_SYN];
+	optional MessageInfo msg = 2;
+}
+
+message MSG_M2C_MESSAGESYSTEM_ACCPETAWARD_ACK
+{
+ 	optional MESSAGEID messageID = 1[default = M2C_MESSAGESYSTEM_ACCPETAWARD_ACK];
+ 	required int32 errorcode = 2;
+    optional ObjectDrop objectDrop = 3;
+}
+
+//提示消息当日显示标记
+message MSG_C2M_MESSAGESYSTEM_TIPS_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_MESSAGESYSTEM_TIPS_SYN];
+	repeated int32 msgType = 2;
+}
+
+message MSG_M2C_MESSAGESYSTEM_TIPS_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_MESSAGESYSTEM_TIPS_ACK];
+	required int32 errorcode = 2;
+}
+//数据库获取信息
+message MSG_M2D_MESSAGESYSTEM_GETALL_SYN
+{
+ 	optional MESSAGEID messageID = 1[default = M2D_MESSAGESYSTEM_GETALL_SYN];
+	optional int32 startId = 2;
+	optional int32 endId = 3;
+}
+
+message DBAwardTypeMessage
+{
+	optional AwardTypeMessage award = 1;
+	optional int32 dbOPeration = 2;
+}
+
+message DBClickTypeMessage
+{
+	optional ClickTypeMessage click = 1;
+	optional int32 dbOPeration = 2;
+}
+
+message DBTipsTypeMessage
+{
+	optional TipsTypeMessage tip = 1;
+	optional int32 dbOPeration = 2;  
+}
+
+message MSG_D2M_MESSAGESYSTEM_MAX_MSGID
+{
+	optional MESSAGEID messageID = 1[default = D2M_MESSAGESYSTEM_MAX_MSGID];
+	optional int64 maxID = 2;
+	optional int32 msgNum = 3;
+}
+
+message MSG_D2M_MESSAGESYSTEM_GETALL_ACK
+{
+  	optional MESSAGEID messageID = 1[default = D2M_MESSAGESYSTEM_GETALL_ACK];
+  	repeated DBAwardTypeMessage awardsDB= 2;
+  	repeated DBClickTypeMessage clicksDB = 3;
+  	repeated DBTipsTypeMessage tipsDB = 4; 
+}
+
+message MSG_M2D_MESSAGESYSTEM_FETCH_SYN
+{
+	optional MESSAGEID messageID = 1[default = M2D_MESSAGESYSTEM_FETCH_SYN];
+}
+
+//数据库服务器告诉GameServer，拉取消息系统信息完成
+message MSG_D2M_MESSAGESYSTEM_GETALL_FINISH
+{
+	optional MESSAGEID messageID = 1 [default =  D2M_MESSAGESYSTEM_GETALL_FINISH];
+}
+
+//消息系统DB更新(即时更新)
+message MSG_M2D_MESSAGESYSTEM_UPDATE_AWARD_SYN
+{
+	optional MESSAGEID messageID = 1[default = M2D_MESSAGESYSTEM_UPDATE_AWARD_SYN];
+	optional DBAwardTypeMessage awardDB = 2;
+}
+
+message MSG_M2D_MESSAGESYSTEM_UPDATE_CLICK_SYN
+{
+	optional MESSAGEID messageID = 1[default = M2D_MESSAGESYSTEM_UPDATE_CLICK_SYN];
+	optional DBClickTypeMessage clickDB = 2;
+}
+
+message MSG_M2D_MESSAGESYSTEM_UPDATE_TIPS_SYN
+{
+	optional MESSAGEID messageID = 1[default = M2D_MESSAGESYSTEM_UPDATE_TIPS_SYN];
+	optional DBTipsTypeMessage tipsDB = 2;
+}
+
+//刷新全部好友系统消息
+message MSG_C2M_REFRESH_FRIENDS_MSG_SYN
+{
+        optional MESSAGEID messageID = 1[default = C2M_REFRESH_FRIENDS_MSG_SYN];
+}
+
+message MSG_M2C_REFRESH_FRIENDS_MSG_ACK
+{
+       optional MESSAGEID messageID = 1[default = M2C_REFRESH_FRIENDS_MSG_ACK];
+       optional FriendsInfoM2C friendsInfo = 2;
+       required int32 errorcode = 3;
+       
+       optional MSG_M2C_GET_RUNNING_OPERATIONG_ACTIVITY_INFO_ACK msgOPerationAcitivity = 4;   //跟随刷新好友信息刷新运营活动
+       optional bool isMysteryShopOpen = 5;
+	optional int32 dailyMissionAwardNum = 6;
+	optional int32 linkMissionAwardNum = 7;													  //神秘商店是否开启
+}
+
+//刷新好友增量消息
+message MSG_C2M_REFRESH_NEW_FRIENDS_MSG_SYN
+{
+		optional MESSAGEID messageID = 1[default = C2M_REFRESH_NEW_FRIENDS_MSG_SYN];
+}
+
+message MSG_M2C_REFRESH_NEW_FRIENDS_MSG_ACK
+{
+       optional MESSAGEID messageID = 1[default = M2C_REFRESH_NEW_FRIENDS_MSG_ACK];
+       optional FriendsInfoM2C friendsInfo = 2;
+       required int32 errorcode = 3;
+}
+
+//客户端请求搜索玩家
+message MSG_C2M_SEARCH_FRIENDS_SYN
+{
+        optional MESSAGEID messageID = 1[default = C2M_SEARCH_FRIENDS_SYN];
+        required string searchContent = 2;
+}
+
+message MSG_M2C_SEARCH_FRIENDS_ACK
+{
+        optional MESSAGEID messageID = 1[default = M2C_SEARCH_FRIENDS_ACK];
+        repeated FriendsBaseInfo friendsList = 2;
+        required int32 errorcode = 3;
+}
+
+//邀请好友
+message MSG_C2M_INVITE_FRIEND_SYN
+{
+        optional MESSAGEID messageID = 1[default = C2M_INVITE_FRIEND_SYN];
+        required int32  friendPlayerID = 2;                 //邀请好友的ID
+}
+
+message MSG_M2C_INVITE_FRIEND_ACK
+{
+        optional MESSAGEID messageID = 1[default = M2C_INVITE_FRIEND_ACK];
+        required int32 errorcode = 2;
+}	
+
+enum FRIEND_OPERATION
+{
+        AGREE_INVITATION = 1;
+        REJECT_INVITATION = 2;
+}
+
+//获取邀请好友状态
+message MSG_C2M_GET_FRIENDS_INVITE_STATUS_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_GET_FRIENDS_INVITE_STATUS_SYN];
+}
+
+message MSG_M2C_GET_FRIENDS_INVITE_STATUS_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_GET_FRIENDS_INVITE_STATUS_ACK];
+	repeated FriendsInviteStatus inviteStatus = 2;
+    required int32 errorcode = 3;
+}
+
+//确认邀请
+message MSG_C2M_CONFIRM_INVITE_SYN
+{
+        optional MESSAGEID messageID = 1[default = C2M_CONFIRM_INVITE_SYN];
+        repeated int32 inviterPlayerID = 2;
+        required FRIEND_OPERATION operation = 3;
+}
+
+message MSG_M2C_CONFIRM_INVITE_ACK
+{
+        optional MESSAGEID messageID = 1[default = M2C_CONFIRM_INVITE_ACK];
+        required int32 errorcode = 2;
+        repeated FriendsInfoM2C friendsInfo = 3;
+        repeated int32 failedPlayerIDList = 4;
+}
+
+//删除好友
+message MSG_C2M_DELETE_FRIEND_SYN
+{
+      optional MESSAGEID messageID = 1[default = C2M_DELETE_FRIEND_SYN];  
+      required int32 deletePlayerID = 2;
+}
+
+message MSG_M2C_DELETE_FRIEND_ACK
+{
+     optional MESSAGEID messageID = 1[default = M2C_DELETE_FRIEND_ACK];  
+     required int32 errorcode = 2;
+     optional FriendsInfoM2C friendsInfo = 3;
+}
+
+//查看好友阵容
+message MSG_C2M_WATCH_FRIEND_FIGHT_POS_SYN
+{
+      optional MESSAGEID messageID = 1[default = C2M_WATCH_FRIEND_FIGHT_POS_SYN];  
+      required int32 friendPlayerID = 2;  
+}
+
+message MSG_M2C_WATCH_FRIEND_FIGHT_POS_ACK
+{
+      optional MESSAGEID messageID = 1[default = M2C_WATCH_FRIEND_FIGHT_POS_ACK];  
+      optional string playerName = 2;
+      optional int32 playerLevel = 3;
+      repeated OtherPlayerFightingPosInfo fightPos = 4;
+      required int32 errorcode = 5;
+}
+
+//标记消息
+message MSG_C2M_MARK_MSG_READ_SYN
+{
+     optional MESSAGEID messageID = 1[default = C2M_MARK_MSG_READ_SYN ];    
+     repeated int32 PlayerIDList = 2;
+     repeated int32 duelEnemyMsgIndexList = 3;
+     repeated int32 leaveMsgIndexList = 4;
+     repeated int32 ladderEnemyMsgIndexList = 5;
+}
+
+message MSG_M2C_MARK_MSG_READ_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_MARK_MSG_READ_ACK ];    
+	required int32 errorcode = 2;
+}
+
+//写日志到LogServer
+message MSG_M2L_LOG_SYN
+{
+	optional MESSAGEID messageID = 1[default = M2L_LOG_SYN];
+	optional int32	type = 2;
+	optional string content = 3;
+}
+
+//封禁DB玩家
+message MSG_M2D_BAN_PLAYER_SYN
+{
+	optional MESSAGEID messageID = 1[default = M2D_BAN_PLAYER_SYN];
+	optional int32  playerid = 2;
+	optional int32  optype = 3;
+	optional int64  endtime = 4;
+}
+
+//禁言DB玩家
+message MSG_M2D_BAN_SPEAK_SYN
+{
+	optional MESSAGEID messageID = 1[default = M2D_BAN_SPEAK_SYN];
+	optional int32 playerid = 2;
+	optional int32 optype = 3;
+	optional int64 endtime = 4;
+}
+
+//给好友留言
+message MSG_C2M_SEND_MESSAGE_SYN
+{
+     optional MESSAGEID messageID = 1[default = C2M_SEND_MESSAGE_SYN ]; 
+     required int32 receiverPlayerID = 2;
+     required string msgContent = 3;  
+}
+
+message MSG_M2C_SEND_MESSAGE_ACK
+{
+     optional MESSAGEID messageID = 1[default = M2C_SEND_MESSAGE_ACK ]; 
+     required int32 errorcode = 2;
+}
+
+//论剑留言
+message MSG_C2M_DUEL_SEND_MESSAGE_SYN
+{
+     optional MESSAGEID messageID = 1[default = C2M_DUEL_SEND_MESSAGE_SYN ]; 
+     required int32 receiverPlayerRank = 2;
+     required string msgContent = 3;  
+}
+
+message MSG_M2C_DUEL_SEND_MESSAGE_ACK
+{
+     optional MESSAGEID messageID = 1[default = M2C_DUEL_SEND_MESSAGE_ACK ]; 
+     required int32 errorcode = 2;
+}
+
+message FriendsInfoDB
+{
+	required int32 PlayerId = 1;
+	required string AccID = 2;
+	required string PlayerName = 3;
+	required int32 PlayerLevel = 4;
+	required int32 PlayerVipLevel = 5;
+	required bytes FriendsList = 6;
+	required bytes InvitationMsgList = 7;
+	required bytes LeaveMsgList = 8;
+	required bytes DuelEnemyMsgList = 9;
+	optional int32 dbOperation = 10;
+	required bytes LadderEnemyMsgList = 11;
+	required bytes InviteStatusList = 12;
+}
+
+//向DB更新Friends基本信息
+message MSG_M2D_FRIEND_MSG_UPDATE_SYN 
+{
+    optional MESSAGEID messageID = 1 [default = M2D_FRIEND_MSG_UPDATE_SYN ]; 
+    required FriendsInfoDB friendsInfo = 2;
+}
+
+
+//向数据库拉起好友列表
+message MSG_M2D_PULL_FRIENDS_INFO_SYN
+{
+	optional MESSAGEID messageID = 1 [default = M2D_PULL_FRIENDS_INFO_SYN];
+}
+
+message MSG_D2M_PULL_FRIENDS_INFO_ACK
+{
+	optional MESSAGEID messageID = 1 [default = D2M_PULL_FRIENDS_INFO_ACK];
+	repeated FriendsInfoDB friendsInfo = 2;
+}
+
+//向数据库拉起好友列表完成
+message MSG_D2M_PULL_FRIENDS_INFO_FINISH
+{
+	optional MESSAGEID messageID = 1 [default = D2M_PULL_FRIENDS_INFO_FINISH];
+}
+
+
+message GoodsItem
+{
+    required int32 itemID = 1;            //道具ID    
+    required int32 dataSellType = 2;      //售卖类型
+    required int32 disCountPrice = 3;     //特价
+    required int64 startTime = 4;        //开始时间
+    required int64 endTime = 5;          //结束时间	
+    required int32 operation = 6;        //操作（增、删、改）
+}
+
+
+
+message MSG_G2G_NOTICE
+{
+ 	optional MESSAGEID messageID = 1[default = G2G_NOTICE];
+ 	repeated AwardTypeMessage award = 2;
+ 	repeated ClickTypeMessage click = 3;
+ 	repeated TipsTypeMessage tip = 4;
+ 	required int32  serverID = 5;
+}
+
+message MSG_G2G_ACCOUNT_AWARD_NOTICE
+{
+	optional MESSAGEID messageID = 1[default = G2G_ACCOUNT_AWARD_NOTICE];
+	required int32 serverID = 2;
+	optional string AccID = 3;
+	optional int64 MsgID = 4;
+	optional string title = 5;
+	optional string content = 6;
+	optional int64 startTime = 7;
+	optional int64 endTime = 8;
+	repeated AwardMessageInfo awardInfo = 9;
+	optional bool readFlag = 10;
+	optional bool sendFlag = 11;
+}
+
+message MSG_BANNED_PLAYER{
+	optional MESSAGEID messageID = 1 [default =G2G_BANNED_PLAYER];
+	repeated int32 players = 2;
+	required int32 serverID = 3;
+	required int64 startTime = 4;  //永久封禁为0
+	required int64 endTime = 5;   //永久封禁为0
+	required int32 operation = 6;   //1为封禁, 2为解封
+	required int32 importance = 7; // 1-9 :9最重要
+}
+
+message MSG_GOODS_DISCOUNT{
+	optional MESSAGEID messageID = 1 [default =G2G_GOODS_DISCOUNT];
+	repeated GoodsItem goods = 2;	
+	repeated int32 serverID = 3;
+}
+
+enum ACTIVITY_AVARD_STATUS
+{
+        AVAILABLE = 1;
+        CARRY_ON = 2;
+        ALREADY_RECEIVE = 3;
+        NOT_START = 4;
+        TIME_PAST = 5;         
+}
+
+message ActivityAward
+{
+        optional int64 awardIndex = 1;
+        optional ACTIVITY_AVARD_STATUS status = 2;
+        optional int32 receivePosition = 3;
+        optional ObjectDrop dropItem = 4;
+  	optional int64 msgID = 5;
+}
+
+//运营活动冲级奖励
+message ActivityUpgradeAwards
+{
+        repeated ActivityAward awardsList = 1;
+}
+
+//运营活动劳苦卓著奖励
+message ActivityHardWarkAwards
+{
+        repeated ActivityAward awardList = 1;
+        optional int32 activityLeftSeconds = 2;
+        optional bool isActivityOver = 3[default = false];
+}
+
+//运营活动连续登陆
+message ActivityContinusLoginAwards
+{
+        repeated ActivityAward awardList = 1;
+}
+
+//运营活动吃人参果
+message ActivityEatGinseng
+{
+       required ACTIVITY_AVARD_STATUS lauchStatus = 1;
+       required ACTIVITY_AVARD_STATUS dinnerStatus = 2;
+       optional int32 addPhysicalPowerNum = 3;
+       optional int32 currentHour = 4;
+}
+
+//运营活动八卦阵
+message ActivityEightGraph
+{
+       required bool isAvailable = 1;
+       optional bool havePlayedToday = 2;
+       optional int32 lastGetPosition = 3;
+       repeated ActivityAward awardList = 4; 
+}
+
+//运营活动招财进宝
+message ActivityFortune
+{
+        required bool isAvailable = 1;
+        optional int32 putInGoldNum = 2; 
+        optional int32 lastGoldNum = 3;                 //上次随机产生的元宝数目
+        optional int64 activityLeftSeconds = 4;         //剩余时间
+	optional bool haveGetAllAwards = 5;		//是否领完所有奖品	 
+}
+
+//获取活动领奖(连续登陆，劳苦卓著，升级，吃鸡)
+message MSG_C2M_GET_ACTIVITY_INFO_SYN
+{
+        optional MESSAGEID messageID = 1 [default = C2M_GET_ACTIVITY_INFO_SYN];
+        required string ChannelID = 2;					//渠道号
+}
+
+message MSG_M2C_GET_ACTIVITY_INFO_ACK
+{
+        optional MESSAGEID messageID = 1 [default = M2C_GET_ACTIVITY_INFO_ACK];
+        required int32 errorcode = 2;
+        optional ActivityUpgradeAwards activityUpgradeAwards = 3;
+        optional ActivityHardWarkAwards activityHardWarkAward = 4;
+        optional ActivityContinusLoginAwards activityContinusLoginAward = 5;
+        optional ActivityEatGinseng activityEatGinseng = 6;
+		repeated VipCardClientData vipCardDataArray = 7;
+}
+
+//获取正在进行的运营活动（八卦阵，迎财神）
+message MSG_C2M_GET_RUNNING_OPERATIONG_ACTIVITY_INFO_SYN
+{
+        optional MESSAGEID messageID = 1 [default = C2M_GET_RUNNING_OPERATIONG_ACTIVITY_INFO_SYN];
+}
+
+message MSG_M2C_GET_RUNNING_OPERATIONG_ACTIVITY_INFO_ACK
+{
+        optional MESSAGEID messageID = 1 [default = M2C_GET_RUNNING_OPERATIONG_ACTIVITY_INFO_ACK];
+        required int32 errorcode = 2;
+        optional ActivityEightGraph activityEightGraph = 3;
+        optional ActivityFortune activityFortune = 4;
+        optional bool isCDKeyAvailable = 5;
+        optional bool isApprenticeAward = 6;
+        optional bool isOpenVIPCardPrize = 7;
+        optional bool isPayAvailable = 8;
+        optional bool isMainPageAvailable = 9;
+		optional int32 rankActivityStatus = 10;
+		optional int32 cutDown = 11;
+		optional string rankActivityTitle = 12;
+		optional int32 treasureActivityCutDown = 13;
+		optional int32 getCardActivityCutDown = 14;
+}
+
+//GM控制迎财神活动
+message MSG_G2M_ACTIVITY_FORTUNE_SET_SYN
+{
+        optional MESSAGEID messageID = 1 [default = G2M_ACTIVITY_FORTUNE_SET_SYN];
+        required bool isNewPlayerOpen = 2;
+        required int32 newPlayerOPenDays = 3;
+        required int64 operatingStartTime = 4;
+        required int64 operatingEndTime = 5;
+        required bool isOperatingActivityOpen = 6;
+}
+
+message MSG_M2G_ACTIVITY_FORTUNE_SET_ACK
+{
+        optional MESSAGEID messageID = 1 [default = M2G_ACTIVITY_FORTUNE_SET_ACK];
+        required int32 errorcode = 2;
+}
+
+
+//运营活动八卦阵 
+message MSG_C2M_RECEIVE_ACTIVITY_EIGHT_GRAPH_SYN
+{
+        optional MESSAGEID messageID = 1 [default = C2M_RECEIVE_ACTIVITY_EIGHT_GRAPH_SYN];
+}
+
+message MSG_M2C_RECEIVE_ACTIVITY_EIGHT_GRAPH_ACK
+{
+        optional MESSAGEID messageID = 1 [default = M2C_RECEIVE_ACTIVITY_EIGHT_GRAPH_ACK ];
+        required int32 errorcode = 2;
+        optional ObjectDrop dropItem = 3;
+        optional ActivityEightGraph activityEightGraph = 4; 
+        optional int32 receiveAwardID = 5;
+        optional int32 lastGetPosition = 6;
+}
+
+//运营活动招财进宝
+message MSG_C2M_RECEIVE_ACTIVITY_FORTUNE_SYN
+{
+        optional MESSAGEID messageID = 1 [default =  C2M_RECEIVE_ACTIVITY_FORTUNE_SYN];
+}
+
+message MSG_M2C_RECEIVE_ACTIVITY_FORTUNE_ACK
+{
+        optional MESSAGEID messageID = 1 [default = M2C_RECEIVE_ACTIVITY_FORTUNE_ACK ];
+        required int32 errorcode = 2;
+        optional ObjectDrop dropItem = 3;
+        optional ActivityFortune activityFortune = 4;
+}
+
+
+//运营活动升级领奖
+message MSG_C2M_RECEIVE_ACTIVITY_UPGRADE_AWARD_SYN
+{
+        optional MESSAGEID messageID = 1 [default = C2M_RECEIVE_ACTIVITY_UPGRADE_AWARD_SYN];
+        required int32 awardID = 2;
+        required int64 msgID = 3;
+}
+
+message MSG_M2C_RECEIVE_ACTIVITY_UPGRADE_AWARD_ACK
+{
+        optional MESSAGEID messageID = 1 [default = M2C_RECEIVE_ACTIVITY_UPGRADE_AWARD_ACK];
+        required int32 errorcode = 2;
+        optional ObjectDrop dropItem = 3;
+        optional ActivityUpgradeAwards activityUpgradeAwards = 4;
+}
+
+//运营活动劳苦卓绝
+message MSG_C2M_RECEIVE_ACTIVITY_HARD_WORK_SYN
+{
+        optional MESSAGEID messageID = 1 [default = C2M_RECEIVE_ACTIVITY_HARD_WORK_SYN];
+        required int64 hardworkAwardsTime = 2;
+        required int64 msgID = 3;
+}
+
+message MSG_M2C_RECEIVE_ACTIVITY_HARD_WORK_ACK
+{
+        optional MESSAGEID messageID = 1 [default = M2C_RECEIVE_ACTIVITY_HARD_WORK_ACK];
+        required int32 errorcode = 2;
+        optional ObjectDrop dropItem = 3;
+        optional ActivityHardWarkAwards activityHardWorkAwards = 4;
+}
+
+message MSG_C2M_ACTIVITY_HARD_WORK_EXPIRED_SYN
+{
+        optional MESSAGEID messageID = 1 [default =  C2M_ACTIVITY_HARD_WORK_EXPIRED_SYN];
+}
+
+message MSG_M2C_ACTIVITY_HARD_WORK_EXPIRED_ACK
+{
+         optional MESSAGEID messageID = 1 [default =  M2C_ACTIVITY_HARD_WORK_EXPIRED_ACK];
+         required int32 errorcode = 2;
+         optional int32 activityLeftSeconds = 3;
+}
+
+//运营活动连续登陆领奖
+message MSG_C2M_RECEIVE_CONTINOUS_LOGIN_AWARD_SYN
+{
+        optional MESSAGEID messageID = 1 [default = C2M_RECEIVE_CONTINOUS_LOGIN_AWARD_SYN]; 
+        required int32 awardDays = 2;
+        required int64 msgID = 3;
+}
+
+message MSG_M2C_RECEIVE_CONTINOUS_LOGIN_AWARD_ACK
+{
+        optional MESSAGEID messageID = 1 [default = M2C_RECEIVE_CONTINOUS_LOGIN_AWARD_ACK];
+        required int32 errorcode = 2;
+        optional ObjectDrop dropItem = 3;
+        optional ActivityContinusLoginAwards activityContinousActivity = 4;
+}
+
+//运营活动吃人参果
+message MSG_C2M_RECEIVE_ACTIVITY_EAT_GINSENG_SYN
+{
+        optional MESSAGEID messageID = 1 [default = C2M_RECEIVE_ACTIVITY_EAT_GINSENG_SYN];
+}
+
+message MSG_M2C_RECEIVE_ACTIVITY_EAT_GINSENG_ACK
+{
+        optional MESSAGEID messageID = 1 [default = M2C_RECEIVE_ACTIVITY_EAT_GINSENG_ACK ];
+        required int32 errorcode = 2;
+        optional int32 currentPhysicalPower = 3;
+        optional ActivityEatGinseng activityEatGinseng = 4;
+        optional int64 msgID = 5;
+}
+
+//角色更名
+message MSG_C2M_MODIFYNAME_SYN
+{
+	optional MESSAGEID messageID = 1 [default = C2M_MODIFYNAME_SYN];
+	optional string name = 2;
+}
+
+message MSG_M2C_MODIFYNAME_ACK
+{
+	optional MESSAGEID messageID = 1 [default = M2C_MODIFYNAME_ACK];
+	required int32 errorcode = 2;
+	optional string name = 3;
+	optional ItemDrop itemDrop = 4;
+}
+
+message MSG_M2D_MODIFYNAME_SYN
+{
+	optional MESSAGEID messageID = 1 [default = M2D_MODIFYNAME_SYN];
+	optional int32 playerId = 2;
+	optional string name = 3;
+}
+
+message MSG_D2M_MODIFYNAME_ACK
+{
+	optional MESSAGEID messageID = 1[default = D2M_MODIFYNAME_ACK];
+	required int32 errorCode = 2;
+	optional int32 playerId = 3;
+	optional string name = 4;
+}
+
+// 引导			
+message MSG_C2M_GUIDE_SET_GUIDE_ID_SYN
+{
+    optional MESSAGEID messageID = 1 [default =  C2M_GUIDE_SET_GUIDE_ID_SYN];
+    optional int32 guideID = 2;
+}
+
+message MSG_M2C_GUIDE_SET_GUIDE_ID_ACK
+{
+    optional MESSAGEID messageID = 1 [default = M2C_GUIDE_SET_GUIDE_ID_ACK];
+    required int32 errorcode = 2;
+    optional GuidePartContext context = 3;    
+    optional GuiedRewardGroup rewardGroup = 4;
+}
+
+//检测门派名是否存在
+message MSG_C2M_CHECK_IF_NAME_EXIST_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_CHECK_IF_NAME_EXIST_SYN];
+	optional string name = 2;
+}
+
+message MSG_M2C_CHECK_IF_NAME_EXIST_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_CHECK_IF_NAME_EXIST_ACK];
+	optional string name = 2;
+	optional int32  errorcode = 3;
+}
+
+message MSG_M2D_CHECK_IF_NAME_EXIST_SYN
+{
+	optional MESSAGEID messageID = 1[default = M2D_CHECK_IF_NAME_EXIST_SYN];
+	optional string name = 2;
+}
+
+message MSG_D2M_CHECK_IF_NAME_EXIST_ACK
+{
+	optional MESSAGEID messageID = 1[default = D2M_CHECK_IF_NAME_EXIST_ACK];
+	optional string name = 2;
+	optional int32 errorcode =3;
+}
+
+message MSG_CTRL_CMD
+{
+	optional MESSAGEID messageID = 1;
+}
+ 
+// 天梯系统 begin
+message MSG_C2M_LADDER_FETCH_CONTEXT_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_LADDER_FETCH_CONTEXT_SYN];
+	optional int32 containFightPosInfo = 2; // 是否拉取天梯阵容信息
+};
+
+message MSG_M2C_LADDER_FETCH_CONTEXT_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_LADDER_FETCH_CONTEXT_ACK];
+	required int32 errorcode = 2;
+	optional LadderPartContext context = 3;
+};
+
+enum LADDER_FIGHTINGPOS_OPERATION_TYPE
+{
+	NONE_LADDER_FIGHTINGPOS = 0;
+	SELECT_LADDER_FIGHTINGPOS = 1;
+	RESET_LADDER_FIGHTINGPOS = 2;
+}
+    
+message MSG_C2M_LADDER_OPERATION_FIGHTINGPOS_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_LADDER_OPERATION_FIGHTINGPOS_SYN]; 
+	optional LADDER_FIGHTINGPOS_OPERATION_TYPE OperationType = 2[default = NONE_LADDER_FIGHTINGPOS];
+}
+
+enum LADDER_FIGHTINGPOS_CHANGE_TYPE
+{
+	NONE_LADDER_FIGHTINGPOS_CHANGE_TYPE = 0;						//无操作
+	RESET_LADDER_FIGHTINGPOS_CHANGE_TYPE = 1;						//已被重置
+	UPDATE_LADDER_FIGHTINGPOS_CHANGE_TYPE = 2;						//已被更新
+	ADD_CARD_SLOT_LADDER_FIGHTINGPOS_CHANGE_TYPE = 3;				//已增加空槽位
+	FRIEND_CARD_LOSE_LADDER_FIGHTINGPOS_CHANGE_TYPE = 4;				//好友卡牌丢失
+}
+
+message MSG_M2C_LADDER_OPERATION_FIGHTINGPOS_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_LADDER_OPERATION_FIGHTINGPOS_ACK]; 
+	optional int32 errorcode = 2; 
+	repeated FightingPosInfoM2C ladderFightingPosInfo = 3;
+	optional LADDER_FIGHTINGPOS_CHANGE_TYPE  changeType = 4[default = NONE_LADDER_FIGHTINGPOS_CHANGE_TYPE];
+}
+
+message FriendCardBaseInfo
+{
+	required int32 cardIndex = 1;
+	required int32 ownerPlayerID = 2;		//如果不是好友关系就设置为0
+	required int32 cardID = 3;
+}
+//
+message MSG_M2D_LADDER_FIGHTINGPOS_GET_FRIENDS_CARD_INFO_SYN
+{
+	optional MESSAGEID messageID = 1[default = M2D_LADDER_FIGHTINGPOS_GET_FRIENDS_CARD_INFO_SYN]; 
+	required int32 PlayerID = 2;
+	repeated FriendCardBaseInfo friendCardArray = 3;
+}
+
+message MSG_D2M_LADDER_FIGHTINGPOS_GET_FRIENDS_CARD_INFO_ACK
+{
+	optional MESSAGEID messageID = 1[default = D2M_LADDER_FIGHTINGPOS_GET_FRIENDS_CARD_INFO_ACK]; 
+	optional int32 errorcode = 2;
+	optional int32 PlayerID = 3;
+	repeated CardBaseInfoDB friendCardInfoArray = 4;
+} 
+
+message MSG_C2M_LADDER_FIND_ENEMY_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_LADDER_FIND_ENEMY_SYN];
+};
+
+message MSG_M2C_LADDER_FIND_ENEMY_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_LADDER_FIND_ENEMY_ACK];
+	required int32 errorcode = 2;
+};
+
+message MSG_C2M_LADDER_FIGHT_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_LADDER_FIGHT_SYN];
+};
+
+message MSG_M2C_LADDER_FIGHT_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_LADDER_FIGHT_ACK];
+	required int32 errorcode = 2;
+	optional LadderFightResult fightResult = 3;
+};
+
+message MSG_C2M_LADDER_FIGHT_BACK_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_LADDER_FIGHT_BACK_SYN];
+	required int32 enemyPlayerID = 2;
+	required int64 genTime = 3;
+	required int32 seq = 4;
+};
+
+message MSG_M2C_LADDER_FIGHT_BACK_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_LADDER_FIGHT_BACK_ACK];
+	required int32 errorcode = 2;
+	optional LadderFightResult fightResult = 3;
+};
+
+message MSG_C2M_LADDER_FETCH_FIGHT_BACK_ENEMY_SYN
+{
+    optional MESSAGEID messageID = 1[default = C2M_LADDER_FETCH_FIGHT_BACK_ENEMY_SYN];
+    required int32 enemyPlayerID = 2;
+    required int64 genTime = 3;
+    required int32 seq = 4;
+};
+
+message MSG_M2C_LADDER_FETCH_FIGHT_BACK_ENEMY_ACK
+{
+    optional MESSAGEID messageID = 1[default = M2C_LADDER_FETCH_FIGHT_BACK_ENEMY_ACK];
+    required int32 errorcode = 2;
+    optional LadderAttribList attribList = 3; // 请求者的属性
+    optional LadderPlayer enemy = 4;
+    optional LadderWinEnemyReward winEnemyReward = 5;
+};
+
+message MSG_C2M_LADDER_FETCH_RANK_LIST_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_LADDER_FETCH_RANK_LIST_SYN];
+	required LadderEmbattle embattle = 2; // 拉取几人阵的排行榜，=LADDER_EMBATTLE_MAX表示拉取全部排行榜
+};
+
+message MSG_M2C_LADDER_FETCH_RANK_LIST_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_LADDER_FETCH_RANK_LIST_ACK];
+	required int32 errorcode = 2;
+	repeated LadderRankList rankLists = 3; // 下标参见LadderEmbattle
+	optional int64 generateTime = 4; // 生成排行榜的时间
+	optional int64 refreshTime = 5; // 刷新时间
+	optional LadderExtraContextCS extraContext = 6;
+};
+
+message MSG_C2M_LADDER_REDUCE_FATIGUE_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_LADDER_REDUCE_FATIGUE_SYN];
+};
+
+message MSG_M2C_LADDER_REDUCE_FATIGUE_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_LADDER_REDUCE_FATIGUE_ACK];
+	required int32 errorcode = 2;
+	optional int32 fatigueValue = 3; // 新的疲劳值
+	optional int32 reduceFatigueCount = 4; // 手动恢复疲劳值的次数 
+}; 
+		
+message MSG_C2M_LADDER_FRIENDCARDS_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_LADDER_FRIENDCARDS_SYN];
+	required int32 friendPlayerID = 2;
+};
+
+message MSG_M2C_LADDER_FRIENDCARDS_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_LADDER_FRIENDCARDS_ACK];
+	optional int32 errorcode = 2;
+ 	repeated CardBaseInfoM2C friendfightingcardsInfo = 3;
+};
+
+// 从db中拉取天梯系统玩家
+message MSG_M2D_LADDER_FETCH_PLAYER_SYN
+{
+	optional MESSAGEID messageID = 1[default = M2D_LADDER_FETCH_PLAYER_SYN];
+};
+
+message MSG_D2M_LADDER_FETCH_PLAYER_ACK
+{
+	optional MESSAGEID messageID = 1[default = D2M_LADDER_FETCH_PLAYER_ACK];
+	optional int32 errorcode = 2;
+	optional LadderPlayerList playerList = 3;
+};
+
+message MSG_D2M_LADDER_FETCH_PLAYER_FIN
+{
+	optional MESSAGEID messageID = 1[default = D2M_LADDER_FETCH_PLAYER_FIN];
+};
+
+// 从db中拉取天梯排行榜
+message MSG_M2D_LADDER_FETCH_RANK_LIST_SYN
+{
+	optional MESSAGEID messageID = 1[default = M2D_LADDER_FETCH_RANK_LIST_SYN];
+};
+
+message MSG_D2M_LADDER_FETCH_RANK_LIST_ACK
+{
+	optional MESSAGEID messageID = 1[default = D2M_LADDER_FETCH_RANK_LIST_ACK];
+	optional int32 errorcode = 2;
+	optional int64 id = 3;
+	optional LadderRankListAll lastRankListAll = 4; // 前一天的排行榜
+	optional LadderRankListAll realRankListAll = 5; // 实时排行榜
+	//optional int64 refreshTime = 6; // 刷新时间
+	optional int64 generateTime = 7; // 排行榜生成时间
+};
+
+message MSG_D2M_LADDER_FETCH_RANK_LIST_FIN
+{
+	optional MESSAGEID messageID = 1[default = D2M_LADDER_FETCH_RANK_LIST_FIN];
+};
+
+message MSG_M2D_LADDER_UPDATE_PLAYER_SYN
+{
+	optional MESSAGEID messageID = 1[default = M2D_LADDER_UPDATE_PLAYER_SYN];
+	optional DBOperate dbOperate = 2;
+	optional LadderPlayerListDB playerList = 3;
+};
+
+message MSG_M2D_LADDER_UPDATE_RANK_LIST_SYN
+{
+	optional MESSAGEID messageID = 1[default = M2D_LADDER_UPDATE_RANK_LIST_SYN];
+	optional DBOperate dbOperate = 2;
+	optional int64 id = 3;
+	optional int64 generateTime = 4;
+	optional LadderRankListAll lastRankListAll = 5; // 前一天的排行榜
+	optional LadderRankListAll realRankListAll = 6; // 实时排行榜
+	//optional int64 refreshTime = 7;
+};  
+		
+message MSG_C2M_LADDER_OTHERPLAYER_FIGHTINGPOS_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_LADDER_OTHERPLAYER_FIGHTINGPOS_SYN];
+	required int32 otherPlayerID = 2;
+};
+
+message MSG_M2C_LADDER_OTHERPLAYER_FIGHTINGPOS_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_LADDER_OTHERPLAYER_FIGHTINGPOS_ACK];
+	optional int32 errorcode = 2;
+	repeated OtherPlayerFightingPosInfo otherFightingInfo = 3;
+	optional int32 otherPlayerID = 4;
+	optional string otherPlayerName = 5;
+	optional int32 otherPlayerLevel = 6;
+};
+
+message MSG_C2M_LADDER_EXCHANGE_COIN_SYN
+{
+    optional MESSAGEID messageID = 1[default = C2M_LADDER_EXCHANGE_COIN_SYN];
+};
+
+message MSG_M2C_LADDER_EXCHANGE_COIN_ACK
+{
+    optional MESSAGEID messageID = 1[default = M2C_LADDER_EXCHANGE_COIN_ACK];
+    optional int32 errorcode = 2;
+    optional int32 playerCoin = 3; // 玩家银两值
+    optional int32 ladderCoin = 4; // 天梯小金库银两值
+}
+
+// 天梯系统 end 
+message MSG_G2G_DELETE_ANNOUNCEMENT
+{
+    optional MESSAGEID messageID = 1[default = G2G_DELETE_ANNOUNCEMENT];
+    required string title = 2;
+    required string content = 3;
+    required int32 serverID = 4;
+    repeated int32 playerIDs = 5;
+    required int64 startTime = 6;
+    required int64 endTime = 7;
+} 
+message SERVERINFO 
+{
+	optional string name = 1;
+	optional string addr = 2;
+	optional int32  id = 3;
+	optional int32  type = 4;
+	optional int32	serverID = 5;
+	optional string maintainNotice = 6;
+	repeated int32 serverPortArray = 7;
+}
+
+//gms设置服务器列表
+message GMS_SET_SERVER_LIST
+{
+	required string serverName = 1;			//服务器名称
+	required string serverIp = 2;			//服务器IP
+	required int32	serverType = 3;			//0无，1新，2火爆
+	required string serverChannel = 4;		//渠道
+	required int32	serverID = 5;			//服务器ID
+	required string maintenanceTips =6;	//维护提示	
+	required int32	oldServerListIndex = 7;	//以前的服务器列表中Index,用于老游客的转换
+}
+
+//获取服务器列表
+message MSG_C2M_GET_SERVERLIST_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_GET_SERVERLIST_SYN];
+	optional string channel = 2; //渠道1风行，2IOS
+	optional int32 system = 3;//0安卓，1IOS
+	optional string addr = 4;  
+	optional string version = 5; //版本
+	repeated GMS_SET_SERVER_LIST gmsServerList = 6;
+}
+
+message MSG_M2C_GET_SERVERLIST_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_GET_SERVERLIST_ACK];
+	repeated SERVERINFO serverlist = 2;
+}
+
+message BloodyBattleSetData
+{
+	optional int32 pass = 1;
+	optional int32 hpAddition = 2;
+	optional int32 apAddition = 3;
+	optional int32 dpAddition = 4;
+	optional int32 mpAddition = 5;
+}
+
+message HeroJuediControlInfo
+{
+	optional int32 ArriveChapterID = 1;
+	optional int32 ArriveParagraphID = 2;
+	optional int32 StarNum = 3;
+} 
+
+message RuneScapeControlInfo
+{
+	optional int32 ArriveChapterID = 1;
+	optional int32 ArriveParagraphID = 2;
+	optional int32 StarNum = 3;
+}
+
+message MSG_C2M_GM_SET_PLAYER_INFO_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_GM_SET_PLAYER_INFO_SYN];
+	optional int32 playerLevel = 2;
+	optional int32 playerVipLevel = 3;
+	optional int32 AddGold = 4;
+	optional int32 AddSilver = 5;
+	optional int32 AddItemType = 6;
+	optional int32 AddItemID = 7;
+	optional int32 AddItemNum = 8;
+	optional int32 CardID = 9;
+	optional int32 CardLevel = 10;
+	optional int32 CardExp = 11;
+	optional int32 VipExp = 12;
+	optional int32 SuitIndex = 13;
+	optional HeroJuediControlInfo heroJuediControlInfo = 14;
+	optional RuneScapeControlInfo runeScapeControlInfo = 15;
+	optional BloodyBattleSetData bbSetData = 16;
+	optional int32 treasureLayer = 17;
+}
+
+message MSG_C2M_GET_EXPAND_INFO_SYN
+{
+	optional MESSAGEID messageID = 1[default = C2M_GET_EXPAND_INFO_SYN];
+}
+
+message MSG_M2C_GET_EXPAND_INFO_ACK
+{
+	optional MESSAGEID messageID = 1[default = M2C_GET_EXPAND_INFO_ACK];
+	optional int32 errorCode = 2;
+	optional PlayerExpandInfo playerExpandInfo = 3;
+}
+
+//GM工具给AUTH Server发的消息
+message MSG_G2G_OPERATION_AC
+{
+    optional MESSAGEID messageID = 1 [default = G2G_OPERATION_AC];
+    required MSG_G2M_ACTIVITY_FORTUNE_SET_SYN operation_ac = 2;
+    repeated int32 serverIDs = 3;
+}
+
+
+//师徒系统
+message APPRENTICE_INFO 
+{
+	optional string name = 1;
+	optional int32 id = 2;
+	optional int32 level = 3;
+	optional int32 viplevel = 4;
+	optional int32 serverid = 5;
+	repeated int32 awardindex = 6;
+	optional int32 lastlogindate = 7;
+	optional int32 deleteflag = 8;  //删除条件0要花钱才能解除|1可免费解除
+	optional int32 status = 9;  //邀请状态0邀请中|1已邀请
+}
+	
+message MSG_C2M_ADD_APPRENTICE_SYN 
+{
+	optional MESSAGEID messageid = 1[default = C2M_ADD_APPRENTICE_SYN ];
+	optional string playerphone = 2;
+	optional string apprenticephone = 3;
+}
+
+message MSG_M2C_ADD_APPRENTICE_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_ADD_APPRENTICE_ACK];
+	optional int32 errorcode = 2;
+	optional string errorinfo = 3;
+	optional string apprenticephone = 4;
+}
+
+message MSG_M2D_ADD_APPRENTICE_SYN
+{
+	optional MESSAGEID messageid = 1[default = M2D_ADD_APPRENTICE_SYN];
+	optional string playerphone = 2;
+	optional string apprenticephone = 3;
+}
+
+message MSG_D2M_ADD_APPRENTICE_ACK 
+{
+	optional MESSAGEID messageid = 1[default = D2M_ADD_APPRENTICE_ACK];
+	optional int32 errorcode = 2;
+	optional string playerphone = 3;
+	optional string apprenticephone = 4;
+}
+
+message MSG_M2A_ADD_APPRENTICE_SYN
+{
+	optional MESSAGEID messageid = 1[default = M2A_ADD_APPRENTICE_SYN];
+	optional string playerphone = 2;
+	optional int32  playerid = 3;
+	optional string apprenticephone = 4;
+}
+
+message MSG_A2M_ADD_APPRENTICE_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_ADD_APPRENTICE_ACK];
+	optional int32 errorcode = 2;
+	optional string errorinfo = 3;
+	optional int32  playerid = 4;
+	optional string apprenticephone = 5;
+}
+
+message MSG_C2M_GET_APPRENTICE_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_GET_APPRENTICE_SYN];
+}
+
+message MSG_M2C_GET_APPRENTICE_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_GET_APPRENTICE_ACK];
+	optional int32 errorcode = 2;
+	optional string errorinfo = 3;
+	repeated APPRENTICE_INFO apprenticeinfo = 4;
+}
+
+message MSG_M2A_GET_APPRENTICE_SYN
+{
+	optional MESSAGEID messageid = 1[default = M2A_GET_APPRENTICE_SYN];
+	optional int32 playerid = 2;
+}
+
+message MSG_A2M_GET_APPRENTICE_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_GET_APPRENTICE_ACK];
+	optional int32 errorcode = 2;
+	optional string errorinfo = 3;
+	optional int32 playerid = 4;	
+	repeated APPRENTICE_INFO apprenticeinfo = 5;
+}
+
+message MSG_C2M_DEL_APPRENTICE_SYN 
+{
+	optional MESSAGEID messageid = 1[default = C2M_DEL_APPRENTICE_SYN ];
+	optional int32 apprenticeserverid = 2;
+	optional int32 apprenticeid = 3;
+	optional int32 type = 4;//0强制解除，1正常出师
+	optional string apprenticephone = 5;
+}
+
+message MSG_M2C_DEL_APPRENTICE_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_DEL_APPRENTICE_ACK];
+	optional int32 errorcode = 2;
+	optional string errorinfo = 3;
+	optional int32 apprenticeid = 4;
+	optional int32 apprenticeserverid = 5;
+	optional string apprenticephone = 6;
+}
+
+message MSG_M2A_DEL_APPRENTICE_SYN
+{
+	optional MESSAGEID messageid = 1[default = M2A_DEL_APPRENTICE_SYN ];
+	optional int32 playerid = 2;
+	optional int32 apprenticeserverid = 3;
+	optional int32 apprenticeid = 4;
+	optional int32 type = 5;
+	optional string apprenticephone = 6;
+}
+
+message MSG_A2M_DEL_APPRENTICE_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_DEL_APPRENTICE_ACK];
+	optional int32 errorcode = 2;
+	optional string errorinfo = 3;
+	optional int32 playerid = 4;
+	optional int32 type = 5;
+	optional int32 apprenticeserverid = 6;
+	optional int32 apprenticeid = 7;
+	optional string apprenticephone = 8;
+}
+	
+message MSG_C2M_GET_APPRENTICE_AWARD_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_GET_APPRENTICE_AWARD_SYN];
+	optional int32 apprenticeserverid = 2;
+	optional int32 apprenticeid = 3;
+	optional int32 awardindex = 4;
+}
+
+message MSG_M2C_GET_APPRENTICE_AWARD_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_GET_APPRENTICE_AWARD_ACK ];
+	optional int32 errorcode = 2;
+	optional string errorinfo = 3;
+	optional int32 apprenticeserverid = 4;
+	optional int32 apprenticeid = 5;
+	optional ObjectDrop reward = 6;
+}
+
+message MSG_M2A_GET_APPRENTICE_AWARD_SYN
+{
+	optional MESSAGEID messageid = 1[default = M2A_GET_APPRENTICE_AWARD_SYN];
+	optional int32 playerid = 2;
+	optional int32 apprenticeserverid = 3;
+	optional int32 apprenticeid = 4;
+	optional int32 awardindex = 5;
+}
+
+message MSG_A2M_GET_APPRENTICE_AWARD_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_GET_APPRENTICE_AWARD_ACK];
+	optional int32 errorcode = 2;
+	optional string errorinfo = 3;
+	optional int32 playerid = 4;
+	optional int32 apprenticeserverid = 5;
+	optional int32 apprenticeid = 6;
+	optional int32 awardindex = 7;
+}
+
+message MSG_M2A_COMMON_PUSH_MSG_SYN
+{
+    optional MESSAGEID messageid = 1[default = M2A_COMMON_PUSH_MSG_SYN];
+    optional string msg = 2;
+    optional int32 serverID = 3; // ServerID
+    optional string accountID = 4; // AccountID
+    optional int32 type = 5;
+}
+
+message MSG_G2G_GM_SET_PLAYER_INFO_SYN
+{
+	optional MESSAGEID messageID = 1[default = G2G_GM_SET_PLAYER_INFO_SYN];
+	required int32 serverID = 2;
+	required MSG_C2M_GM_SET_PLAYER_INFO_SYN gm_set_info = 3;
+	required int32 playerID = 4;
+	required string accountID = 5;
+}
+
+message MSG_C2M_MISSION_UPDATE_CHECK_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_MISSION_UPDATE_CHECK_SYN];
+}
+
+message MSG_M2C_MISSION_UPDATA_CHECK_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_MISSION_UPDATA_CHECK_ACK];
+	optional int32 errorCode = 2;
+	optional int32 dailyMissionAwardNum = 3;
+	optional int32 linkMissionAwardNum = 4;
+	optional bool isNewPlayerMissionEnd = 5;
+}
+
+message MSG_C2M_MISSION_FETCH_INFO_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_MISSION_FETCH_INFO_SYN];
+	required string ChannelID = 2;					//渠道号
+}
+
+message MissionInfoToClient 
+{
+	optional int32 id=1;  //任务id
+	optional int32 stepid = 2; //当前步骤 
+	optional bool isReceivable = 3; //是否可领取
+	optional int32 type = 6;
+	optional int32 requireParams = 7;
+	optional int32 currentParams = 8;
+}
+
+message MSG_M2C_MISSION_FETCH_INFO_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_MISSION_FETCH_INFO_ACK];
+	optional int32 errorcode = 2;
+	repeated MissionInfoToClient missioninfo = 3;
+	optional MSG_M2C_GET_ACTIVITY_INFO_ACK activityInfo = 4;       //领奖信息
+        optional int64 strongTipsMsgID = 5;
+}
+
+message MSG_C2M_MISSION_AWARD_ACQUIRE_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_MISSION_AWARD_ACQUIRE_SYN];
+	optional int32 id = 2;
+	optional int32 stepid = 3;
+}
+
+message MSG_M2C_MISSION_AWARD_ACQUIRE_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_MISSION_AWARD_ACQUIRE_ACK];
+	optional int32 errorcode = 2;
+	optional ObjectDrop reward = 3;
+	repeated MissionInfoToClient missioninfo = 4;
+	optional int64 strongTipsMsgID = 5;
+}
+
+enum MysteryShopRefreshStatus
+{
+	MYSTERY_SHOP_REFRESH_AUTO = 0;			//神秘商店自动刷新
+	MYSTERY_SHOP_REFRESH_MANUAL = 1;		//神秘商店手动刷新	
+}
+
+message MSG_C2M_REFRESH_MYSTERY_SHOP_INFO_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_REFRESH_MYSTERY_SHOP_INFO_SYN];
+	optional MysteryShopRefreshStatus refreshStatus = 2[default = MYSTERY_SHOP_REFRESH_AUTO];
+}
+
+message MysteryShopGoods
+{
+	required int32 goodID = 1;					//神秘商店物品索引，购买时用
+	required string goodName = 2;				//物品名称
+	required string goodDesc = 3;				//物品描述
+	required int32 goodItemType = 4;			//物品类型
+	required int32 goodItemID = 5;				//物品ID
+	required int32 gooditemCount = 6;			//物品数量
+	required int32 goodLeftBuyTimes = 7;		//物品剩余购买次数
+	required int32 goodPrice = 8;				//物品价格
+	required int32 goodDiscountPrice = 9;		//商品打折价格
+	required int32 isbuyable = 10;				//物品能否购买，为0置灰
+	required int32 isRare = 11;					//物品是否稀有
+}
+
+message	MSG_M2C_REFRESH_MYSTERY_SHOP_INFO_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_REFRESH_MYSTERY_SHOP_INFO_ACK];
+	optional int64 nextRefreshSeconds = 2;								//下次刷新时间
+	optional int32 manualRefreshPrice = 3;								//手动刷新需要的代币价格
+	repeated MysteryShopGoods mysteryGoods = 4;							//神秘物品
+	required int32 errorcode = 5;
+	optional ItemDrop itemDrop = 6;										//手动刷新消耗的女娲石	
+	optional int32 manualRefreshLeftTimes = 7;							//手动刷新剩余次数
+	optional int32 fortuneValue = 8;									//当前幸运值
+	optional int32 leftBuyableTypeNum  = 9;								//当前VIP还能购买的次数
+	optional int32 lowDiscount = 10;									//客户端使用，当小于lowDiscount时，显示红色
+}
+	
+message MSG_C2M_BUY_MYSTERY_GOOD_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_BUY_MYSTERY_GOOD_SYN];
+	required int32 buyGoodID = 2;									//购买商品下标
+	required int32 buyGoodNum = 3;									//购买商品数量
+	required int32 perGoodPrice = 4;								//购买商品单价
+	required int32 goodStaticID = 5;								//购买商品静态ID
+}
+
+message MSG_M2C_BUY_MYSTERY_GOOD_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_BUY_MYSTERY_GOOD_ACK];
+	optional ObjectDrop buyedGood = 2;										//购买到的物品
+	optional MSG_M2C_REFRESH_MYSTERY_SHOP_INFO_ACK mysteryShopInfo = 3;		//神秘商店信息
+	optional ItemDrop itemDrop = 4;											//消耗女娲石数量
+	required int32 errorcode = 5;
+}
+
+message MSG_C2M_GET_VIPCARD_INFO_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_GET_VIPCARD_INFO_SYN];
+	optional int32 vipCardID = 2;		//-1代表获取全部，非负数代表获取指定vip卡的信息
+	required string ChannelID = 3;					//渠道号
+} 
+
+message VipCardClientData
+{
+	required int32 vipCardID = 1;		//Vip卡ID
+	optional int64 vipLeftTime = 2;		//该卡剩余特权天数
+	optional bool todayHadAward = 3;	//该卡今天是否已领奖
+	optional bool todayAbleBuy = 4;		//今天能否购买
+	optional int64 msgID = 5;			//提示消息的ID
+	
+	optional int32  vipCardPrize = 6;		//价格
+	optional string	vipCardGoodsID = 7;
+	
+	optional bool isOpenOnSale = 8;			//是否优惠活动
+	optional int32 SaleLeftTime = 9;			//活动剩余时间
+}
+
+
+message VipCardDBData
+{
+	required int32 vipCardID = 1;		//Vip卡ID
+	optional int64 vipEndTime = 2;		//该卡结束特权时间
+	optional int64 lastAwardTime = 3;	//该卡最后领奖时间
+	optional int32 dBFlag = 4;
+}
+
+message MSG_M2C_GET_VIPCARD_INFO_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_GET_VIPCARD_INFO_ACK];
+	optional int32 errorcode = 2;
+	repeated VipCardClientData vipCardDataArray = 3;
+} 
+
+message MSG_C2M_GET_VIPCARD_DAYPRIZE_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_GET_VIPCARD_DAYPRIZE_SYN];
+	optional int32 vipCardID = 2;		//领奖的Vip卡ID
+	required string ChannelID = 3;					//渠道号
+} 
+
+message MSG_M2C_GET_VIPCARD_DAYPRIZE_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_GET_VIPCARD_DAYPRIZE_ACK];
+	optional int32 errorcode = 2;
+	optional ObjectDrop objectdrop = 3;
+	repeated VipCardClientData vipCardDataArray = 4;
+}
+
+message DynamicCtrlData
+{
+	optional int32 ctrlType = 1;	//1.周期性开启 2.定时开启
+	optional bool isActive = 2;
+	optional string tipsStr = 3;
+}
+
+message DynamicRuneInfo
+{
+	optional bytes dynamicRuneContext = 1;
+	optional bytes dynamicRuneMaxId = 2;
+}
+
+message DynamicRuneData
+{
+	optional int32 runeId = 1;	//关卡ID
+	optional int32 streamId = 2;	//完成的流ID  非线性用不到 
+	optional int32 times = 3;	//剩余次数
+	optional int32 runeType = 4;	//线性 非线性
+	optional DynamicCtrlData ctrlData = 5;	//开启时间控制数据
+	optional int32 serFightTimes = 6;
+}
+
+message MSG_C2M_GET_DYNAMICRUNE_INFO_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_GET_DYNAMICRUNE_INFO_SYN];
+}
+
+message MSG_M2C_GET_DYNAMICRUNE_INFO_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_GET_DYNAMICRUNE_INFO_ACK];
+	optional int32 errorcode = 2;
+	repeated DynamicRuneData runeData = 3;
+}
+
+message MSG_C2M_FIGHT_DYNAMICRUNE_INFO_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_FIGHT_DYNAMICRUNE_SYN];
+	optional int32 runeId = 2;
+	optional int32 streamId = 3;
+}
+
+message MSG_M2C_FIGHT_DYNAMICRUNE_INFO_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_FIGHT_DYNAMICRUNE_ACK];
+	optional int32 errorcode = 2;
+	repeated DynamicRuneData runeData = 3;
+	repeated int32 ourCards = 4; 
+  	repeated int32 enemyCards = 5;
+  	optional GainSkillsMessage gainSkills = 6;
+  	repeated WarProcessMessageData warProcessDataList = 7;
+	optional bool IsWin = 8;
+	optional ObjectDrop objectDrop = 9;
+	optional ItemDrop itemDrop = 10;
+	optional int32 gainStars = 11;
+	optional int32 silver = 12;
+	optional int32 gold = 13;
+}
+
+message MSG_C2M_SERFIGHT_DYNAMICRUNE_INFO_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_SERFIGHT_DYNAMICRUNE_SYN];
+	optional int32 runeId = 2;
+}
+
+message MSG_M2C_SERFIGHT_DYNAMICRUNE_INFO_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_SERFIGHT_DYNAMICRUNE_ACK];
+	optional int32 errorCode = 2;
+	repeated DynamicRuneData runeData = 3;
+	optional ObjectDrop objectDrop = 4;
+	optional ItemDrop itemDrop = 5;
+}
+
+message EquipFragmentDBData
+{
+	required int32 EquipID = 1;
+	optional int32 FragmentNum = 2;
+	optional int32 dBFlag = 3;
+}
+
+message EquipFragmentClientData
+{
+	required int32 EquipID = 1;
+	optional int64 FragmentNum = 2;
+} 
+
+
+message EquipFragmentDrop
+{
+	required int32 EquipID = 1;
+	optional int32 FragmentChangeNum = 2; 
+}
+
+
+message MSG_C2M_GET_EQUIPFRAG_INFO_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_GET_EQUIPFRAG_INFO_SYN];
+}
+
+message MSG_M2C_GET_EQUIPFRAG_INFO_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_GET_EQUIPFRAG_INFO_ACK];
+	optional int32 errorcode = 2;
+	repeated EquipFragmentClientData equipFragArray = 3;
+	repeated EquipmentData equipmentDataArray = 4;
+	repeated GemstoneClientData gemstoneDataArray = 5;
+}
+
+message MSG_C2M_MERGE_FRAG_TO_EQUIP_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_MERGE_FRAG_TO_EQUIP_SYN];
+	required int32 EquipID = 2;
+	required int32 MergeNum = 3;
+}
+
+message MSG_M2C_MERGE_FRAG_TO_EQUIP_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_MERGE_FRAG_TO_EQUIP_ACK];
+	optional int32 errorcode = 2;
+	optional EquipFragmentClientData equipFragData = 3;
+	repeated EquipmentData equipmentArray = 7;
+}
+
+message GemstoneDBData
+{
+	optional int32 GemstoneID = 1;
+	optional int32 GemstoneNum = 2;
+	optional int32 dBFlag = 3;
+}
+
+message EquipGemstoneDBData
+{
+	repeated GemstoneOfEquipDBData equipGemstoneDataArray = 1;
+}
+
+message GemstoneClientData
+{
+	optional int32 GemstoneID = 1;
+	optional int32 GemstoneNum = 2;
+}
+
+message GemstoneClientDropData
+{
+	optional int32 GemstoneID = 1;
+	optional int32 GemstoneChangeNum = 2;
+}
+
+message GemstoneOfEquipDBData
+{ 
+	optional int32 SlotID = 1;
+	optional int32 GemstoneID = 2;
+} 
+
+message GemstoneOfEquipClientData
+{
+	optional int32 slotIndex = 1;	//从0开始
+	optional int32 SlotID = 2;
+	optional int32 GemstoneID = 3;
+} 
+		
+message MSG_C2M_UPGRADE_GEMSTONE_SYN	//升级宝石
+{
+	optional MESSAGEID messageid = 1[default = C2M_UPGRADE_GEMSTONE_SYN];
+	required int32 GemstoneID = 2;
+	optional int32 UpgradeGemstoneNum = 3;
+}
+
+message MSG_M2C_UPGRADE_GEMSTONE_ACK	
+{
+	optional MESSAGEID messageid = 1[default = M2C_UPGRADE_GEMSTONE_ACK];
+	optional int32 errorcode = 2;
+	repeated GemstoneClientDropData gemstoneChangeDataArray =3;
+	optional int32 costMoney = 4;
+	optional int32 playerMoney = 5;
+}
+
+message MSG_C2M_MERGE_GEMSTONE_SYN	//合成宝石
+{
+	optional MESSAGEID messageid = 1[default = C2M_MERGE_GEMSTONE_SYN];
+	required int32 gemstoneIDGreen = 2;
+	required int32 gemstoneIDBlue = 3;
+	required int32 gemstoneIDRed = 4; 
+}
+
+message MSG_M2C_MERGE_GEMSTONE_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_MERGE_GEMSTONE_ACK];
+	optional int32 errorcode = 2;
+	repeated GemstoneClientDropData gemstoneChangeDataArray =3;
+	optional int32 costMoney = 4;
+	optional int32 playerMoney = 5;
+}
+
+message MSG_C2M_DECOMPOSITE_GEMSTONE_SYN	//分解彩色宝石
+{
+	optional MESSAGEID messageid = 1[default = C2M_DECOMPOSITE_GEMSTONE_SYN];
+	required int32 gemstoneID = 2;	//一个彩色宝石的ID
+}
+
+message MSG_M2C_DECOMPOSITE_GEMSTONE_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_DECOMPOSITE_GEMSTONE_ACK];
+	optional int32 errorcode = 2;
+	repeated GemstoneClientDropData gemstoneChangeDataArray =3;
+	optional int32 costMoney = 4;
+	optional int32 playerMoney = 5;
+}
+
+message MSG_C2M_EQUIP_DIGHOLE_SYN		//装备打孔
+{
+	optional MESSAGEID messageid = 1[default = C2M_EQUIP_DIGHOLE_SYN];
+	required int32 equipIndex = 2;
+	required int32 newSlotNum = 3;	//想打新孔的序号，从0开始
+}
+
+message MSG_M2C_EQUIP_DIGHOLE_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_EQUIP_DIGHOLE_ACK];
+	optional int32 errorcode = 2;
+	optional EquipmentData equipData = 3;
+	optional ItemDrop itemDrop = 4;
+}
+
+message MSG_C2M_EQUIP_EMBED_GEMSTONE_SYN	//镶嵌宝石
+{
+	optional MESSAGEID messageid = 1[default = C2M_EQUIP_EMBED_GEMSTONE_SYN];
+	required int32 equipIndex = 2;
+	required int32 slotNum = 3;	 
+	required int32 gemstoneID = 4;
+}
+
+message MSG_M2C_EQUIP_EMBED_GEMSTONE_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_EQUIP_EMBED_GEMSTONE_ACK];
+	optional int32 errorcode = 2;
+	optional EquipmentData equipData = 3; 
+	optional GemstoneClientDropData gemstoneChangeData =4;
+	optional FightingPosInfoM2C fightingPosInfo = 5;
+	optional FightingPosInfoM2C ladderfightingPosInfo = 6;
+}
+
+message MSG_C2M_EQUIP_REMOVE_GEMSTONE_SYN	//卸载宝石
+{
+	optional MESSAGEID messageid = 1[default = C2M_EQUIP_REMOVE_GEMSTONE_SYN];
+	required int32 equipIndex = 2;
+	required int32 slotNum = 3;	 
+}
+
+message MSG_M2C_EQUIP_REMOVE_GEMSTONE_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_EQUIP_REMOVE_GEMSTONE_ACK];
+	optional int32 errorcode = 2;
+	optional EquipmentData equipData = 3; 
+	optional ItemDrop itemDrop = 4;
+	optional GemstoneClientDropData gemstoneChangeData =5;
+	optional FightingPosInfoM2C fightingPosInfo = 6;
+	optional FightingPosInfoM2C ladderfightingPosInfo = 7;
+}
+
+enum CHECK_IN_STATE
+{
+	CHECK_IN_STATE_PAST = 0;	 			//过去状态
+	CHECK_IN_STATE_FETURE = 1;				//未来状态，不可领取
+	CHECK_IN_STATE_NOT_RECEIVE = 2;			//今天可领但未领
+	CHECK_IN_STATE_RECEIVE_GENERAL = 3;		//已领普通奖励
+	CHECK_IN_STATE_RECEIVE_VIP = 4;			//已领取VIP奖励
+}
+
+message CheckIn
+{
+	optional int32 index = 1;
+	optional CHECK_IN_STATE checkinstate = 2;
+	optional int32 objectType = 3;
+	optional int32 objectID = 4;
+	optional int32 objectNum = 5;
+	optional int32 vipMultiple = 6;
+	optional int32 vipLimit =7;
+	optional int32 effect = 8;
+	optional string objectName = 9;
+}
+
+message CheckInBaseInfo
+{
+	optional int32 month = 1;
+	optional int32 currentMonthCheckInTimes = 2;
+	
+	//补签所补充的信息
+	optional int32 extraSupplyCheckinNeedgold = 3;	//额外补签所需元宝
+	optional int32 surplusFreeCheckinTimes	= 4;			//当前可免费补签次数
+	optional int32 surplusMaxCheckinTimes	= 5;			//当前最大补签次数
+}
+
+message MSG_C2M_GET_CHECKIN_INFO_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_GET_CHECKIN_INFO_SYN];
+	required int32 checkNum = 2[default = 0];
+}
+
+message MSG_M2C_GET_CHECKIN_INFO_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_GET_CHECKIN_INFO_ACK];
+	optional int32 errorcode = 2;
+	repeated CheckIn checkInArray = 3;
+	optional CheckInBaseInfo checkinBase = 4;
+}
+
+enum CHECKIN_TYPE
+{
+	NORMAL_CHECKIN_TYPE = 0;		//正常签到
+	SUPPLY_CHECKIN_TYPE = 1;		//补签
+}
+
+message MSG_C2M_CHECKIN_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_CHECKIN_SYN];
+	optional CHECKIN_TYPE checkinType = 2;	//签到类型
+}
+
+message MSG_M2C_CHECKIN_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_CHECKIN_ACK];
+	optional int32 errorcode = 2;
+	optional ObjectDrop objectDropData = 3;
+	optional CheckIn checkInData = 4;
+	optional CheckInBaseInfo checkinBase = 5;
+	optional int64 msgID = 6;			//提示消息的ID
+	optional int32 subGoldNum = 7;//所扣元宝
+}
+
+enum CHECK_IN_DB_STATE
+{
+	CHECK_IN_DB_STATE_NOT_EXIST = 0;
+	CHECK_IN_DB_STATE_IS_EXIST = 1;
+}
+
+message CheckInDBData
+{
+	optional CHECK_IN_DB_STATE checkInDBState = 1;
+	optional int64 lastCheckInTime = 2;
+	optional int32 lastCheckInIsReceiveVipPrize = 3;
+	optional int32 currentMonthCheckInTimes = 4;
+	optional int32 SurplusFreeCheckinTimes = 5;
+}
+
+//////////////探宝
+message TreasureDBData
+{
+	optional int32 screenMode = 1;
+	optional int32 layer = 2;
+	optional int32 position = 3;
+	optional int32 times = 4;
+	optional int32 buyTimes = 5;
+	optional bytes explorer = 6;
+	optional bytes triggered = 7;
+	optional int32 heroId = 8;
+	optional int32 step = 9;
+	optional bool isAlive = 10;
+}
+
+message TreasureDataToClient
+{
+	optional int32 screenMode = 1;
+	optional int32 layer = 2;
+	optional int32 position = 3;	
+	optional int32 times = 4;	//剩余可复活次数
+	optional int32 buyTimes = 5;
+	repeated int32 explorer = 6;
+	optional int32 heroId = 7;
+	optional bool isTemp = 8;
+	optional int32 tempPosition = 9;
+	optional int32 tempActionId = 10;
+	optional bool isAlive = 11;
+	repeated int32 triggered = 12;
+	optional int32 nextLayerAwardId = 13;
+	optional int32 nextLayerAwardType = 14;
+	optional int32 nextLayerAwardNum = 15;
+}
+
+//请求探宝信息
+message MSG_C2M_GET_TREASURE_INFO_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_GET_TREASURE_INFO_SYN];
+}
+
+message MSG_M2C_GET_TREASURE_INFO_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_GET_TREASURE_INFO_ACK];
+	optional int32 errorCode = 2;
+	optional TreasureDataToClient treasureData = 3;
+}
+
+//开始探宝
+message MSG_C2M_START_TREASURE_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_START_TREASURE_SYN];
+	optional int32 heroId = 2;
+}
+
+message MSG_M2C_START_TREASURE_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_START_TREASURE_ACK];
+	optional int32 errorCode = 2;
+	optional TreasureDataToClient treasureData = 3;
+	optional int32 silverCoin = 4;
+	optional int32 goldCoin = 5;
+}
+
+//进行探宝
+message MSG_C2M_EXPLORER_TREASURE_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_EXPLORER_TREASURE_SYN];
+	optional int32 position = 2;
+	optional int32 toward = 3;		//1左，2右，3上，4下
+}
+
+message MSG_M2C_EXPLORER_TREASURE_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_EXPLORER_TREASURE_ACK];
+	optional int32 errorCode = 2;
+	optional TreasureDataToClient treasureData = 3;
+	optional int32 actionId = 4;
+	optional ObjectDrop objectDrop = 5;
+}
+
+//购买探宝次数
+message MSG_C2M_BUY_TREASURE_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_BUY_TREASURE_SYN];
+}
+
+message MSG_M2C_BUY_TREASURE_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_BUY_TREASURE_ACK];
+	optional int32 errorCode = 2;
+	optional int32 times = 3;
+	optional int32 buyTimes = 4;
+	optional int32 goldCoin = 5;
+}
+
+//探宝复活
+message MSG_C2M_REVIVE_TREASURE_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_REVIVE_TREASURE_SYN];
+}
+
+message MSG_M2C_REVIVE_TREASURE_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_REVIVE_TREASURE_ACK];
+	optional int32 errorCode = 2;
+	optional TreasureDataToClient treasureData = 3;
+}
+
+//探宝猜拳
+message MSG_C2M_FINGER_TREASURE_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_FINGER_TREASURE_SYN];
+	optional int32 choose = 2;	//1石头 2剪刀 3布
+}
+
+message MSG_M2C_FINGER_TREASURE_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_FINGER_TREASURE_ACK];
+	optional int32 errorCode = 3;
+	optional int32 choose = 4;
+	optional int32 isWin = 5;	//1胜 2负 3平
+	optional TreasureDataToClient treasureData = 6;
+	optional ObjectDrop objectDrop = 7;
+}
+		
+message MSG_C2M_HERO_JUEDI_GET_INFO_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_HERO_JUEDI_GET_INFO_SYN];
+}
+
+message HeroJueDiParagraph
+{
+	optional int32 ParagraphID = 1;
+	optional int32 Star = 2;				//战斗星级
+	optional int32 hadFightingNum = 3;		//当天已挑战次数
+	optional int32 hadAddFightingNum = 4;	//当天已经增加的次数
+}
+
+message HeroJueDiChapter
+{
+	optional int32 ChapterID = 1;
+	repeated  HeroJueDiParagraph heroJuediParagraphInfo = 2;
+} 
+
+message HeroJueDiDBData
+{
+	optional int32 dBFlag = 1;
+	optional int32 ChapterID = 2;
+	optional int32 ParagraphID = 3;
+	optional int32 star = 4;
+	optional int32 currentDayhadFightingNum = 5;
+	optional int32 currentDayhadAddFightingNum = 6;	//当天已经增加的次数
+}
+
+enum HERO_ATTRIBUTE_DB_STATE
+{
+	HERO_ATTRIBUTE_DB_STATE_NOT_EXIST = 0;
+	HERO_ATTRIBUTE_DB_STATE_IS_EXIST = 1;
+}
+
+message HeroAttributeDBData
+{
+	optional HERO_ATTRIBUTE_DB_STATE heroAttributeDBState = 1;
+	optional int32 RealmID = 2;						//大境界ID
+	optional int32 RankID = 3;						//小阶数ID
+	optional int64 lastResetJuediTime = 4;			//上次重置绝地系统的时间 
+	optional int32 MysteryChapterID = 5;			//出现的神秘关卡所属大关卡ID，小于等于0表示没有神秘关卡
+	optional int32 MysteryChapterHadFightNum = 6;			//出现的神秘关卡所属大关卡ID，小于等于0表示没有神秘关卡
+}
+
+message MSG_M2C_HERO_JUEDI_GET_INFO_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_HERO_JUEDI_GET_INFO_ACK];
+	optional int32 errorcode = 2;
+	repeated HeroJueDiChapter heroJueDiChapterInfo = 3;
+	optional int32 hadMysteryParagraph = 4;
+}
+
+message MSG_C2M_HERO_JUEDI_FIGHT_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_HERO_JUEDI_FIGHT_SYN];
+	required int32 ChapterID = 2;
+	required int32 ParagraphID = 3;
+}
+
+message FightWarBaseInfo
+{
+	repeated WarProcessMessageData warProcessDataList = 1;
+  	optional GainSkillsMessage gainSkills = 2;
+  	repeated int32 ourCards = 3; 
+  	repeated int32 enemyCards = 4;
+  	optional bool IsWin = 5;
+  	optional int32 warStar = 6;
+}
+
+message MSG_M2C_HERO_JUEDI_FIGHT_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_HERO_JUEDI_FIGHT_ACK];
+	optional int32 errorcode = 2;
+	optional HeroJueDiChapter heroJueDiChapterInfo = 3; 
+  	optional FightWarBaseInfo fightWarBase = 4; 
+  	optional ObjectDrop prizeData = 5;
+  	optional int32 heroCurrentDayHadJuediNum = 6;
+} 
+
+message MSG_C2M_HERO_JUEDI_FIGHT_ALL_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_HERO_JUEDI_FIGHT_ALL_SYN];
+	required int32 ChapterID = 2;
+}
+ 
+message MSG_M2C_HERO_JUEDI_FIGHT_ALL_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_HERO_JUEDI_FIGHT_ALL_ACK];
+	optional int32 errorcode = 2;
+	optional HeroJueDiChapter heroJueDiChapterInfo = 3;  
+  	optional ObjectDrop prizeData = 4;
+  	optional int32 heroCurrentDayHadJuediNum = 5;
+}
+
+message MSG_C2M_HERO_JUEDI_ADD_FIGHTING_NUM_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_HERO_JUEDI_ADD_FIGHTING_NUM_SYN];
+	required int32 ChapterID = 2;
+	optional int32 ParagraphID = 3;			//不填值则代表重置该大关卡下所有小关卡信息，否则为重置特定小关卡
+}
+
+message MSG_M2C_HERO_JUEDI_ADD_FIGHTING_NUM_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_HERO_JUEDI_ADD_FIGHTING_NUM_ACK];
+	optional int32 errorcode = 2;
+	optional HeroJueDiChapter heroJueDiChapterInfo = 3;
+	optional int32 subGlodCoin = 4;
+	optional int32 playerGlodCoin = 5;
+}
+
+message MSG_C2M_HERO_ATTRIBUTE_GET_INFO_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_HERO_ATTRIBUTE_GET_INFO_SYN];
+}
+
+message MSG_M2C_HERO_ATTRIBUTE_GET_INFO_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_HERO_ATTRIBUTE_GET_INFO_ACK];
+	optional int32 errorcode = 2;
+	optional int32 RealmID = 3;					//大境界ID
+	optional int32 RankID = 4;					//小阶数ID
+}
+
+message MSG_C2M_HERO_ATTRIBUTE_UPGRADE_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_HERO_ATTRIBUTE_UPGRADE_SYN]; 
+}
+
+message MSG_M2C_HERO_ATTRIBUTE_UPGRADE_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_HERO_ATTRIBUTE_UPGRADE_ACK];
+	optional int32 errorcode = 2;
+	optional ItemDrop itemDropData = 3;
+	optional int32 RealmID = 4;						//大境界ID
+	optional int32 RankID = 5;						//小阶数ID
+    repeated FightingPosInfoM2C fightPosInfo= 6;	//阵位信息
+}
+
+enum INVITATION_CODE_GET_TYPE
+{
+	INVITATION_CODE_GET_TYPE_NO_CREATE = 0;
+	INVITATION_CODE_GET_TYPE_NEED_CREATE = 1;
+}
+ 
+message MSG_C2M_INVITATION_CODE_GET_INFO_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_INVITATION_CODE_GET_INFO_SYN];
+	required string ChannelID = 2;					//渠道号
+	optional INVITATION_CODE_GET_TYPE InvitationGetType = 3[default = INVITATION_CODE_GET_TYPE_NO_CREATE];
+}
+
+//师徒系统
+message InvitationCodeState
+{
+	optional string name = 1;
+	optional int32 id = 2;
+	optional int32 level = 3;
+	optional int32 viplevel = 4;
+	optional int32 serverid = 5;
+	repeated int32 awardindex = 6;
+	optional int32 lastlogindate = 7;
+	optional int32 deleteflag = 8;  //删除条件0要花钱才能解除|1可免费解除
+	optional int32 status = 9;  //邀请状态0邀请中|1已邀请，2表示未邀请
+}
+
+message InvitationCodeInfo
+{
+	optional string selfCode = 1;							//自己的邀请码，可能是空串，15级以后肯定有内容，客户端在玩家等级15级之后再显示
+	optional int32 remainInvitationNum = 2;					//剩余邀请次数，如果邀请次数为0，不能付费解除关系
+	optional bool beshared = 3;								//自己是否填过别人的邀请码
+	repeated InvitationCodeState InvitationStateArray = 4;	//邀请列表
+	optional int32	leftTime = 5;								//邀请码剩余时间
+}
+
+message MSG_M2C_INVITATION_CODE_GET_INFO_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_INVITATION_CODE_GET_INFO_ACK];
+	optional int32 errorcode = 2;
+	optional string errorinfo = 3;
+	optional int32 deleteInvitationNeedGoldCoin = 4;
+	optional InvitationCodeInfo invitationInfo = 5;
+	optional int32 invitationOpenLevel = 6;
+	optional int32 freeDeleteLevel =7;
+}
+
+message MSG_M2A_INVITATION_CODE_GET_INFO_SYN
+{
+	optional MESSAGEID messageid = 1[default = M2A_INVITATION_CODE_GET_INFO_SYN];
+	required string ChannelID = 2;					//渠道号 
+	required int32 PlayerID = 3;					//玩家PlayerID
+	optional INVITATION_CODE_GET_TYPE InvitationGetType = 4;
+}	
+
+message MSG_A2M_INVITATION_CODE_GET_INFO_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_INVITATION_CODE_GET_INFO_ACK];
+	optional int32 errorcode = 2;
+	optional string errorinfo = 3;
+	optional int32 PlayerID = 4;					//玩家PlayerID
+	optional InvitationCodeInfo invitationInfo = 5;
+}
+
+message MSG_C2M_INVITATION_CODE_AWARD_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_INVITATION_CODE_AWARD_SYN];
+	required int32 ApprenticeServerId = 2;			//徒弟所在服务器ServerID
+	required int32 ApprenticePlayerID = 3;			//徒弟的PlayerID
+	required int32 AwardIndex = 4;					//领奖ID
+}
+
+message MSG_M2C_INVITATION_CODE_AWARD_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_INVITATION_CODE_AWARD_ACK];
+	optional int32 errorcode = 2;
+	optional string errorinfo = 3;
+	optional int32 ApprenticeServerId = 4;			//徒弟所在服务器ServerID
+	optional int32 ApprenticePlayerID = 5;			//徒弟的PlayerID
+	optional int32 AwardIndex = 6;					//领奖ID
+	optional ObjectDrop prizeData = 7;						//奖励内容
+}
+
+message MSG_M2A_INVITATION_CODE_AWARD_SYN
+{
+	optional MESSAGEID messageid = 1[default = M2A_INVITATION_CODE_AWARD_SYN];
+	required int32 PlayerID = 2;					//玩家PlayerID
+	required int32 ApprenticeServerId = 3;			//徒弟所在服务器ServerID
+	required int32 ApprenticePlayerID = 4;			//徒弟的PlayerID
+	required int32 AwardIndex = 5;					//领奖ID
+}
+
+message MSG_A2M_INVITATION_CODE_AWARD_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_INVITATION_CODE_AWARD_ACK];
+	optional int32 errorcode = 2;
+	optional string errorinfo = 3;
+	optional int32 PlayerID = 4;					//玩家PlayerID
+	optional int32 ApprenticeServerId = 5;			//徒弟所在服务器ServerID
+	optional int32 ApprenticePlayerID = 6;			//徒弟的PlayerID
+	optional int32 AwardIndex = 7;					//领奖ID 
+}
+
+enum INVITATION_CONFIRM_TYPE
+{
+	INVITATION_CONFIRM_OK = 1;
+	INVITATION_CANCEL = 2;
+}
+
+message MSG_C2M_INVITATION_CODE_CONFIRM_CANCEL_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_INVITATION_CODE_CONFIRM_CANCEL_SYN];
+	required string ChannelID = 2;					//自己的渠道号
+	required int32 ApprenticeServerId = 3;					//徒弟所在服务器ServerID
+	required int32 ApprenticePlayerID = 4;					//徒弟的PlayerID
+	required INVITATION_CONFIRM_TYPE ConfirmType = 5;		//确定类型
+}
+
+message MSG_M2C_INVITATION_CODE_CONFIRM_CANCEL_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_INVITATION_CODE_CONFIRM_CANCEL_ACK];
+	optional int32 errorcode = 2;
+	optional string errorinfo = 3;
+	optional int32 ApprenticeServerId = 4;					//徒弟所在服务器ServerID
+	optional int32 ApprenticePlayerID = 5;					//徒弟的PlayerID
+	optional INVITATION_CONFIRM_TYPE ConfirmType = 6;		//确定类型
+	optional InvitationCodeInfo invitationInfo = 7;			//更新信息
+}
+
+message MSG_M2A_INVITATION_CODE_CONFIRM_CANCEL_SYN
+{
+	optional MESSAGEID messageid = 1[default = M2A_INVITATION_CODE_CONFIRM_CANCEL_SYN];
+	required string ChannelID = 2;					//自己的渠道号
+	required int32 PlayerID = 3;					//玩家PlayerID
+	required int32 ApprenticeServerId = 4;					//徒弟所在服务器ServerID
+	required int32 ApprenticePlayerID = 5;					//徒弟的PlayerID
+	required INVITATION_CONFIRM_TYPE ConfirmType = 6;		//确定类型
+}
+
+message MSG_A2M_INVITATION_CODE_CONFIRM_CANCEL_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_INVITATION_CODE_CONFIRM_CANCEL_ACK];
+	optional int32 errorcode = 2;
+	optional string errorinfo = 3;
+	optional int32 PlayerID = 4;							//玩家PlayerID
+	optional int32 ApprenticeServerId = 5;					//徒弟所在服务器ServerID
+	optional int32 ApprenticePlayerID = 6;					//徒弟的PlayerID
+	optional INVITATION_CONFIRM_TYPE ConfirmType = 7;		//确定类型 
+	optional InvitationCodeInfo invitationInfo = 8;			//更新信息
+}
+
+message MSG_C2M_INVITATION_CODE_INPUT_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_INVITATION_CODE_INPUT_SYN];
+	required string ChannelID = 2;					//自己的渠道号
+	required string InviterCode = 3;				//邀请方的邀请码
+}
+
+message MSG_M2C_INVITATION_CODE_INPUT_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_INVITATION_CODE_INPUT_ACK];
+	optional int32 errorcode = 2;
+	optional string errorinfo = 3;
+	optional bool beshared = 4;		 //自己是否填过别人的邀请码
+}
+
+message MSG_M2A_INVITATION_CODE_INPUT_SYN
+{
+	optional MESSAGEID messageid = 1[default = M2A_INVITATION_CODE_INPUT_SYN];
+	required int32 PlayerID = 2;					//玩家PlayerID
+	required string ChannelID = 3;					//自己的渠道号
+	required string InviterCode = 4;				//邀请方的邀请码
+}
+
+message MSG_A2M_INVITATION_CODE_INPUT_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_INVITATION_CODE_INPUT_ACK];
+	optional int32 errorcode = 2;
+	optional string errorinfo = 3;
+	optional int32 PlayerID = 4;					//玩家PlayerID
+	optional bool beshared = 5;		 //自己是否填过别人的邀请码
+} 
+
+enum INVITATION_DELETE_TYPE
+{
+	INVITATION_DELETE_FREE = 1;
+	INVITATION_DELETE_GOLD = 2;
+}
+		
+message MSG_C2M_INVITATION_CODE_DELETE_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_INVITATION_CODE_DELETE_SYN];
+	required string ChannelID = 2;					//渠道号
+	required int32 ApprenticeServerId = 3;					//徒弟所在服务器ServerID
+	required int32 ApprenticePlayerID = 4;					//徒弟的PlayerID
+	required INVITATION_DELETE_TYPE DeleteType = 5;			//解除类型，免费解除还是元宝解除
+}
+
+message MSG_M2C_INVITATION_CODE_DELETE_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_INVITATION_CODE_DELETE_ACK];
+	optional int32 errorcode = 2;
+	optional string errorinfo = 3;
+	optional int32 ApprenticeServerId = 4;					//徒弟所在服务器ServerID
+	optional int32 ApprenticePlayerID = 5;					//徒弟的PlayerID
+	optional INVITATION_DELETE_TYPE DeleteType = 6;			//解除类型，免费解除还是元宝解除
+	optional int32 subGlodCoin = 7;							//此次消耗的元宝数
+	optional int32 playerGlodCoin = 8;						//最新的元宝数
+	optional InvitationCodeInfo invitationInfo = 9;			//更新信息
+}
+
+message MSG_M2A_INVITATION_CODE_DELETE_SYN
+{
+	optional MESSAGEID messageid = 1[default = M2A_INVITATION_CODE_DELETE_SYN];
+	required string ChannelID = 2;					//渠道号
+	required int32 PlayerID = 3;					//玩家PlayerID
+	required int32 ApprenticeServerId = 4;					//徒弟所在服务器ServerID
+	required int32 ApprenticePlayerID = 5;					//徒弟的PlayerID
+	required INVITATION_DELETE_TYPE DeleteType = 6;			//解除类型，免费解除还是元宝解除
+}
+
+message MSG_A2M_INVITATION_CODE_DELETE_ACK
+{
+	optional MESSAGEID messageid = 1[default = A2M_INVITATION_CODE_DELETE_ACK];
+	optional int32 errorcode = 2;
+	optional string errorinfo = 3;
+	optional int32 PlayerID = 4;							//玩家PlayerID
+	optional int32 ApprenticeServerId = 5;					//徒弟所在服务器ServerID
+	optional int32 ApprenticePlayerID = 6;					//徒弟的PlayerID
+	optional INVITATION_DELETE_TYPE DeleteType = 7;			//解除类型，免费解除还是元宝解除
+	optional InvitationCodeInfo invitationInfo = 8;			//更新信息
+}
+
+message ConsumeRankDataDB
+{
+	optional int32 rank = 1;
+	optional int32 playerid = 2;
+	optional int32 consumeSum = 3;
+	optional int32 dboperation = 4;
+}
+
+//向DB请求消费排行榜
+message MSG_M2D_GET_COSUME_RANK_BILLBOARD_SYN
+{
+	optional MESSAGEID messageid = 1[default = M2D_GET_COSUME_RANK_BILLBOARD_SYN];
+}
+
+message MSG_D2M_GET_COSUME_RANK_BILLBOARD_ACK
+{
+	optional MESSAGEID messageid = 1[default = D2M_GET_COSUME_RANK_BILLBOARD_ACK];
+	optional int32 errorcode = 2;
+	repeated ConsumeRankDataDB consumeRankData = 3;
+}
+
+message MSG_M2D_UPDATE_COSUME_RANK_BILLBOARD
+{
+	optional MESSAGEID messageid = 1[default = M2D_UPDATE_COSUME_RANK_BILLBOARD];
+	repeated ConsumeRankDataDB consumeRankData = 2;
+}
+
+//请求排名活动信息
+message MSG_C2M_CONSUME_RANK_INFO_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_CONSUME_RANK_INFO_SYN];
+}
+
+message MSG_M2C_CONSUME_RANK_INFO_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_CONSUME_RANK_INFO_ACK];
+	optional int32 errorcode = 2;
+	optional int32 	imageId = 3;
+	optional string activityExplain = 4;
+	optional int32 status = 5;
+	optional int32 cutdown = 6;
+	optional int32 dayConsume = 7;
+	optional int32 sumConsume = 8;
+	optional int32 rank = 9;
+	optional int32 nextDayConsumeAwardNeed = 10;
+	optional int32 nextDayConsumeAwardId = 11;
+	optional int32 nextDayConsumeAwardType = 12;
+	optional int32 nextDayConsumeAwardNum = 13;
+	optional int32 nextSumConsumeAwardNeed = 14;
+	optional int32 nextSumConsumeAwardId = 15;
+	optional int32 nextSumConsumeAwardType = 16;
+	optional int32 nextSumConsumeAwardNum = 17;
+	optional int32 sumRankNum = 18;
+	optional int32 consumeType = 19;
+	optional int32 consumeId = 20;
+	optional int32 openBoardCutDown = 21; //单位:分钟
+}
+
+//排行榜内容
+message rankBillboardData
+{
+	optional int32 rank = 1;	//-1 就是"XX+"
+	optional string playerName = 2;	//"???"就是机器人
+	optional int32 sumConsume = 3;	//-1 就是"???"
+	optional int32 awardId = 4;
+	optional int32 awardType = 5;
+	optional bool isSelf = 6;
+}
+
+//请求排名活动排行榜信息
+message MSG_C2M_CONSUME_RANK_BILLBOARD_INFO_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_CONSUME_RANK_BILLBOARD_INFO_SYN];
+}
+
+message MSG_M2C_CONSUME_RANK_BILLBOARD_INFO_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_CONSUME_RANK_BILLBOARD_INFO_ACK];
+	optional int32 errorcode = 2;
+	optional int32 cutdown = 3;
+	repeated rankBillboardData billboardData = 4;
+}
+
+//请求排名奖励信息
+message MSG_C2M_CONSUME_RANK_AWARD_INFO_SYN
+{
+	optional MESSAGEID messageid = 1[default = C2M_CONSUME_RANK_AWARD_INFO_SYN];
+	optional int32 rank = 2;
+}
+
+message MSG_M2C_CONSUME_RANK_AWARD_INFO_ACK
+{
+	optional MESSAGEID messageid = 1[default = M2C_CONSUME_RANK_AWARD_INFO_ACK];
+	optional int32 errorcode = 2;
+	repeated AwardMessageInfo awardInfo = 3;
+}
+
+//抽卡活动控制模块
+message GetCardStepCtrl
+{
+	optional int32 vip = 1;
+	optional int32 cardCount = 2;
+}
+
+message GetCardItem
+{
+	optional int32 itemId = 1;
+	optional int32 itemType = 2;
+	optional int32 itemNum = 3;
+}
+
+message GMSGetCardActivityCtrl
+{
+	optional int64 startTime = 1;
+	optional int64 endTime = 2;
+	optional GetCardItem getCardItem = 3;
+	repeated GetCardStepCtrl stepCtrl = 4;
+	optional int32 defaultCardCount = 5;
+	optional int32 operation = 6;	//0开启 1关闭
+}
+
+//开箱子活动控制模块
+message OpenBoxStepCtrl
+{
+	optional int32 vip = 1;
+	optional int32 minStep = 2;
+	optional int32 maxStep = 3;
+}
+
+message OpenBoxItem
+{
+	optional int32 itemId = 1;
+	optional int32 itemType = 2;
+	optional int32 itemNum = 3;
+}
+
+message GMSOpenBoxActivityCtrl
+{
+	optional int64 startTime = 1;
+	optional int64 endTime = 2;
+	repeated OpenBoxItem openBoxItem = 3;
+	repeated OpenBoxStepCtrl stepCtrl = 4;
+	optional int32 defaultMinStep = 5;
+	optional int32 defaultMaxStep = 6;
+	optional int32 operation = 7;	//0开启 1关闭
+}
+
+//消费排行活动控制模块
+message ConsumeRankDailyAwardCtrl
+{
+	optional int32 day = 1;
+	optional int32 consumeNum = 2;
+	optional AwardMessageInfo awardInfo = 3;
+}
+
+message ConsumeRankSumAwardCtrl
+{
+	optional int32 sumConsume = 1;
+	optional AwardMessageInfo awardInfo = 2;
+}
+
+message ConsumeRankAwardCtrl
+{
+	optional int32 rank = 1;
+	optional int32 minConsume = 2;
+	repeated AwardMessageInfo awardInfo = 3;
+}
+
+message GMSConsumeRankActivityCtrl
+{
+	optional int64 showStartTime = 1;
+	optional int64 showEndTime = 2;
+	optional int64 startTime = 3;
+	optional int64 endTime = 4;
+	optional int32 consumeId = 5;
+	optional int32 consumeType = 6;
+	optional int32 imageId = 7;
+	optional string explain = 8;
+	optional int32 rankNum = 9;
+	optional int32 openBoardCutDown = 10;
+	optional int32 viewRange = 11;
+	repeated ConsumeRankDailyAwardCtrl dailyAwardCtrl = 12;
+	repeated ConsumeRankSumAwardCtrl sumAwardCtrl = 13;
+	repeated ConsumeRankAwardCtrl rankAwardCtrl = 14;
+	optional string title = 15;
+	optional int32 operation = 16;	//0开启 1关闭
+}
+
+//开服连接Auth通知GMS
+message MSG_G2G_BUSINESS_ACTIVITY_OPENSERVER_NOTICE
+{
+	optional MESSAGEID messageid = 1[default = G2G_BUSINESS_ACTIVITY_OPENSERVER_NOTICE];
+	required int32 serverID = 2;
+}
+
+//请求运营活动初始化
+message MSG_G2G_BUSINESS_ACTIVITY_INIT
+{
+	optional MESSAGEID messageid = 1[default = G2G_BUSINESS_ACTIVITY_INIT];
+	required int32 serverID = 2;
+	optional GMSGetCardActivityCtrl getCardCtrl = 3;
+	optional GMSOpenBoxActivityCtrl openBoxCtrl = 4;
+	optional GMSConsumeRankActivityCtrl consumeRankCtrl = 5;
+}
+
+//下发抽卡活动
+message MSG_G2G_BUSINESS_ACTIVITY_GETCARD
+{
+	optional MESSAGEID messageid = 1[default = G2G_BUSINESS_ACTIVITY_GETCARD];
+	required int32 serverID = 2;
+	optional GMSGetCardActivityCtrl getCardCtrl = 3;
+}
+
+//下发开箱子活动
+message MSG_G2G_BUSINESS_ACTIVITY_OPENBOX
+{
+	optional MESSAGEID messageid = 1[default = G2G_BUSINESS_ACTIVITY_OPENBOX];
+	required int32 serverID = 2;
+	optional GMSOpenBoxActivityCtrl openBoxCtrl = 3;
+}
+
+//下发排行奖励活动
+message MSG_G2G_BUSINESS_ACTIVITY_CONSUMERANK
+{
+	optional MESSAGEID messageid = 1[default = G2G_BUSINESS_ACTIVITY_CONSUMERANK];
+	required int32 serverID = 2;
+	optional GMSConsumeRankActivityCtrl consumeRankCtrl = 3;
+}

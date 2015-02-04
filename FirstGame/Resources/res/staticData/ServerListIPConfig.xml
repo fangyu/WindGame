@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document>
+  <ListServer>
+    <IP value="114.66.198.3">
+        <PortList>
+            <Port ID="1">9002</Port>
+            <Port ID="2">9003</Port>
+            <Port ID="3">9004</Port>
+        </PortList>
+        <Distrubte>
+            <ID>funs0003</ID>
+        </Distrubte>
+    </IP>
+    
+    
+    <IP value="114.66.198.3">
+        <PortList>
+            <Port ID="1">9002</Port>
+            <Port ID="2">9003</Port>
+            <Port ID="3">9004</Port>
+        </PortList>
+        <Distrubte>
+            <ID>funs0004</ID>
+        </Distrubte>
+    </IP>
+    
+    
+    <IP value="114.66.198.3">
+        <PortList>
+            <Port ID="1">9002</Port>
+            <Port ID="2">9003</Port>
+            <Port ID="3">9004</Port>
+        </PortList>
+        <Distrubte>
+            <ID>funs0014</ID>
+        </Distrubte>
+    </IP>
+    
+    
+    <IP value="114.66.198.3">
+        <PortList>
+            <Port ID="1">9002</Port>
+            <Port ID="2">9003</Port>
+            <Port ID="3">9004</Port>
+        </PortList>
+        <Distrubte>
+            <ID>funs0016</ID>
+        </Distrubte>
+    </IP>
+    
+    
+    <IP value="114.66.198.3">
+        <PortList>
+            <Port ID="1">9002</Port>
+            <Port ID="2">9003</Port>
+            <Port ID="3">9004</Port>
+        </PortList>
+        <Distrubte>
+            <ID>funs0018</ID>
+        </Distrubte>
+    </IP>
+    
+    <IP value="114.66.198.3">
+        <PortList>
+            <Port ID="1">9002</Port>
+            <Port ID="2">9003</Port>
+            <Port ID="3">9004</Port>
+        </PortList>
+        <Distrubte>
+            <ID>funs0020</ID>
+        </Distrubte>
+    </IP>
+
+    <IP value="114.66.198.3">
+        <PortList>
+            <Port ID="1">9002</Port>
+            <Port ID="2">9003</Port>
+            <Port ID="3">9004</Port>
+        </PortList>
+        <Distrubte>
+            <ID>DefaultDistrubte</ID>
+        </Distrubte>
+    </IP>
+ 
+    <IP value="115.29.52.14">
+        <PortList>
+            <Port ID="1">9002</Port>
+            <Port ID="2">9003</Port>
+            <Port ID="3">9004</Port>
+        </PortList>
+        <Distrubte>
+            <ID>Backup</ID>
+        </Distrubte>
+    </IP>
+  </ListServer>
+
+  <UpdateServer>
+    <IP ID="1">123.125.20.41</IP>
+    <IP ID="2">115.28.54.45</IP>
+  </UpdateServer>
+</document>
